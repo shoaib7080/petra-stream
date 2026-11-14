@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://petrastream.ae/sitemap.xml
+

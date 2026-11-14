@@ -1,0 +1,57 @@
+---
+// Modals.astro - Technical RFQ Consultation Modal
+---
+
+<!-- Technical RFQ Enquiry Modal -->
+<div class="rfq-modal-overlay" id="rfq-modal-dialog" aria-hidden="true" role="dialog" aria-labelledby="rfq-title">
+  <div class="rfq-modal-box">
+    <div class="rfq-modal-header">
+      <div>
+        <h3 class="rfq-modal-h3" id="rfq-title">Technical RFQ & Consultation</h3>
+        <p style="font-size:0.92rem; color:var(--slate-muted); margin-top:2px;">Petrastream Contracting LLC • Mechanical Services & Products</p>
+      </div>
+      <button type="button" class="rfq-modal-close" data-close-modal="rfq" aria-label="Close dialog">✕</button>
+    </div>
+    <div class="rfq-form-content">
+      <form id="rfq-modal-form">
+        <div class="form-row-duo">
+          <div class="form-field-group">
+            <label class="field-label-bold">Full Name *</label>
+            <input type="text" class="input-box" placeholder="e.g. Eng. Ahmed Al-Mansoor" required />
+          </div>
+          <div class="form-field-group">
+            <label class="field-label-bold">Company / Organization *</label>
+            <input type="text" class="input-box" placeholder="e.g. ADNOC Operating Partner / EPC Contractor" required />
+          </div>
+        </div>
+        <div class="form-row-duo">
+          <div class="form-field-group">
+            <label class="field-label-bold">Corporate Work Email *</label>
+            <input type="email" class="input-box" placeholder="name@company.ae" required />
+          </div>
+          <div class="form-field-group">
+            <label class="field-label-bold">Direct Phone / WhatsApp *</label>
+            <input type="tel" class="input-box" placeholder="+971 50 000 0000" required />
+          </div>
+        </div>
+        <div class="form-field-group">
+          <label class="field-label-bold">Primary Area of Interest *</label>
+          <select class="input-box" required>
+            <option value="services">Industrial Contracting Services (Shutdown, Erection, Piping, E&I)</option>
+            <option value="products">Industrial Products & Equipment (Valves, Sensors, Habitats, Skids)</option>
+            <option value="integrated">Integrated Turnkey: Both Contracting Services & Equipment Supply</option>
+          </select>
+        </div>
+        <div class="form-field-group">
+          <label class="field-label-bold">Project Scope / Technical Specifications *</label>
+          <textarea class="input-box" rows="4" placeholder="Please outline the required scope, pipeline sizing, pressure rating, shutdown timeline or equipment specifications..." required></textarea>
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:1rem; margin-top:1.75rem;">
+          <button type="button" class="btn-navy-outline" data-close-modal="rfq">Cancel</button>
+          <button type="submit" class="btn-orange-solid">Submit Technical RFQ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

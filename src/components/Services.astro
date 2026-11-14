@@ -1,0 +1,114 @@
+---
+// Services.astro - Section 05: All 9 Industrial Contracting Services (3-column grid)
+const services = [
+  {
+    num: "01",
+    title: "Maintenance, Shutdown & Turnaround",
+    desc: "Industrial maintenance and planned shutdown support activities.",
+    img: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    num: "02",
+    title: "Pre-Commissioning & Commissioning",
+    desc: "System preparation, cleaning, testing and commissioning support.",
+    img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    num: "03",
+    title: "Electrical & Instrumentation",
+    desc: "Electrical and instrumentation installation and project support.",
+    img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    num: "04",
+    title: "Mechanical Erection",
+    desc: "Installation and erection of industrial mechanical equipment.",
+    img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    num: "05",
+    title: "Process & Plant Piping",
+    desc: "Process and utility piping fabrication and installation support.",
+    img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    num: "06",
+    title: "Pipeline Construction",
+    desc: "Pipeline installation and associated field construction activities.",
+    img: "https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    num: "07",
+    title: "Oil & Gas Construction",
+    desc: "Industrial construction support for oil and gas facilities.",
+    img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    num: "08",
+    title: "Civil & Structural Works",
+    desc: "Civil construction and structural installation support.",
+    img: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    num: "09",
+    title: "Welding Habitat Solutions",
+    desc: "Specialized habitat solutions for controlled industrial hot-work applications.",
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=700&q=80"
+  }
+];
+---
+
+<section class="section-block section-cream" id="services">
+  <div class="content-frame">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:2rem; margin-bottom:3.5rem;">
+      <div style="max-width:860px;">
+        <div class="section-kicker">OUR EXPERTISE</div>
+        <h2 class="section-heading-lg">Industrial Contracting & Engineering Services</h2>
+        <p class="section-desc-readable">
+          Petrastream provides a range of industrial contracting services designed to support different stages of industrial operations and project requirements. Our service portfolio covers maintenance, commissioning, installation, construction and specialized industrial applications.
+        </p>
+      </div>
+      <div>
+        <a href="/contact-us" class="btn-orange-solid">
+          <span>Enquire for Services</span>
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 3-Column Service Card Grid on Desktop, 2 on Tablet, 1 on Mobile -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:2rem;">
+      {services.map((item) => (
+        <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 8px 24px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
+          <div style="height:210px; position:relative; overflow:hidden;">
+            <img src={item.img} alt={item.title} style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" />
+            <div style="position:absolute; top:1rem; right:1rem; background:var(--navy); color:var(--orange); font-family:'Manrope',sans-serif; font-size:0.95rem; font-weight:800; padding:0.3rem 0.75rem; border-left:3px solid var(--orange);">
+              {item.num}
+            </div>
+          </div>
+          <div style="padding:2rem; display:flex; flex-direction:column; flex-grow:1;">
+            <h3 style="font-size:1.35rem; font-weight:800; color:var(--navy); margin-bottom:0.75rem; line-height:1.25;">
+              {item.num}. {item.title}
+            </h3>
+            <p style="font-size:1.05rem; line-height:1.65; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">
+              {item.desc}
+            </p>
+            <div>
+              <a href={`/services#service-${item.num}`} class="btn-ghost-orange" style="display:inline-flex; align-items:center; gap:0.5rem; font-weight:700; color:var(--orange); font-size:1rem; padding:0; text-decoration:none;">
+                <span>Learn More →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Button -->
+    <div style="text-align:center; margin-top:3.5rem;">
+      <a href="/services" class="btn-navy-outline">
+        <span>View All Services →</span>
+      </a>
+    </div>
+  </div>
+</section>
+

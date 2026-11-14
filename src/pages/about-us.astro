@@ -1,0 +1,441 @@
+---
+// src/pages/about-us.astro - Dedicated About Us Page (Full Blueprint)
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Modals from '../components/Modals.astro';
+import { imageConfig } from '../config/imageConfig.js';
+---
+
+<Layout 
+  title="About Us | Petrastream Contracting LLC (UAE)"
+  description="Learn about Petrastream Contracting LLC, a UAE-based industrial contracting and specialized product solutions company supporting the Oil & Gas, Energy, and Industrial sectors."
+  canonical="https://petrastream.ae/about-us"
+>
+  <Header activePage="about" />
+
+  <main>
+    <!-- Section 1: About Us Hero Banner -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-bg" style={`background-image: url('${imageConfig.aboutImage.url}');`}></div>
+      <div class="subpage-hero-scrim"></div>
+      <div class="content-frame">
+        <div class="subpage-hero-content">
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span aria-hidden="true">/</span>
+            <span>About Us</span>
+          </nav>
+          <div class="section-kicker-light">GET TO KNOW PETRASTREAM</div>
+          <h1 class="subpage-hero-title">About Petrastream Contracting LLC</h1>
+          <p class="subpage-hero-lead">
+            Petrastream Contracting LLC is focused on providing industrial contracting services and specialized product solutions to support the requirements of the Oil & Gas, Energy and Industrial sectors. Through our two core business divisions, we aim to support clients with industrial service capabilities, equipment solutions and coordinated technical support.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="/services" class="btn-orange-solid">
+              <span>Explore Our Services</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+            <a href="/products" class="btn-white-ghost">
+              <span>Explore Our Products</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Company Overview / Who We Are -->
+    <section class="section-block section-cream" id="who-we-are">
+      <div class="content-frame">
+        <div class="overview-two-col-grid">
+          <div class="overview-photo-frame">
+            <img 
+              src={imageConfig.aboutImage.url} 
+              alt="Industrial Engineering Operations" 
+              class="overview-heroic-img" 
+              loading="lazy" 
+              decoding="async" 
+            />
+            <div class="overview-caption-bar">
+              <span>Industrial Contracting & Product Solutions</span>
+              <span class="highlight-orange" style="font-size:0.75rem; font-weight:700;">SPECIFICATION FOCUSED</span>
+            </div>
+          </div>
+          <div class="overview-content-pane">
+            <div class="section-kicker">WHO WE ARE</div>
+            <h2 class="overview-heading-text">Your Partner in Industrial Contracting & Product Solutions</h2>
+            <div class="orange-bar"></div>
+            <p class="overview-main-p">
+              Petrastream Contracting LLC is an industrial contracting and product solutions company focused on serving the technical and operational requirements of the Oil & Gas, Energy and Industrial sectors.
+            </p>
+            <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-1rem;">
+              We operate through two principal business areas: Industrial Contracting Services and Industrial Products & Equipment. Our services cover different stages of industrial operations, including maintenance, shutdown and turnaround activities, pre-commissioning, commissioning, electrical and instrumentation works, mechanical erection, piping, pipeline construction and other industrial construction requirements.
+            </p>
+            <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-1.2rem;">
+              Alongside our service capabilities, we offer a portfolio of specialized industrial products and equipment intended to support maintenance, operational and project-specific requirements. At Petrastream, we focus on understanding each enquiry, reviewing technical requirements and coordinating appropriate solutions in line with the agreed scope and specifications.
+            </p>
+            <div style="margin-top:0.5rem;">
+              <a href="/services" class="btn-navy-outline">
+                <span>Explore Our Business</span>
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Our Business Focus -->
+    <section class="section-block section-white">
+      <div class="content-frame">
+        <div style="max-width:880px; margin-bottom:3.5rem;">
+          <div class="section-kicker">OUR BUSINESS FOCUS</div>
+          <h2 class="section-heading-lg">Focused on Industrial Services & Specialized Solutions</h2>
+          <p class="section-desc-readable">
+            Our business is structured around two complementary areas that address different industrial requirements. Whether the requirement involves specialized site services or industrial equipment, our focus is to understand the scope and coordinate a suitable solution.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:2rem;">
+          <!-- Card 1 -->
+          <article class="why-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:2.5rem;">
+            <div>
+              <span class="why-num" style="color:var(--orange);">01</span>
+              <h3 style="font-family:'Manrope',sans-serif; font-size:1.6rem; font-weight:750; color:var(--navy); margin: 1rem 0;">Industrial Contracting Services</h3>
+              <p style="font-size:1.05rem; line-height:1.65; color:var(--slate); margin-bottom:2rem;">
+                Industrial services supporting maintenance, shutdown, commissioning, installation, construction and specialized industrial applications.
+              </p>
+            </div>
+            <div>
+              <a href="/services" class="btn-orange-solid">
+                <span>Explore Services</span>
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="why-card" style="display:flex; flex-direction:column; justify-content:space-between; padding:2.5rem;">
+            <div>
+              <span class="why-num" style="color:var(--orange);">02</span>
+              <h3 style="font-family:'Manrope',sans-serif; font-size:1.6rem; font-weight:750; color:var(--navy); margin: 1rem 0;">Industrial Products & Equipment</h3>
+              <p style="font-size:1.05rem; line-height:1.65; color:var(--slate); margin-bottom:2rem;">
+                Specialized industrial equipment and products for pipeline, flow, maintenance, safety, modular and automation applications.
+              </p>
+            </div>
+            <div>
+              <a href="/products" class="btn-orange-solid">
+                <span>Explore Products</span>
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Our Two Core Divisions -->
+    <section class="section-block section-cream">
+      <div class="content-frame">
+        <div style="max-width:880px; margin-bottom:3.5rem;">
+          <div class="section-kicker">TWO CORE DIVISIONS</div>
+          <h2 class="section-heading-lg">Specialized Capabilities Across Field Execution & Equipment Supply</h2>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:2rem;">
+          <!-- Division A -->
+          <div style="background:var(--white); border:1.5px solid var(--border); padding:2.5rem; border-radius:2px;">
+            <span style="font-size:0.85rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.06em;">DIVISION A</span>
+            <h3 style="font-size:1.5rem; font-weight:750; color:var(--navy); margin:0.5rem 0 1rem;">Industrial Contracting & Engineering Services</h3>
+            <p style="font-size:1rem; line-height:1.65; color:var(--slate); margin-bottom:1.5rem;">
+              Our industrial contracting division focuses on service requirements across industrial facilities and project environments. Our service portfolio includes maintenance, shutdown and turnaround, pre-commissioning and commissioning, electrical and instrumentation, civil and structural works, mechanical erection, process and plant piping, pipeline construction and oil and gas construction.
+            </p>
+            <ul style="list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:0.5rem;">
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Maintenance, Shutdown & Turnaround</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Pre-Commissioning & Commissioning</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Electrical & Instrumentation</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Civil & Structural Works</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Mechanical Erection</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Process & Plant Piping</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Pipeline Construction</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Oil & Gas Construction</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Welding Habitat Solutions</li>
+            </ul>
+            <a href="/services" class="btn-navy-outline">View All Services →</a>
+          </div>
+
+          <!-- Division B -->
+          <div style="background:var(--white); border:1.5px solid var(--border); padding:2.5rem; border-radius:2px;">
+            <span style="font-size:0.85rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.06em;">DIVISION B</span>
+            <h3 style="font-size:1.5rem; font-weight:750; color:var(--navy); margin:0.5rem 0 1rem;">Specialized Industrial Products & Equipment</h3>
+            <p style="font-size:1rem; line-height:1.65; color:var(--slate); margin-bottom:1.5rem;">
+              Our product division focuses on specialized equipment and industrial products that support operational, maintenance and project requirements. Product selection and supply are coordinated according to the technical requirements, specifications and application needs of each enquiry.
+            </p>
+            <ul style="list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:0.5rem;">
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Pipeline & Flow Equipment</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Industrial Cleaning Equipment</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Flange Management & Bolting Tools</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Industrial Safety Solutions</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> HVAC & Modular Systems</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Specialized Containers & Accommodation</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Water Treatment Solutions</li>
+              <li style="font-size:0.95rem; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange);">✓</span> Robotics & Industrial Automation</li>
+            </ul>
+            <a href="/products" class="btn-navy-outline">View All Products →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Our Capabilities -->
+    <section class="section-block section-white">
+      <div class="content-frame">
+        <div style="max-width:880px; margin-bottom:3.5rem;">
+          <div class="section-kicker">OUR CAPABILITIES</div>
+          <h2 class="section-heading-lg">Capabilities Designed Around Industrial Requirements</h2>
+          <p class="section-desc-readable">
+            Industrial operations require coordinated services, appropriate equipment and a clear understanding of technical requirements. Petrastream's business portfolio brings together a range of contracting services and specialized product solutions to address these needs.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap:1.75rem;">
+          <div style="border:1px solid var(--border); padding:2rem; background:var(--cream);">
+            <h4 style="font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:0.75rem;">Plant Maintenance</h4>
+            <p style="font-size:0.98rem; line-height:1.6; color:var(--slate);">Maintenance and shutdown-related service requirements.</p>
+          </div>
+          <div style="border:1px solid var(--border); padding:2rem; background:var(--cream);">
+            <h4 style="font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:0.75rem;">Commissioning Support</h4>
+            <p style="font-size:0.98rem; line-height:1.6; color:var(--slate);">Pre-commissioning and commissioning activities.</p>
+          </div>
+          <div style="border:1px solid var(--border); padding:2rem; background:var(--cream);">
+            <h4 style="font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:0.75rem;">Electrical & Instrumentation</h4>
+            <p style="font-size:0.98rem; line-height:1.6; color:var(--slate);">Electrical and instrumentation-related works.</p>
+          </div>
+          <div style="border:1px solid var(--border); padding:2rem; background:var(--cream);">
+            <h4 style="font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:0.75rem;">Mechanical & Piping</h4>
+            <p style="font-size:0.98rem; line-height:1.6; color:var(--slate);">Mechanical erection and process piping requirements.</p>
+          </div>
+          <div style="border:1px solid var(--border); padding:2rem; background:var(--cream);">
+            <h4 style="font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:0.75rem;">Pipeline Construction</h4>
+            <p style="font-size:0.98rem; line-height:1.6; color:var(--slate);">Pipeline-related construction requirements.</p>
+          </div>
+          <div style="border:1px solid var(--border); padding:2rem; background:var(--cream);">
+            <h4 style="font-size:1.25rem; font-weight:700; color:var(--navy); margin-bottom:0.75rem;">Specialized Equipment</h4>
+            <p style="font-size:0.98rem; line-height:1.6; color:var(--slate);">Equipment and product solutions for industrial applications.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:3rem;">
+          <a href="/services" class="btn-orange-solid">Explore Our Complete Capabilities →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Mission & Vision -->
+    <section class="section-block section-cream">
+      <div class="content-frame">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:2rem;">
+          <div style="background:var(--white); border:1.5px solid var(--border); padding:clamp(1.75rem, 4vw, 3rem); border-radius:2px;">
+            <div style="width:48px; height:48px; background:var(--cream); color:var(--orange); display:flex; align-items:center; justify-content:center; border-radius:2px; margin-bottom:1.5rem;">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <span style="font-size:0.85rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.06em;">OUR MISSION</span>
+            <h3 style="font-size:1.5rem; font-weight:750; color:var(--navy); margin:0.5rem 0 1rem;">To Support Industrial Requirements Through Coordinated Solutions</h3>
+            <p style="font-size:1.05rem; line-height:1.65; color:var(--slate);">
+              We aim to understand client requirements, coordinate suitable solutions and maintain clear communication throughout each engagement.
+            </p>
+          </div>
+
+          <div style="background:var(--navy); border:1.5px solid var(--navy-surface); padding:3rem; border-radius:2px; color:var(--white);">
+            <div style="width:48px; height:48px; background:var(--navy-surface); color:var(--orange); display:flex; align-items:center; justify-content:center; border-radius:2px; margin-bottom:1.5rem;">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            </div>
+            <span style="font-size:0.85rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.06em;">OUR VISION</span>
+            <h3 style="font-size:1.5rem; font-weight:750; color:var(--white); margin:0.5rem 0 1rem;">To Build Lasting Business Relationships Through Dependable Support</h3>
+            <p style="font-size:1.05rem; line-height:1.65; color:#D3DFED;">
+              We aspire to develop our capabilities and product portfolio in response to evolving industrial and operational requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Core Values -->
+    <section class="section-block section-white">
+      <div class="content-frame">
+        <div style="max-width:880px; margin-bottom:3.5rem;">
+          <div class="section-kicker">CORE VALUES</div>
+          <h2 class="section-heading-lg">The Principles Behind Our Approach</h2>
+          <p class="section-desc-readable">
+            Our approach is guided by principles that support professional communication, technical coordination and responsible business relationships.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap:1.5rem;">
+          <div class="why-card" style="padding:1.75rem 1.5rem;">
+            <h4 style="font-size:1.2rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem;">Safety Awareness</h4>
+            <p style="font-size:0.95rem; line-height:1.6; color:var(--slate);">Recognizing the importance of safety requirements and applicable site procedures in industrial environments.</p>
+          </div>
+          <div class="why-card" style="padding:2rem;">
+            <h4 style="font-size:1.2rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem;">Quality Focus</h4>
+            <p style="font-size:0.95rem; line-height:1.6; color:var(--slate);">Paying attention to technical specifications, agreed scope and applicable quality requirements.</p>
+          </div>
+          <div class="why-card" style="padding:2rem;">
+            <h4 style="font-size:1.2rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem;">Integrity</h4>
+            <p style="font-size:0.95rem; line-height:1.6; color:var(--slate);">Maintaining transparent communication with clients, suppliers and business partners.</p>
+          </div>
+          <div class="why-card" style="padding:2rem;">
+            <h4 style="font-size:1.2rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem;">Client Focus</h4>
+            <p style="font-size:0.95rem; line-height:1.6; color:var(--slate);">Understanding individual requirements and coordinating suitable solutions.</p>
+          </div>
+          <div class="why-card" style="padding:2rem;">
+            <h4 style="font-size:1.2rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem;">Continuous Improvement</h4>
+            <p style="font-size:0.95rem; line-height:1.6; color:var(--slate);">Reviewing requirements and seeking opportunities to improve coordination and service delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Industries We Support -->
+    <section class="section-block section-cream">
+      <div class="content-frame">
+        <div style="max-width:880px; margin-bottom:3.5rem;">
+          <div class="section-kicker">INDUSTRIES WE SUPPORT</div>
+          <h2 class="section-heading-lg">Supporting a Range of Industrial Sectors</h2>
+          <p class="section-desc-readable">
+            Our contracting services and product portfolio are intended to support a range of industrial applications. We focus on understanding the operating environment and technical requirements associated with each enquiry.
+          </p>
+        </div>
+
+        <div class="industry-grid">
+          <div class="industry-card">
+            <h3 class="industry-card-title">Oil & Gas</h3>
+            <p class="industry-card-desc">Industrial services and equipment requirements for oil and gas applications.</p>
+          </div>
+          <div class="industry-card">
+            <h3 class="industry-card-title">Petrochemical</h3>
+            <p class="industry-card-desc">Solutions supporting selected petrochemical plant requirements.</p>
+          </div>
+          <div class="industry-card">
+            <h3 class="industry-card-title">Energy & Power</h3>
+            <p class="industry-card-desc">Product and service requirements for energy and power facilities.</p>
+          </div>
+          <div class="industry-card">
+            <h3 class="industry-card-title">Industrial Manufacturing</h3>
+            <p class="industry-card-desc">Equipment and contracting requirements across manufacturing environments.</p>
+          </div>
+          <div class="industry-card">
+            <h3 class="industry-card-title">Water & Utilities</h3>
+            <p class="industry-card-desc">Solutions for relevant water treatment and utility applications.</p>
+          </div>
+          <div class="industry-card">
+            <h3 class="industry-card-title">Infrastructure</h3>
+            <p class="industry-card-desc">Industrial support for applicable infrastructure requirements.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:3rem;">
+          <a href="/industries" class="btn-navy-outline">Explore Industries We Serve →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Our Working Approach -->
+    <section class="section-block theme-light" id="approach">
+      <div class="content-frame">
+        <div class="section-title-wrap">
+          <div class="section-label-chip">
+            <span class="label-dot"></span>
+            <span>STRUCTURED PROCESS</span>
+          </div>
+          <h2 class="section-h2">A Structured Approach to Every Requirement</h2>
+          <p class="section-lead-p">
+            We believe that a clear understanding of requirements is an important starting point for coordinating industrial services and product solutions. Our proposed working approach follows a structured process from initial enquiry to agreed completion.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-row">
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">01</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">DISCOVERY</span>
+                <h3 class="timeline-title">Understanding the Requirement</h3>
+                <p class="timeline-desc">Receiving and reviewing the enquiry, scope, specifications and expected deliverables.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">02</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">ENGINEERING</span>
+                <h3 class="timeline-title">Technical Review</h3>
+                <p class="timeline-desc">Reviewing the application and identifying the relevant technical and product requirements.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">03</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">ALIGNMENT</span>
+                <h3 class="timeline-title">Solution Coordination</h3>
+                <p class="timeline-desc">Coordinating the required service, equipment, technical information and commercial proposal.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">04</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">EXECUTION</span>
+                <h3 class="timeline-title">Execution or Supply</h3>
+                <p class="timeline-desc">Proceeding in accordance with the agreed scope, specifications and commercial terms.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">05</span></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">HANDOVER</span>
+                <h3 class="timeline-title">Completion & Handover</h3>
+                <p class="timeline-desc">Coordinating applicable documentation and agreed handover requirements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Our Commitment -->
+    <section class="section-block theme-dark" style="position:relative; overflow:hidden; padding: 5rem 0;">
+      <div style={`position:absolute; inset:0; background-image:url('${imageConfig.heroImage.url}'); background-size:cover; background-position:center; filter:saturate(0.8); opacity:0.25;`}></div>
+      <div class="content-frame" style="position:relative; z-index:2; max-width:880px;">
+        <span class="section-label-chip-light"><span class="label-dot-orange"></span><span>OUR COMMITMENT</span></span>
+        <h2 class="cta-h2" style="margin-top:1rem;">Focused on Understanding Your Industrial Requirements</h2>
+        <p class="cta-lead-p">
+          Every industrial requirement has its own technical and operational considerations. At Petrastream, we aim to approach each enquiry with attention to its scope, specifications and intended application. Whether the requirement involves industrial contracting services or specialized equipment, our focus is to coordinate relevant information and discuss suitable solutions with our clients.
+        </p>
+        <div style="display:flex; gap:1.25rem; flex-wrap:wrap; margin-top:2rem;">
+          <a href="/contact-us" class="btn-orange-solid">Discuss Your Requirement →</a>
+          <a href="/products" class="btn-white-ghost">View Our Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: Final Call to Action -->
+    <section class="section-block theme-dark cta-section" style="border-top:1px solid rgba(255,255,255,0.15);">
+      <div class="content-frame">
+        <div style="text-align:center; max-width:780px; margin:0 auto;">
+          <h2 class="cta-h2">Let's Discuss Your Next Industrial Requirement</h2>
+          <p class="cta-lead-p" style="margin-left:auto; margin-right:auto;">
+            Looking for industrial contracting support or specialized products and equipment? Get in touch with Petrastream to discuss your requirements.
+          </p>
+          <div style="display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap; margin-top:2rem;">
+            <a href="/contact-us" class="btn-orange-solid">Contact Us →</a>
+            <a href="/services" class="btn-white-ghost">Explore Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <Modals />
+</Layout>
+

@@ -1,0 +1,45 @@
+---
+// FAQ.astro - Section 09: Functional FAQ Accordion (Strictly Text-Based, No Unnecessary Images)
+import { faqData } from '../data/faqData.js';
+---
+
+<section class="section-block faq-section-cream" id="faq">
+  <div class="content-frame">
+    <!-- Header Block -->
+    <div class="section-title-wrap">
+      <div class="section-label-chip">
+        <span class="label-dot"></span>
+        <span>FREQUENTLY ASKED QUESTIONS</span>
+      </div>
+      <h2 class="section-h2">Questions & Technical Clarifications</h2>
+      <p class="section-lead-p">
+        Answers to key questions regarding our mechanical services, industrial product supply, quality compliance, and technical proposal procedures.
+      </p>
+    </div>
+
+    <!-- Accordion Wrapper -->
+    <div class="faq-accordion-wrap" style="margin-left: auto; margin-right: auto;">
+      {faqData.map((item, index) => (
+        <article class={`faq-item-box ${index === 0 ? 'open' : ''}`} id={item.id}>
+          <button 
+            type="button" 
+            class="faq-question-btn" 
+            aria-expanded={index === 0 ? "true" : "false"}
+            aria-controls={`faq-answer-${index}`}
+          >
+            <span class="faq-q-text">{item.question}</span>
+            <span class="faq-icon-toggle" aria-hidden="true">+</span>
+          </button>
+          <div 
+            id={`faq-answer-${index}`} 
+            class="faq-answer-pane" 
+            style={index === 0 ? "display: block;" : "display: none;"}
+          >
+            <p class="faq-answer-p">{item.answer}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+

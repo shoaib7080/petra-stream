@@ -1,0 +1,438 @@
+---
+// src/pages/products.astro - Dedicated Products Page (Full Blueprint)
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Modals from '../components/Modals.astro';
+import { imageConfig } from '../config/imageConfig.js';
+import { productsData } from '../data/productsData.js';
+
+const productCategories = [
+  {
+    id: "cat-process",
+    title: "Process & Mechanical Equipment",
+    subheading: "Pipeline Access, High-Velocity Flushing & Industrial Cleaning",
+    items: [
+      {
+        num: "01",
+        name: "Hot Tapping Equipment",
+        img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+        desc: "Hot tapping equipment is used to create a branch connection or access point on an existing pressurized pipeline or process system without taking the entire system out of service.",
+        specs: "Carbon steel, stainless steel, and alloy pipeline compatible. Pressure ratings per ASME B31.3/B31.4/B31.8. Flanged or welded connection configurations.",
+        applications: "Oil & Gas pipelines, refineries, petrochemical plants, and transmission lines."
+      },
+      {
+        num: "02",
+        name: "Industrial Flushing Units",
+        img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+        desc: "Designed for high-velocity circulating and cleaning of lube oil systems, hydraulic packages, pipelines, and industrial machinery.",
+        specs: "Skid-mounted or mobile flushing packages with high-efficiency duplex filtration, heating, sampling points, and differential pressure instrumentation.",
+        applications: "Turbine lubrication circuits, hydraulic systems, compressors, and pipeline pre-commissioning."
+      },
+      {
+        num: "03",
+        name: "Hydro-Jetting Equipment",
+        img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+        desc: "High-pressure water jetting systems used for industrial cleaning, surface preparation, scale removal, and cleaning heat exchanger bundles.",
+        specs: "Operating pressure from 500 to 1400+ bar. Triplex plunger pumps, flexible lances, rotating cleaning nozzles, and foot safety valves.",
+        applications: "Heat exchanger tube cleaning, vessel descaling, paint removal, and industrial plant maintenance."
+      }
+    ]
+  },
+  {
+    id: "cat-valves",
+    title: "Valves, Flanges & Piping Components",
+    subheading: "Engineered Flow Control, Differential Metering & Flange Tooling",
+    items: [
+      {
+        num: "04",
+        name: "Industrial Valves",
+        img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=800&q=80",
+        desc: "Gate, Globe, Ball, Butterfly, Check, Plug, and Control valves engineered for reliable isolation, throttling, and safety shutdown.",
+        specs: "ASME Class 150 to 2500. Carbon steel (WCB/A105), Stainless (CF8M/316), Duplex, and Inconel. Flanged, butt-weld, and socket-weld ends. Manual, electric, and pneumatic actuators.",
+        applications: "Hydrocarbon processing, oilfield production manifolds, petrochemical units, and power plants."
+      },
+      {
+        num: "05",
+        name: "Orifice Flanges & Orifice Plate Assemblies",
+        img: "https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=800&q=80",
+        desc: "Differential-pressure flow measurement flange unions manufactured in accordance with ASME B16.36.",
+        specs: "ASME Class 300 to 2500 ratings. Complete with differential pressure tapping holes, jack screws, orifice plates, and certification dossiers.",
+        applications: "Custody transfer metering, process flow monitoring, and natural gas measurement."
+      },
+      {
+        num: "06",
+        name: "Flange Management & Bolting Tools",
+        img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+        desc: "Specialized hydraulic torque wrenches, bolt tensioners, flange spreaders, nut splitters, and hydraulic power packs.",
+        specs: "Square drive and low-profile cassette tools up to 50,000+ Nm. Hydraulic pressure up to 700 to 1500 bar with certified calibration.",
+        applications: "Turnaround bolting, pipeline flange assembly, heat exchanger channel heads, and pressure vessel closures."
+      }
+    ]
+  },
+  {
+    id: "cat-instrumentation",
+    title: "Instrumentation & Monitoring Solutions",
+    subheading: "Process Sensing, Volumetric Metering & Non-Intrusive Asset Integrity",
+    items: [
+      {
+        num: "07",
+        name: "Flow Transmitters",
+        img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80",
+        desc: "Electromagnetic, Coriolis mass, ultrasonic, and differential pressure transmitters for continuous fluid measurement.",
+        specs: "4–20 mA, HART, Modbus, Foundation Fieldbus outputs. ATEX/IECEx certified explosion-proof enclosures for hazardous zones.",
+        applications: "Chemical dosing, pipeline custody transfer, utility water metering, and process line monitoring."
+      },
+      {
+        num: "08",
+        name: "Wireless Corrosion Monitoring Sensors",
+        img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+        desc: "Non-intrusive ultrasonic and electrical resistance (ER) sensor arrays providing continuous wall-thickness data without process penetration.",
+        specs: "Continuous sub-micron metal loss measurement. Wireless mesh network connectivity with long-life battery modules.",
+        applications: "Piping elbows, dead-legs, acid gas units, separator vessels, and offshore flowlines."
+      }
+    ]
+  },
+  {
+    id: "cat-safety",
+    title: "Safety & Specialized Welding Solutions",
+    subheading: "Hot-Work Containment, Spark Protection & Atmospheric Isolation",
+    items: [
+      {
+        num: "09",
+        name: "Fire Tarpaulins & Welding Blankets",
+        img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+        desc: "Heavy-duty silica, fiberglass, and vermiculite-treated textiles protecting surrounding plant equipment from molten slag and welding sparks.",
+        specs: "Temperature resistance rated from 550°C to 1200°C. Standard and custom roll dimensions with reinforced brass eyelets.",
+        applications: "On-site welding barriers, structural maintenance, hot-work draping, and vessel protection."
+      },
+      {
+        num: "10",
+        name: "Pressurised Welding Habitats",
+        img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+        desc: "Modular positive-pressure enclosures engineered to prevent combustible hydrocarbons from entering hot-work zones during plant operation.",
+        specs: "Automatic gas detection (LEL/H2S), pneumatic fail-safe shutoff dampers, positive-pressure air fans, and flame-retardant wall panels.",
+        applications: "Live offshore platforms, FPSOs, refinery process trains, and gas terminal piping manifolds."
+      }
+    ]
+  },
+  {
+    id: "cat-modular",
+    title: "HVAC, Modular Buildings & Containers",
+    subheading: "Environmental Control, Blast Resistance & Heavy-Duty Field Enclosures",
+    items: [
+      {
+        num: "11",
+        name: "HVAC Systems & Equipment",
+        img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+        desc: "Industrial rooftop units, air handling units (AHUs), chillers, and explosion-proof HVAC systems for extreme Middle East ambient temperatures.",
+        specs: "Designed for 50°C+ ambient conditions. Anti-corrosive coil coatings, hazardous-area fan motors, and BMS integration.",
+        applications: "Electrical control rooms, substations, offshore living modules, and analyzer houses."
+      },
+      {
+        num: "12",
+        name: "TGR / Blast-Proof / E-Houses",
+        img: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80",
+        desc: "Prefabricated, modular blast-resistant buildings engineered to house electrical switchgear, DCS cabinets, and process analyzers.",
+        specs: "Engineered blast ratings (e.g. 0.5 to 1.5+ bar overpressure). Fire ratings up to A60/H60 with positive pressurization.",
+        applications: "Refinery substations, remote wellhead RTU shelters, technical gas rooms, and satellite instrument buildings."
+      },
+      {
+        num: "13",
+        name: "Specialized Containers & Accommodation",
+        img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=800&q=80",
+        desc: "Standard ISO and DNV 2.7-1 certified offshore containers, workshop units, tool vans, and modular personnel accommodation.",
+        specs: "Heavy structural steel frames, certified 4-point lifting slings, marine coating systems, and optional thermal/acoustic insulation.",
+        applications: "Offshore exploration platforms, temporary camp infrastructure, field workshops, and certified rig tooling storage."
+      }
+    ]
+  },
+  {
+    id: "cat-water",
+    title: "Corrosion Fittings & Water Treatment",
+    subheading: "Mechanical Monitoring Access, Desalination Skids & Waste Processing",
+    items: [
+      {
+        num: "14",
+        name: "COSASCO Corrosion Access Fittings",
+        img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+        desc: "High-pressure access fittings, solid/hollow plugs, coupon holders, and retrieval tool packages for online corrosion monitoring.",
+        specs: "Rated up to 6000 psi (414 bar). NACE MR0175 compliant materials (A105, 316SS, Inconel). Compatible with mechanical retrieval tools.",
+        applications: "Infield gathering lines, gas dehydration units, water injection systems, and crude transmission pipes."
+      },
+      {
+        num: "15",
+        name: "RO & STP Water Treatment Systems",
+        img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+        desc: "Reverse Osmosis (RO) desalination plants and containerized Sewage Treatment Plants (STP) for remote industrial sites and operational plants.",
+        specs: "Capacity from 10 to 1000+ m³/day. Multi-media sand filtration, activated carbon, cartridge filters, PLC automation, and UV disinfection.",
+        applications: "Industrial process water, construction campsites, offshore drilling rigs, and refinery utilities."
+      }
+    ]
+  },
+  {
+    id: "cat-automation",
+    title: "Industrial Robotics & Automation",
+    subheading: "Automated Inspection Crawlers, PLC Panels & SCADA Integration",
+    items: [
+      {
+        num: "16",
+        name: "Robotics Solutions",
+        img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+        desc: "Remote visual inspection pipeline crawlers, magnetic wall-climbing robots for tank shell inspection, and robotic cleaning tools.",
+        specs: "High-definition 360° pan/tilt cameras, integrated laser profiling, explosion-proof crawlers, and cable reels up to 300+ meters.",
+        applications: "Underground pipeline inspection, crude tank bottom scanning, boiler tube examination, and confined space assessment."
+      },
+      {
+        num: "17",
+        name: "Industrial Automation Solutions",
+        img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=800&q=80",
+        desc: "Complete PLC, SCADA, and DCS automation packages including certified control panel fabrication, drive integration, and field commissioning.",
+        specs: "Major industrial PLC architectures (Siemens, Rockwell, Schneider), Modbus/Profinet/Ethernet-IP communication, and IEC 61439 panels.",
+        applications: "Compressor skid automation, pump station telemetry, safety shutdown systems (ESD), and water plant control."
+      }
+    ]
+  }
+];
+
+const specTable = [
+  { cat: "Hot Tapping", params: "Line size, pressure rating, fluid temperature, branch size, pipe material" },
+  { cat: "Flushing Units", params: "Flow rate (LPM), filtration target (NAS/ISO), reservoir capacity, pump drive" },
+  { cat: "Hydro-Jetting", params: "Operating pressure (500–1400 bar), flow rate, nozzle configuration, electric/diesel" },
+  { cat: "Industrial Valves", params: "Nominal size, ASME pressure class, body metallurgy, trim material, actuator type" },
+  { cat: "Orifice Flanges", params: "Pipe line size, flange rating, bore size, plate material, pressure tap type" },
+  { cat: "Flow Transmitters", params: "Flow range, measurement technology, output protocol, hazardous area rating" },
+  { cat: "Corrosion Sensors", params: "Technology (ER/UT/LPR), operating pressure, temperature, wireless gateway protocol" },
+  { cat: "Fire Tarpaulins", params: "Base fabric, coating type, GSM weight, continuous temperature rating" },
+  { cat: "Flange Tools", params: "Torque capacity, bolt diameter range, hydraulic operating pressure, profile clearance" },
+  { cat: "HVAC Systems", params: "Cooling capacity (TR/kW), airflow (CFM), ambient rating (50°C+), hazardous area classification" },
+  { cat: "Welding Habitats", params: "Hazardous zone classification, differential pressure threshold, gas detection configuration" },
+  { cat: "Modular E-Houses", params: "Structural loads, blast overpressure rating, fire rating (A60/H60), electrical capacity" },
+  { cat: "Specialized Containers", params: "External dimensions, payload capacity, DNV 2.7-1 certification, internal outfitting" },
+  { cat: "COSASCO Fittings", params: "Connection type, access fitting material, pressure rating (up to 6000 psi), probe model" },
+  { cat: "RO & STP Systems", params: "Treatment capacity (m³/day), feed water TDS, product water target quality, footprint" },
+  { cat: "Robotics Solutions", params: "Payload reach, pipeline diameter range, camera resolution, ATEX certification" },
+  { cat: "Automation Systems", params: "PLC platform, communication protocols, I/O count, control architecture" }
+];
+---
+
+<Layout 
+  title="Specialized Industrial Products & Equipment | Petrastream Contracting LLC"
+  description="Explore Petrastream Contracting LLC's complete portfolio of 17 specialized industrial products across 7 categories: Process equipment, valves, bolting tools, instrumentation, habitats, and automation."
+  canonical="https://petrastream.ae/products"
+>
+  <Header activePage="products" />
+
+  <main>
+    <!-- Section 1: Hero Banner -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-bg" style={`background-image: url('${imageConfig.productsImage.url}');`}></div>
+      <div class="subpage-hero-scrim"></div>
+      <div class="content-frame">
+        <div class="subpage-hero-content">
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span aria-hidden="true">/</span>
+            <span>Products</span>
+          </nav>
+          <div class="section-kicker-light">INDUSTRIAL PRODUCTS & SPECIALIZED EQUIPMENT</div>
+          <h1 class="subpage-hero-title">Products & Engineered Industrial Solutions</h1>
+          <p class="subpage-hero-lead">
+            Petrastream Contracting LLC provides access to a diverse range of industrial products, specialized equipment and engineered solutions for the Oil & Gas, Energy, Petrochemical and Industrial sectors. We focus on understanding technical requirements, reviewing applicable specifications and coordinating suitable products for project-specific applications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Product Category Navigation Strip -->
+    <nav class="category-nav-strip" aria-label="Product Categories">
+      <div class="content-frame">
+        <ul class="category-nav-list">
+          <li><a href="#cat-process" class="category-nav-link">Process & Mechanical</a></li>
+          <li><a href="#cat-valves" class="category-nav-link">Valves & Bolting</a></li>
+          <li><a href="#cat-instrumentation" class="category-nav-link">Instrumentation</a></li>
+          <li><a href="#cat-safety" class="category-nav-link">Safety & Habitats</a></li>
+          <li><a href="#cat-modular" class="category-nav-link">HVAC & Modular E-Houses</a></li>
+          <li><a href="#cat-water" class="category-nav-link">Corrosion & Water</a></li>
+          <li><a href="#cat-automation" class="category-nav-link">Robotics & Automation</a></li>
+          <li><a href="#tech-specs" class="category-nav-link" style="color:var(--orange);">Technical Specs Table</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Section 3: Complete Product Catalogue by Category -->
+    <section class="section-block section-white" id="catalogue">
+      <div class="content-frame">
+        <div style="display:flex; flex-direction:column; gap:5rem;">
+          {productCategories.map((cat) => (
+            <div id={cat.id} style="scroll-margin-top: 140px;">
+              <div style="margin-bottom: 2.5rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem;">
+                <span style="font-size: 0.85rem; font-weight: 750; color: var(--orange); text-transform: uppercase; letter-spacing: 0.06em;">CATEGORY OVERVIEW</span>
+                <h2 style="font-family:'Manrope',sans-serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 750; color: var(--navy); margin: 0.35rem 0;">
+                  {cat.title}
+                </h2>
+                <p style="font-size: 1.05rem; color: var(--slate-muted); margin: 0;">{cat.subheading}</p>
+              </div>
+
+              <!-- Products Grid -->
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem;">
+                {cat.items.map((item) => (
+                  <article style="background:var(--white); border:1.5px solid var(--border); display:flex; flex-direction:column; border-radius:2px; overflow:hidden; box-shadow:0 8px 24px rgba(20,43,70,0.05); transition:border-color 0.2s ease;">
+                    <div style="height:210px; position:relative; overflow:hidden; background:#F8FAFC;">
+                      <img src={item.img} alt={item.name} style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" />
+                      <div style="position:absolute; top:1rem; right:1rem; background:var(--navy); color:var(--orange); font-family:'Manrope',sans-serif; font-size:0.95rem; font-weight:800; padding:0.3rem 0.75rem; border-left:3px solid var(--orange);">
+                        {item.num}
+                      </div>
+                    </div>
+                    <div style="padding:1.75rem; display:flex; flex-direction:column; flex-grow:1;">
+                      <h3 style="font-size:1.3rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem; line-height:1.3;">
+                        {item.num}. {item.name}
+                      </h3>
+                      <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.25rem;">
+                        {item.desc}
+                      </p>
+                      <div style="background:var(--cream); padding:1rem; border-radius:2px; font-size:0.88rem; line-height:1.5; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">
+                        <p style="margin:0 0 0.4rem;"><strong style="color:var(--navy);">Specifications:</strong> {item.specs}</p>
+                        <p style="margin:0;"><strong style="color:var(--navy);">Applications:</strong> {item.applications}</p>
+                      </div>
+                      <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                        <a 
+                          href={`/products/${productsData.find(p => p.num === item.num)?.slug || 'industrial-valves'}`} 
+                          class="btn-orange-solid" 
+                          style="width:100%; text-align:center; justify-content:center; padding:0.65rem 1rem; font-size:0.92rem;"
+                        >
+                          <span>View Dedicated Product Page →</span>
+                        </a>
+                        <a href="/contact-us" class="btn-navy-outline" style="width:100%; text-align:center; justify-content:center; padding:0.65rem 1rem; font-size:0.88rem;">
+                          <span>Request Specifications / RFQ</span>
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Technical Specification Comparison Strip -->
+    <section class="section-block section-cream" id="tech-specs">
+      <div class="content-frame">
+        <div class="section-title-wrap">
+          <div class="section-label-chip">
+            <span class="label-dot"></span>
+            <span>ENGINEERING PARAMETERS</span>
+          </div>
+          <h2 class="section-h2">Technical Specifications That Matter</h2>
+          <p class="section-lead-p">
+            Industrial equipment selection is governed by operating parameters, fluids, temperatures, and metallurgy. Review key selection criteria across our product catalogue.
+          </p>
+        </div>
+
+        <div class="product-specs-table-container">
+          <table class="product-specs-table">
+            <thead>
+              <tr>
+                <th style="width:28%;">Product Category</th>
+                <th>Key Selection Parameters</th>
+              </tr>
+            </thead>
+            <tbody>
+              {specTable.map((row) => (
+                <tr>
+                  <td style="font-weight:700; color:var(--navy);">{row.cat}</td>
+                  <td style="color:var(--slate); line-height:1.5;">{row.params}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Product Selection & Supply Process -->
+    <section class="section-block theme-light" id="supply-process">
+      <div class="content-frame">
+        <div class="section-title-wrap">
+          <div class="section-label-chip">
+            <span class="label-dot"></span>
+            <span>PROCUREMENT WORKFLOW</span>
+          </div>
+          <h2 class="section-h2">From Technical Requirement to Product Delivery</h2>
+          <p class="section-lead-p">
+            Every product order follows a disciplined technical vetting process ensuring specification compliance, document traceability, and on-time delivery.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-row">
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">01</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 1</span>
+                <h3 class="timeline-title">Requirement Review</h3>
+                <p class="timeline-desc">Review client enquiry, datasheets, drawings, line lists, and project specifications.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">02</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 2</span>
+                <h3 class="timeline-title">Technical Evaluation</h3>
+                <p class="timeline-desc">Evaluate suitability against pressure, temperature, metallurgy, and operating limits.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">03</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 3</span>
+                <h3 class="timeline-title">Supplier Coordination</h3>
+                <p class="timeline-desc">Coordinate with certified manufacturers for pricing, lead time, and submittals.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">04</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 4</span>
+                <h3 class="timeline-title">Documentation & Inspection</h3>
+                <p class="timeline-desc">Coordinate Mill Test Certificates (MTCs), FAT reports, and third-party inspection dossiers.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">05</span></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 5</span>
+                <h3 class="timeline-title">Delivery Coordination</h3>
+                <p class="timeline-desc">Coordinate export packing, freight logistics, and site delivery according to agreed terms.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Final Enquiry Section -->
+    <section class="section-block theme-dark cta-section" id="product-enquiries">
+      <div class="content-frame">
+        <div style="text-align:center; max-width:820px; margin:0 auto;">
+          <span class="section-label-chip-light"><span class="label-dot-orange"></span><span>PRODUCT ENQUIRIES</span></span>
+          <h2 class="cta-h2" style="margin-top:1rem;">Looking for the Right Industrial Product?</h2>
+          <p class="cta-lead-p" style="margin:1rem auto 2rem;">
+            Whether you require specialized equipment, mechanical components, instrumentation, modular solutions or industrial automation products, Petrastream can review your requirements and coordinate a suitable supply proposal.
+          </p>
+          <div style="display:flex; justify-content:center;">
+            <a href="/contact-us" class="btn-orange-solid" style="padding:1rem 2.25rem; font-size:1.1rem;">
+              <span>Submit a Product Enquiry →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <Modals />
+</Layout>
+

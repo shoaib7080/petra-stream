@@ -1,0 +1,305 @@
+---
+// src/pages/services/[slug].astro - Dedicated Individual Service Page for all 9 Services
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Modals from '../../components/Modals.astro';
+import { servicesData } from '../../data/servicesData.js';
+
+export function getStaticPaths() {
+  return servicesData.map((service, index) => {
+    const prevService = index > 0 ? servicesData[index - 1] : servicesData[servicesData.length - 1];
+    const nextService = index < servicesData.length - 1 ? servicesData[index + 1] : servicesData[0];
+    return {
+      params: { slug: service.slug },
+      props: { service, prevService, nextService }
+    };
+  });
+}
+
+const { service, prevService, nextService } = Astro.props;
+---
+
+<Layout 
+  title={`${service.title} | Petrastream Contracting LLC UAE`}
+  description={`${service.title} specialized industrial contracting services in the UAE. ${service.overview.slice(0, 155)}...`}
+  canonical={`https://petrastream.ae/services/${service.slug}`}
+>
+  <Header activePage="services" />
+
+  <main>
+    <!-- Section 1: Hero Banner -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-bg" style={`background-image: url('${service.img}');`}></div>
+      <div class="subpage-hero-scrim"></div>
+      <div class="content-frame">
+        <div class="subpage-hero-content">
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="/services">Services</a>
+            <span aria-hidden="true">/</span>
+            <span>{service.title}</span>
+          </nav>
+          <div class="section-kicker-light">SERVICE {service.num} • INDUSTRIAL CONTRACTING</div>
+          <h1 class="subpage-hero-title">{service.title}</h1>
+          <p class="subpage-hero-lead">
+            {service.overview.split('.')[0]}. Professional industrial execution delivered in strict compliance with approved procedures, facility safety standards, and project specifications.
+          </p>
+          <div class="hero-cta-actions">
+            <a href="#service-rfq" class="btn-orange-solid">
+              <span>Request Technical Proposal</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+            <a href="/services" class="btn-white-ghost">
+              <span>View All 9 Services</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Detailed Service Overview & Operational Framework -->
+    <section class="section-block section-cream">
+      <div class="content-frame">
+        <div class="overview-two-col-grid">
+          <!-- Text Overview -->
+          <div class="overview-content-pane">
+            <div class="section-kicker">TECHNICAL OVERVIEW</div>
+            <h2 class="overview-heading-text">Scope Definition & Engineering Approach</h2>
+            <div class="orange-bar"></div>
+            <p class="overview-main-p" style="font-size:1.1rem; line-height:1.75; color:var(--navy); font-weight:550;">
+              {service.overview}
+            </p>
+            <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-0.5rem;">
+              At Petrastream Contracting LLC, each work scope is assessed in relation to client technical documentation, operating constraints, permit-to-work protocols, and shutdown timelines. Work sequences, materials staging, and personnel mobilization are carefully coordinated to support safe, on-schedule completion.
+            </p>
+          </div>
+
+          <!-- Quick Facts Card -->
+          <div style="background:var(--white); border:1.5px solid var(--border); padding:clamp(1.75rem, 4vw, 2.5rem); border-radius:2px; box-shadow:0 12px 32px rgba(20,43,70,0.06);">
+            <span style="font-size:0.85rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.06em;">SERVICE HIGHLIGHTS</span>
+            <h3 style="font-size:1.35rem; font-weight:750; color:var(--navy); margin:0.5rem 0 1.25rem;">Discipline Specifications</h3>
+            
+            <div style="display:flex; flex-direction:column; gap:1rem; font-size:0.95rem;">
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:0.75rem;">
+                <span style="color:var(--slate-muted);">Discipline:</span>
+                <strong style="color:var(--navy); text-align:right;">Mechanical / Industrial</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:0.75rem;">
+                <span style="color:var(--slate-muted);">Operating Region:</span>
+                <strong style="color:var(--navy);">United Arab Emirates (UAE)</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:0.75rem;">
+                <span style="color:var(--slate-muted);">Compliance:</span>
+                <strong style="color:var(--navy);">ASME / API / Client Specs</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between; border-bottom:1px solid var(--border); padding-bottom:0.75rem;">
+                <span style="color:var(--slate-muted);">Execution Mode:</span>
+                <strong style="color:var(--navy);">Turnkey / Scope-Contracted</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="color:var(--slate-muted);">Mobilization:</span>
+                <strong style="color:var(--orange);">Planned Outage & Urgent Support</strong>
+              </div>
+            </div>
+
+            <div style="margin-top:2rem;">
+              <a href="#service-rfq" class="btn-orange-solid" style="width:100%; text-align:center; justify-content:center;">
+                <span>Enquire About This Scope</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Comprehensive Scope of Services Breakdown -->
+    <section class="section-block section-white">
+      <div class="content-frame">
+        <div style="max-width:880px; margin-bottom:3.5rem;">
+          <div class="section-kicker">DETAILED SCOPE BREAKDOWN</div>
+          <h2 class="section-heading-lg">Activities Included in this Service</h2>
+          <p class="section-desc-readable">
+            Our service scope covers structured activities carried out in strict accordance with approved procedures, safety requirements, and technical specifications.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:1.75rem;">
+          {service.scopes.map((scope, idx) => {
+            const hasColon = scope.includes(':');
+            const scopeTitle = hasColon ? scope.split(':')[0] : `Activity ${idx + 1}`;
+            const scopeDesc = hasColon ? scope.split(':')[1] : scope;
+            return (
+              <div class="why-card" style="padding:2rem; display:flex; flex-direction:column; justify-content:flex-start;">
+                <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+                  <span style="width:32px; height:32px; background:var(--cream); color:var(--orange); display:flex; align-items:center; justify-content:center; font-size:0.9rem; font-weight:800; border-radius:2px; flex-shrink:0;">
+                    0{idx + 1}
+                  </span>
+                  <h3 style="font-size:1.15rem; font-weight:750; color:var(--navy); margin:0;">
+                    {scopeTitle}
+                  </h3>
+                </div>
+                <p style="font-size:0.98rem; line-height:1.65; color:var(--slate); margin:0;">
+                  {scopeDesc.trim()}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Engineering Requirements & Applications -->
+    <section class="section-block section-cream">
+      <div class="content-frame">
+        <div class="section-title-wrap">
+          <div class="section-label-chip">
+            <span class="label-dot"></span>
+            <span>ENGINEERING SPECIFICATIONS</span>
+          </div>
+          <h2 class="section-h2">Technical Requirements & Target Applications</h2>
+          <p class="section-lead-p">
+            Industrial contracting activities require coordination between technical requirements, site conditions, work procedures and project schedules.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:2rem; margin-top:3rem;">
+          <div style="background:var(--white); border:1.5px solid var(--border); padding:2rem; border-radius:2px;">
+            <div style="width:40px; height:40px; background:var(--cream); color:var(--orange); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; border-radius:2px;">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <h3 style="font-size:1.25rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem;">Technical Prerequisites</h3>
+            <p style="font-size:0.98rem; line-height:1.65; color:var(--slate); margin:0;">
+              {service.requirements}
+            </p>
+          </div>
+
+          <div style="background:var(--white); border:1.5px solid var(--border); padding:2rem; border-radius:2px;">
+            <div style="width:40px; height:40px; background:var(--cream); color:var(--orange); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; border-radius:2px;">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            </div>
+            <h3 style="font-size:1.25rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem;">Target Industrial Facilities</h3>
+            <p style="font-size:0.98rem; line-height:1.65; color:var(--slate); margin:0;">
+              {service.applications}
+            </p>
+          </div>
+
+          <div style="background:var(--white); border:1.5px solid var(--border); padding:2rem; border-radius:2px;">
+            <div style="width:40px; height:40px; background:var(--cream); color:var(--orange); display:flex; align-items:center; justify-content:center; margin-bottom:1rem; border-radius:2px;">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+            </div>
+            <h3 style="font-size:1.25rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem;">Quality & QA/QC Handover</h3>
+            <p style="font-size:0.98rem; line-height:1.65; color:var(--slate); margin:0;">
+              Comprehensive inspection test records, welder qualifications, test packs, and client turnover dossiers compiled in accordance with approved procedures.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Previous / Next Navigation Between All 9 Services -->
+    <section class="section-block section-white" style="border-bottom:1px solid var(--border);">
+      <div class="content-frame">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+          <a href={`/services/${prevService.slug}`} class="btn-navy-outline" style="padding:0.75rem 1.4rem;">
+            <span>← Previous: {prevService.title}</span>
+          </a>
+          <a href="/services" style="color:var(--orange); font-weight:700; font-size:1rem; text-decoration:none;">
+            View All 9 Services
+          </a>
+          <a href={`/services/${nextService.slug}`} class="btn-navy-outline" style="padding:0.75rem 1.4rem;">
+            <span>Next: {nextService.title} →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Dedicated On-Page RFQ Consultation Form -->
+    <section class="section-block section-cream" id="service-rfq">
+      <div class="content-frame">
+        <div class="contact-two-col-grid">
+          <div class="contact-info-column">
+            <div class="section-label-chip">
+              <span class="label-dot"></span>
+              <span>SERVICE PROPOSAL REQUEST</span>
+            </div>
+            <h2 class="section-h2" style="margin-top:0.75rem;">Request an Engineering Proposal for {service.title}</h2>
+            <p class="section-lead-p" style="margin-bottom:2rem;">
+              Connect directly with Petrastream's technical coordination desk in the UAE. Provide your facility parameters, work-pack specifications, or scheduled turnaround timeline.
+            </p>
+            <div class="contact-meta-card">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <span class="contact-meta-label">Technical RFQ Submissions</span>
+                <p class="contact-meta-val"><a href="mailto:info@petrastream.ae" class="contact-meta-link">info@petrastream.ae</a></p>
+              </div>
+            </div>
+            <div class="contact-meta-card" style="margin-top:1rem;">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <span class="contact-meta-label">Turnaround & Outage Response</span>
+                <p class="contact-meta-val">Rapid technical review within 24 business hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-column">
+            <div class="contact-form-wrapper">
+              <div class="form-header-box">
+                <h3 class="form-title-h3">Submit RFQ: {service.title}</h3>
+                <p class="form-sub-p">Complete the form below to receive a formal technical and commercial proposal.</p>
+              </div>
+              <form class="b2b-enquiry-form" onsubmit="event.preventDefault(); alert('Thank you for requesting a proposal for ' + this.dataset.service + '. Our engineering desk will review your scope and respond shortly.');" data-service={service.title}>
+                <div class="form-row-duo">
+                  <div class="form-field-group">
+                    <label class="field-label-bold">Full Name *</label>
+                    <input type="text" class="input-box" placeholder="e.g. Eng. Tariq Al-Mansoor" required />
+                  </div>
+                  <div class="form-field-group">
+                    <label class="field-label-bold">Company / Organization *</label>
+                    <input type="text" class="input-box" placeholder="e.g. EPC Contractor / Operating Co." required />
+                  </div>
+                </div>
+
+                <div class="form-row-duo">
+                  <div class="form-field-group">
+                    <label class="field-label-bold">Corporate Work Email *</label>
+                    <input type="email" class="input-box" placeholder="name@company.ae" required />
+                  </div>
+                  <div class="form-field-group">
+                    <label class="field-label-bold">Direct Phone Number</label>
+                    <input type="tel" class="input-box" placeholder="+971 50 000 0000" />
+                  </div>
+                </div>
+
+                <div class="form-field-group">
+                  <label class="field-label-bold">Selected Service Scope</label>
+                  <input type="text" class="input-box" value={service.title} readonly style="background:#F3F4F6; cursor:not-allowed;" />
+                </div>
+
+                <div class="form-field-group">
+                  <label class="field-label-bold">Project Scope & Technical Specifications *</label>
+                  <textarea class="input-box" rows="4" placeholder="Please outline the required scope of work, facility location, pipeline/vessel specs, schedule constraints, or outage timeline..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-orange-solid" style="width:100%; justify-content:center; padding:1rem; font-size:1.05rem;">
+                  <span>Submit Service RFQ →</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <Modals />
+</Layout>
+

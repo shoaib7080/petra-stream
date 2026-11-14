@@ -1,0 +1,41 @@
+---
+// ThemeSelector.astro - Compact design approval preview bar
+---
+<aside class="theme-strip" aria-label="Visual Theme Preview Controls">
+  <div class="content-frame">
+    <div class="theme-strip-flex">
+      <div class="theme-label-text">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+        <span>Design Approval Theme Preview:</span>
+        <strong id="theme-status-label">Theme 1: Corporate Industrial (Navy #142B46 / Light Cream #FAF8F5 / Orange #E98235)</strong>
+      </div>
+      <div class="theme-pill-row">
+        <button type="button" class="theme-btn active" data-theme-target="theme-1" title="Navy Blue (#142B46) / Light Cream (#FAF8F5) / Orange (#E98235)">
+          <span class="color-dots-pair">
+            <span class="dot-chip" style="background:#142B46;"></span>
+            <span class="dot-chip" style="background:#FAF8F5;"></span>
+            <span class="dot-chip" style="background:#E98235;"></span>
+          </span>
+          <span>Theme 1: Corporate Industrial</span>
+        </button>
+        <button type="button" class="theme-btn" data-theme-target="theme-2" title="Deep Navy (#101E32) / Cool White (#F7F8FA) / Copper Orange (#C87943)">
+          <span class="color-dots-pair">
+            <span class="dot-chip" style="background:#101E32;"></span>
+            <span class="dot-chip" style="background:#F7F8FA;"></span>
+            <span class="dot-chip" style="background:#C87943;"></span>
+          </span>
+          <span>Theme 2: Premium Engineering</span>
+        </button>
+        <button type="button" class="theme-btn" data-theme-target="theme-3" title="Dark Slate (#293B4D) / Soft Ivory (#FAF8F2) / Muted Orange (#D9824B)">
+          <span class="color-dots-pair">
+            <span class="dot-chip" style="background:#293B4D;"></span>
+            <span class="dot-chip" style="background:#FAF8F2;"></span>
+            <span class="dot-chip" style="background:#D9824B;"></span>
+          </span>
+          <span>Theme 3: Minimal Corporate</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>
+

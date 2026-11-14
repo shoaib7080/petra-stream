@@ -1,0 +1,54 @@
+---
+// WhyChoose.astro - Section 08: Why Choose Petrastream per blueprint
+const pillars = [
+  {
+    num: "01",
+    title: "Requirement-Focused",
+    desc: "Understanding project scope and technical requirements with attention to operating conditions."
+  },
+  {
+    num: "02",
+    title: "Technical Coordination",
+    desc: "Coordinating suitable products and service solutions tailored to client specifications."
+  },
+  {
+    num: "03",
+    title: "Integrated Capabilities",
+    desc: "Two complementary business divisions under one company providing turnkey synergy."
+  },
+  {
+    num: "04",
+    title: "Client-Focused Approach",
+    desc: "Clear communication, transparent execution, and professional project coordination."
+  }
+];
+---
+
+<section class="section-block theme-cream" id="why-choose">
+  <div class="content-frame">
+    <!-- Header Block -->
+    <div class="section-title-wrap">
+      <div class="section-label-chip">
+        <span class="label-dot"></span>
+        <span>OUR COMMITMENT</span>
+      </div>
+      <h2 class="section-h2">A Focused Approach to Industrial Requirements</h2>
+      <p class="section-lead-p">
+        We understand that industrial projects demand clear technical communication, suitable equipment selection and coordinated service support. Our approach is centered on addressing these requirements through a professional and structured business process.
+      </p>
+    </div>
+
+    <!-- 4 Pillars Grid (Strictly Text-Based, No Unverified Claims) -->
+    <div class="why-choose-grid">
+      {pillars.map((item) => (
+        <article class="why-card">
+          <div class="why-card-top">
+            <span class="why-num">{item.num}</span>
+          </div>
+          <h3 class="why-card-title">{item.title}</h3>
+          <p class="why-card-desc">{item.desc}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

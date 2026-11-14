@@ -1,0 +1,16 @@
+{
+  "name": "petra-stream",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Petrastream Contracting LLC - Premium Industrial B2B Website built with Astro",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.15.0"
+  }
+}
+

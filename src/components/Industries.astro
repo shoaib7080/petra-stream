@@ -1,0 +1,113 @@
+---
+// Industries.astro - Section 06: Industries We Serve (Primary Focus: Oil & Gas)
+import { imageConfig } from '../config/imageConfig.js';
+
+const oilGasSectors = [
+  {
+    title: "Upstream Facilities",
+    tag: "Exploration & Production",
+    desc: "Wellhead mechanical installations, flowlines, manifold piping, separation units, and continuous production reliability support.",
+    focus: "ASME & API Compliant"
+  },
+  {
+    title: "Downstream Refining",
+    tag: "Refineries & Crude Processing",
+    desc: "Shutdown and turnaround execution, column erection, furnace piping, heat exchanger overhauls, and critical mechanical maintenance.",
+    focus: "High-Temperature & High-Pressure"
+  },
+  {
+    title: "Petrochemical Plants",
+    tag: "Chemical Synthesis & Processing",
+    desc: "Specialized alloy piping spools, high-integrity valves, reactor vessel servicing, and non-intrusive corrosion monitoring.",
+    focus: "Corrosion Resistant Metallurgy"
+  },
+  {
+    title: "Pipeline Infrastructure",
+    tag: "Cross-Country & Infield Transmission",
+    desc: "Pipeline construction, tie-ins, hot tapping, hydrostatic testing, line plugging, and pigging launch/receiver installations.",
+    focus: "Zero-Downtime Hot Tapping"
+  },
+  {
+    title: "Gas Processing & LNG",
+    tag: "Gas Sweetening & Compression",
+    desc: "Cryogenic valve supply, compression skid erection, flare system piping, and gas treatment plant mechanical works.",
+    focus: "Cryogenic & Gas Tight Specs"
+  },
+  {
+    title: "Offshore Terminals & Storage",
+    tag: "Marine Terminals & Tank Farms",
+    desc: "Loading arm maintenance, bulk storage tank piping, pressurized welding habitat works, and offshore platform mechanical services.",
+    focus: "Marine Environment Protection"
+  }
+];
+---
+
+<section class="section-block theme-light" id="industries">
+  <div class="content-frame">
+    <!-- Header Block -->
+    <div class="section-title-wrap">
+      <div class="section-label-chip">
+        <span class="label-dot"></span>
+        <span>PRIMARY SECTOR FOCUS</span>
+      </div>
+      <h2 class="section-h2">Industries We Serve: Oil & Gas</h2>
+      <p class="section-lead-p">
+        Petra Stream specializes in providing mechanical services and industrial product solutions engineered specifically for the harsh operating environments and rigorous safety standards of the Oil & Gas industry.
+      </p>
+    </div>
+
+    <!-- Featured Sector Banner with Photograph -->
+    <div class="industry-hero-banner" style="background-color: var(--navy); border-radius: 2px; overflow: hidden; margin-bottom: 3rem; border: 1px solid var(--border);">
+      <div style="position: relative; min-height: 320px;">
+        <img 
+          src={imageConfig.industryImage.url} 
+          alt={imageConfig.industryImage.alt} 
+          style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"
+          loading="lazy"
+          decoding="async"
+        />
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(20,43,70,0.2) 0%, rgba(20,43,70,0.7) 100%);"></div>
+      </div>
+      <div style="padding: clamp(2rem, 3.5vw, 3rem); display: flex; flex-direction: column; justify-content: center; color: var(--white);">
+        <span style="font-size: 0.82rem; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">CORE INDUSTRY COMMITMENT</span>
+        <h3 style="font-family: 'Manrope', sans-serif; font-size: clamp(1.4rem, 2vw, 1.85rem); font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 1rem;">
+          Specialized Engineering for High-Stakes Hydrocarbon Facilities
+        </h3>
+        <p style="font-size: 1rem; line-height: 1.65; color: #D3DFED; margin-bottom: 1.5rem;">
+          Every mechanical contracting service and equipment delivery is aligned with international API, ASME, and ADNOC-compliant quality specifications to ensure uninterrupted asset reliability and personnel safety across UAE onshore and offshore installations.
+        </p>
+        <div>
+          <a href="#contact" class="btn-orange-solid" style="display: inline-flex;">
+            <span>Discuss Oil & Gas Requirements</span>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Oil & Gas Sub-Sectors Grid -->
+    <div class="industry-grid">
+      {oilGasSectors.map((item) => (
+        <article class="industry-card">
+          <span class="industry-tag">{item.tag}</span>
+          <h3 class="industry-card-title">{item.title}</h3>
+          <p class="industry-card-desc">{item.desc}</p>
+          <div class="industry-card-footer">
+            <span class="industry-metric-chip">{item.focus}</span>
+            <a href="#contact" class="industry-action-link" title={`Inquire regarding ${item.title}`}>
+              <span>Enquire</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Bottom Button per blueprint -->
+    <div style="text-align:center; margin-top:3.5rem;">
+      <a href="/industries" class="btn-navy-outline">
+        <span>Explore Industries We Serve →</span>
+      </a>
+    </div>
+  </div>
+</section>

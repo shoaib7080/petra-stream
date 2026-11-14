@@ -1,0 +1,34 @@
+---
+// Hero.astro - Full-width industrial hero section with dark navy overlay per blueprint
+import { imageConfig } from '../config/imageConfig.js';
+---
+
+<section class="hero-industrial-bold" id="hero" style="min-height: 620px;">
+  <!-- Single high-quality industrial background image with dark navy transparent overlay -->
+  <div class="hero-oilgas-img" style={`background-image: url('${imageConfig.heroImage.url}');`} role="img" aria-label={imageConfig.heroImage.alt}></div>
+  <div class="hero-scrim-dark"></div>
+
+  <div class="content-frame">
+    <div class="hero-text-container" style="max-width: 980px;">
+      <div class="section-kicker section-kicker-light">
+        INDUSTRIAL CONTRACTING | ENGINEERING | SPECIALIZED PRODUCTS
+      </div>
+      <h1 class="hero-super-title">
+        Industrial Contracting & <span class="highlight-orange">Specialized Solutions</span> for Critical Industries
+      </h1>
+      <p class="hero-sub-description">
+        Delivering industrial services and specialized product solutions to support the evolving requirements of the Oil & Gas, Energy and Industrial sectors.
+      </p>
+      <div class="hero-cta-actions">
+        <a href="/services" class="btn-orange-solid">
+          <span>Explore Our Services</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+        <a href="/products" class="btn-white-ghost">
+          <span>Explore Our Products</span>
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

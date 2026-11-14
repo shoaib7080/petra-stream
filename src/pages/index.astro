@@ -1,0 +1,68 @@
+---
+// src/pages/index.astro - Main Entry Point for Petra Stream Astro Website
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import CompanyIntro from '../components/CompanyIntro.astro';
+import CoreDivisions from '../components/CoreDivisions.astro';
+import Services from '../components/Services.astro';
+import Products from '../components/Products.astro';
+import Industries from '../components/Industries.astro';
+import WhyChoose from '../components/WhyChoose.astro';
+import OurApproach from '../components/OurApproach.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Modals from '../components/Modals.astro';
+---
+
+<Layout 
+  title="Petra Stream | Mechanical Services & Mechanical Products Provider (UAE)"
+  description="Petra Stream (Petrastream Contracting LLC) is a UAE-based mechanical services and mechanical products provider supporting B2B clients in the Oil & Gas, Petrochemical, and Energy sectors."
+>
+  <!-- Section 01: Header & Navigation with Mega-Menus & Drawer -->
+  <Header />
+
+  <!-- Main Content Flow -->
+  <main>
+    <!-- Section 02: Hero Section -->
+    <Hero />
+
+    <!-- Section 03: Company Overview / About -->
+    <CompanyIntro />
+
+    <!-- Section 04: Two Core Business Capabilities -->
+    <CoreDivisions />
+
+    <!-- Section 05: Mechanical Contracting Services (9 Services) -->
+    <Services />
+
+    <!-- Section 06: Mechanical Products & Specialized Equipment (17 Products) -->
+    <Products />
+
+    <!-- Section 07: Industries We Serve (Oil & Gas primary) -->
+    <Industries />
+
+    <!-- Section 08: Why Choose Petra Stream (Text-Based 4 Core Pillars) -->
+    <WhyChoose />
+
+    <!-- Section 09: Our Approach (Text-Based 5-Step Execution Methodology) -->
+    <OurApproach />
+
+    <!-- Section 10: Frequently Asked Questions (Accordion) -->
+    <FAQ />
+
+    <!-- Section 11: Industrial Partnership Callout -->
+    <CTA />
+
+    <!-- Section 12: Direct Business Enquiry & Contact Section -->
+    <Contact />
+  </main>
+
+  <!-- Section 13: Corporate Footer -->
+  <Footer />
+
+  <!-- Interactive RFQ Consultation Modal -->
+  <Modals />
+</Layout>

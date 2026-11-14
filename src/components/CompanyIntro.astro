@@ -1,0 +1,48 @@
+---
+// CompanyIntro.astro - Section 03 Company Introduction (Two columns: 45% image, 55% text) per blueprint
+import { imageConfig } from '../config/imageConfig.js';
+---
+
+<section class="section-block section-cream" id="about">
+  <div class="content-frame">
+    <div class="overview-two-col-grid">
+      <!-- Left: 45% Width Image -->
+      <div class="overview-photo-frame">
+        <img 
+          src={imageConfig.aboutImage.url} 
+          alt="Industrial Engineers and Plant Facility" 
+          class="overview-heroic-img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="overview-caption-bar">
+          <span>Industrial Contracting & Product Solutions</span>
+          <span class="highlight-orange" style="font-size:0.75rem; font-weight:700;">SPECIFICATION FOCUSED</span>
+        </div>
+      </div>
+
+      <!-- Right: 55% Width Text -->
+      <div class="overview-content-pane">
+        <div class="section-kicker">ABOUT PETRASTREAM</div>
+        <h2 class="overview-heading-text">
+          Your Partner in Industrial Contracting & Product Solutions
+        </h2>
+        <div class="orange-bar"></div>
+        <p class="overview-main-p">
+          Petrastream Contracting LLC is an industrial contracting and product solutions company focused on addressing the requirements of the Oil & Gas, Energy and Industrial sectors.
+        </p>
+        <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-1rem;">
+          Our business is built around two key areas: specialized industrial contracting services and the supply of industrial products and equipment.
+        </p>
+        <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-1.2rem;">
+          From maintenance, construction and installation activities to specialized equipment and industrial product solutions, we aim to support client requirements through a structured, professional and specification-focused approach. We emphasize understanding project requirements, coordinating suitable solutions and maintaining clear communication throughout the engagement.
+        </p>
+        <div style="margin-top:0.5rem;">
+          <a href="/about-us" class="btn-navy-outline">
+            <span>Discover More About Us →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

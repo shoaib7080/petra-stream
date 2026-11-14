@@ -1,0 +1,46 @@
+---
+// src/pages/contact-us.astro - Dedicated Contact Us Page (Full Blueprint)
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Modals from '../components/Modals.astro';
+import Contact from '../components/Contact.astro';
+import { imageConfig } from '../config/imageConfig.js';
+---
+
+<Layout 
+  title="Contact Us | Petrastream Contracting LLC"
+  description="Contact Petrastream Contracting LLC in the United Arab Emirates for industrial contracting services, mechanical products supply, technical RFQs, and project consultations."
+  canonical="https://petrastream.ae/contact-us"
+>
+  <Header activePage="contact" />
+
+  <main>
+    <!-- Subpage Hero Banner -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-bg" style={`background-image: url('${imageConfig.heroImage.url}');`}></div>
+      <div class="subpage-hero-scrim"></div>
+      <div class="content-frame">
+        <div class="subpage-hero-content">
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span aria-hidden="true">/</span>
+            <span>Contact Us</span>
+          </nav>
+          <div class="section-kicker-light">DIRECT TECHNICAL DESK</div>
+          <h1 class="subpage-hero-title">Connect With Our Engineering & Procurement Team</h1>
+          <p class="subpage-hero-lead">
+            Whether you require urgent site maintenance support, detailed product datasheets, or commercial proposals for an upcoming project, our UAE-based specialists are ready to review your requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Contact Section with Form & Placeholders -->
+    <Contact />
+  </main>
+
+  <Footer />
+  <Modals />
+</Layout>
+

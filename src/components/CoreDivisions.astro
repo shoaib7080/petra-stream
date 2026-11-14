@@ -1,0 +1,70 @@
+---
+// CoreDivisions.astro - Section 04: Two Core Divisions per blueprint
+import { imageConfig } from '../config/imageConfig.js';
+---
+
+<section class="section-block section-white" id="divisions-section">
+  <div class="content-frame">
+    <div style="max-width:880px; margin-bottom:4rem;">
+      <div class="section-kicker">WHAT WE DO</div>
+      <h2 class="section-heading-lg">Two Core Divisions. One Industrial Focus.</h2>
+      <p class="section-desc-readable">
+        Our business activities are structured around two primary divisions, enabling us to address both industrial service requirements and specialized product needs.
+      </p>
+    </div>
+
+    <!-- DIVISION 01: Industrial Contracting Services -->
+    <article class="business-showcase-panel">
+      <div class="showcase-img-holder">
+        <img 
+          src={imageConfig.capabilities.services.url} 
+          alt={imageConfig.capabilities.services.alt} 
+          class="showcase-feature-img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="showcase-number-badge">DIVISION 01</div>
+      </div>
+      <div class="showcase-text-holder">
+        <div class="section-kicker">DIVISION 01</div>
+        <h3 class="showcase-headline">Industrial Contracting Services</h3>
+        <p class="showcase-description-text">
+          Comprehensive industrial contracting activities covering maintenance, shutdown, commissioning, construction, installation and specialist welding habitat solutions.
+        </p>
+        <div style="margin-top:0.5rem;">
+          <a href="/services" class="btn-orange-solid">
+            <span>Explore Our Services</span>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- DIVISION 02: Industrial Products & Equipment -->
+    <article class="business-showcase-panel panel-inverted" style="margin-top:2.5rem;">
+      <div class="showcase-img-holder">
+        <img 
+          src={imageConfig.capabilities.products.url} 
+          alt={imageConfig.capabilities.products.alt} 
+          class="showcase-feature-img"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="showcase-number-badge">DIVISION 02</div>
+      </div>
+      <div class="showcase-text-holder">
+        <div class="section-kicker">DIVISION 02</div>
+        <h3 class="showcase-headline">Industrial Products & Equipment</h3>
+        <p class="showcase-description-text">
+          A specialized product portfolio covering pipeline equipment, industrial maintenance systems, safety solutions, modular systems and automation technologies.
+        </p>
+        <div style="margin-top:0.5rem;">
+          <a href="/products" class="btn-orange-solid">
+            <span>Explore Our Products</span>
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

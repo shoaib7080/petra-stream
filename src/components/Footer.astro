@@ -1,0 +1,98 @@
+---
+// Footer.astro - Section 11: Corporate Industrial Footer
+import { siteConfig } from '../config/siteConfig.js';
+---
+
+<footer class="site-footer">
+  <div class="content-frame">
+    <!-- Main Footer Grid (4 Columns) -->
+    <div class="footer-columns-grid">
+      <!-- Col 1: Brand & Overview -->
+      <div class="footer-col-brand">
+        <a href="#hero" class="footer-brand-logo">
+          <div class="brand-badge-box">P</div>
+          <div class="brand-naming">
+            <span class="brand-title-white">PETRASTREAM</span>
+            <span class="brand-subline-orange">CONTRACTING LLC</span>
+          </div>
+        </a>
+        <p class="footer-about-text">
+          Petra Stream (Petrastream Contracting LLC) is a premier UAE-based Mechanical Service Provider and certified Industrial Products Provider supporting operating companies, EPC contractors, and refineries across the Middle East.
+        </p>
+        <div class="footer-license-tag">
+          <span>Licensed & Operating in the United Arab Emirates</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div>
+        <h4 class="footer-column-heading">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Petrastream</a></li>
+          <li><a href="#capabilities">Core Capabilities</a></li>
+          <li><a href="#services">Contracting Services</a></li>
+          <li><a href="#products">Equipment & Products</a></li>
+          <li><a href="#industries">Industries We Serve</a></li>
+          <li><a href="#why-choose">Why Choose Us</a></li>
+          <li><a href="#approach">Our 5-Stage Approach</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact & RFQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Contracting Services -->
+      <div>
+        <h4 class="footer-column-heading">Specialized Services</h4>
+        <ul class="footer-links-list">
+          <li><a href="#services">Maintenance & Shutdowns</a></li>
+          <li><a href="#services">Pre-Commissioning & Startup</a></li>
+          <li><a href="#services">Electrical & Instrumentation</a></li>
+          <li><a href="#services">Mechanical Equipment Erection</a></li>
+          <li><a href="#services">Process & Plant Piping</a></li>
+          <li><a href="#services">Cross-Country Pipelines</a></li>
+          <li><a href="#services">Oil & Gas Plant Construction</a></li>
+          <li><a href="#services">Civil Foundations & Structures</a></li>
+          <li><a href="#services">Pressurized Welding Habitats</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Products & Contact -->
+      <div>
+        <h4 class="footer-column-heading">Products & Inquiries</h4>
+        <ul class="footer-links-list">
+          <li><a href="#products">Valves & Orifice Metering</a></li>
+          <li><a href="#products">Hot Tapping & Flushing Skids</a></li>
+          <li><a href="#products">Non-Intrusive Corrosion Sensors</a></li>
+          <li><a href="#products">Hydro-Jetting & Flange Tools</a></li>
+          <li><a href="#products">Modular Blast-Proof E-Houses</a></li>
+        </ul>
+
+        <div class="footer-contact-block">
+          <div class="footer-contact-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+            <span>{siteConfig.country}</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <a href={`mailto:${siteConfig.contact.emailPlaceholder}`} style="color:inherit; text-decoration:none;">{siteConfig.contact.emailPlaceholder}</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            <span>{siteConfig.contact.phonePlaceholder}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Strip -->
+    <div class="footer-bottom-strip">
+      <div>
+        © 2026 Petrastream Contracting LLC. All Rights Reserved.
+      </div>
+      <div>
+        Mechanical Contracting Services & Certified Equipment Solutions • UAE
+      </div>
+    </div>
+  </div>
+</footer>

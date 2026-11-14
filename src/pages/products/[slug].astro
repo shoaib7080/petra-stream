@@ -1,0 +1,273 @@
+---
+// src/pages/products/[slug].astro - Dedicated Individual Product Page for all 17 Products
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Modals from '../../components/Modals.astro';
+import { productsData } from '../../data/productsData.js';
+
+export function getStaticPaths() {
+  return productsData.map((product, index) => {
+    const prevProduct = index > 0 ? productsData[index - 1] : productsData[productsData.length - 1];
+    const nextProduct = index < productsData.length - 1 ? productsData[index + 1] : productsData[0];
+    return {
+      params: { slug: product.slug },
+      props: { product, prevProduct, nextProduct }
+    };
+  });
+}
+
+const { product, prevProduct, nextProduct } = Astro.props;
+---
+
+<Layout 
+  title={`${product.name} | Petrastream Contracting LLC UAE`}
+  description={`${product.name} supplier in the UAE. ${product.overview.slice(0, 150)}... Sourced and coordinated by Petrastream Contracting LLC.`}
+  canonical={`https://petrastream.ae/products/${product.slug}`}
+>
+  <Header activePage="products" />
+
+  <main>
+    <!-- Section 1: Hero Banner -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-bg" style={`background-image: url('${product.img}');`}></div>
+      <div class="subpage-hero-scrim"></div>
+      <div class="content-frame">
+        <div class="subpage-hero-content">
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="/products">Products</a>
+            <span aria-hidden="true">/</span>
+            <span>{product.name}</span>
+          </nav>
+          <div class="section-kicker-light">PRODUCT {product.num} • {product.category.toUpperCase()}</div>
+          <h1 class="subpage-hero-title">{product.name}</h1>
+          <p class="subpage-hero-lead">
+            {product.overview.split('.')[0]}. Coordinated and supplied according to project technical requirements, client specifications, and operating conditions in the Oil & Gas and Industrial sectors.
+          </p>
+          <div class="hero-cta-actions">
+            <a href="#product-rfq" class="btn-orange-solid">
+              <span>Request Product Datasheet & RFQ</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+            <a href="/products" class="btn-white-ghost">
+              <span>View All 17 Products</span>
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Product Overview & Image Presentation -->
+    <section class="section-block section-cream">
+      <div class="content-frame">
+        <div class="overview-two-col-grid">
+          <!-- Left: Product Image -->
+          <div class="overview-photo-frame" style="overflow:hidden; border-radius:2px;">
+            <img 
+              src={product.img} 
+              alt={product.name} 
+              class="overview-heroic-img" 
+              loading="lazy" 
+              decoding="async" 
+            />
+            <div class="overview-caption-bar">
+              <span>{product.category}</span>
+              <span class="highlight-orange" style="font-size:0.75rem; font-weight:700;">ITEM {product.num}</span>
+            </div>
+          </div>
+
+          <!-- Right: Technical Details -->
+          <div class="overview-content-pane">
+            <div class="section-kicker">EQUIPMENT PROFILE</div>
+            <h2 class="overview-heading-text">Technical Overview & Functionality</h2>
+            <div class="orange-bar"></div>
+            <p class="overview-main-p" style="font-size:1.12rem; line-height:1.72; color:var(--navy); font-weight:550;">
+              {product.overview}
+            </p>
+            <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-0.5rem;">
+              Product selection and supply are coordinated according to the technical requirements, design conditions, and site parameters of each project enquiry. We review material compatibility, pressure ratings, temperature limits, and hazardous area certifications to coordinate a compliant supply proposal.
+            </p>
+            <div style="margin-top:1.5rem;">
+              <a href="#product-rfq" class="btn-orange-solid">
+                <span>Inquire About This Equipment →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Key Technical Specifications & Selection Parameters -->
+    <section class="section-block section-white">
+      <div class="content-frame">
+        <div style="max-width:880px; margin-bottom:3.5rem;">
+          <div class="section-kicker">SPECIFICATION PARAMETERS</div>
+          <h2 class="section-heading-lg">Key Technical Specifications</h2>
+          <p class="section-desc-readable">
+            Equipment parameters, metallurgy, pressure ratings, and operating limits coordinated for project-specific compliance.
+          </p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:1.75rem;">
+          {product.specs.map((spec, idx) => {
+            const hasColon = spec.includes(':');
+            const paramLabel = hasColon ? spec.split(':')[0] : `Parameter 0${idx + 1}`;
+            const paramValue = hasColon ? spec.split(':')[1] : spec;
+            return (
+              <div class="why-card" style="padding:1.85rem; border-left:3px solid var(--orange);">
+                <div style="font-size:0.85rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.4rem;">
+                  {paramLabel}
+                </div>
+                <h3 style="font-size:1.05rem; font-weight:650; color:var(--navy); line-height:1.5; margin:0;">
+                  {paramValue.trim()}
+                </h3>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Target Applications & Industrial Deployment -->
+    <section class="section-block section-cream">
+      <div class="content-frame">
+        <div class="overview-two-col-grid">
+          <div>
+            <div class="section-kicker">APPLICATIONS & USE CASES</div>
+            <h2 class="overview-heading-text">Where This Product is Deployed</h2>
+            <div class="orange-bar"></div>
+            <p class="overview-main-p" style="font-size:1.08rem; line-height:1.7; color:var(--slate);">
+              {product.applications}
+            </p>
+            <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-0.5rem;">
+              Whether required for scheduled turnaround outages, greenfield pipeline construction, refinery processing units, or continuous operational maintenance, our technical desk ensures that every unit matches site specifications and documentation standards.
+            </p>
+          </div>
+
+          <div style="background:var(--white); border:1.5px solid var(--border); padding:clamp(1.75rem, 4vw, 2.5rem); border-radius:2px; box-shadow:0 12px 32px rgba(20,43,70,0.06);">
+            <span style="font-size:0.85rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.06em;">DOCUMENTATION & QUALITY</span>
+            <h3 style="font-size:1.35rem; font-weight:750; color:var(--navy); margin:0.5rem 0 1.25rem;">Traceability & Inspection</h3>
+            
+            <ul style="list-style:none; padding:0; margin:0 0 1.75rem; display:flex; flex-direction:column; gap:0.75rem; font-size:0.95rem; color:var(--slate);">
+              <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange); font-weight:700;">✓</span> Manufacturer Mill Test Certificates (MTC EN 10204 3.1)</li>
+              <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange); font-weight:700;">✓</span> Factory Acceptance Testing (FAT) & Pressure Hydrotest Reports</li>
+              <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange); font-weight:700;">✓</span> Hazardous-Area Zone 1 / Zone 2 ATEX / IECEx Certification</li>
+              <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange); font-weight:700;">✓</span> Third-Party Inspection (TPI) Coordination (DNV, Lloyd's, BV)</li>
+              <li style="display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--orange); font-weight:700;">✓</span> Complete Export Packing & UAE Logistics Coordination</li>
+            </ul>
+
+            <a href="#product-rfq" class="btn-orange-solid" style="width:100%; text-align:center; justify-content:center;">
+              <span>Request Formal Proposal</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Previous / Next Product Navigation Across All 17 Products -->
+    <section class="section-block section-white" style="border-bottom:1px solid var(--border);">
+      <div class="content-frame">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
+          <a href={`/products/${prevProduct.slug}`} class="btn-navy-outline" style="padding:0.75rem 1.4rem;">
+            <span>← Previous: {prevProduct.name}</span>
+          </a>
+          <a href="/products" style="color:var(--orange); font-weight:700; font-size:1rem; text-decoration:none;">
+            View All 17 Products
+          </a>
+          <a href={`/products/${nextProduct.slug}`} class="btn-navy-outline" style="padding:0.75rem 1.4rem;">
+            <span>Next: {nextProduct.name} →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Dedicated On-Page RFQ Consultation Form -->
+    <section class="section-block section-cream" id="product-rfq">
+      <div class="content-frame">
+        <div class="contact-two-col-grid">
+          <div class="contact-info-column">
+            <div class="section-label-chip">
+              <span class="label-dot"></span>
+              <span>PRODUCT ENQUIRY</span>
+            </div>
+            <h2 class="section-h2" style="margin-top:0.75rem;">Submit an RFQ for {product.name}</h2>
+            <p class="section-lead-p" style="margin-bottom:2rem;">
+              Connect with Petrastream's equipment desk in the UAE. Specify your sizing parameters, operating pressures, material grades, or required quantities for commercial quotation.
+            </p>
+            <div class="contact-meta-card">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <span class="contact-meta-label">Equipment Procurement Desk</span>
+                <p class="contact-meta-val"><a href="mailto:info@petrastream.ae" class="contact-meta-link">info@petrastream.ae</a></p>
+              </div>
+            </div>
+            <div class="contact-meta-card" style="margin-top:1rem;">
+              <div class="contact-icon-box">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <span class="contact-meta-label">Commercial Response Time</span>
+                <p class="contact-meta-val">Formal pricing proposal within 24 to 48 hours</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-column">
+            <div class="contact-form-wrapper">
+              <div class="form-header-box">
+                <h3 class="form-title-h3">Technical RFQ: {product.name}</h3>
+                <p class="form-sub-p">Complete the form below to receive a formal equipment proposal and datasheet.</p>
+              </div>
+              <form class="b2b-enquiry-form" onsubmit="event.preventDefault(); alert('Thank you for inquiring about ' + this.dataset.product + '. Our procurement desk will review your technical parameters and respond shortly.');" data-product={product.name}>
+                <div class="form-row-duo">
+                  <div class="form-field-group">
+                    <label class="field-label-bold">Full Name *</label>
+                    <input type="text" class="input-box" placeholder="e.g. Tariq Al-Mansoor" required />
+                  </div>
+                  <div class="form-field-group">
+                    <label class="field-label-bold">Company / Organization *</label>
+                    <input type="text" class="input-box" placeholder="e.g. National Petroleum LLC" required />
+                  </div>
+                </div>
+
+                <div class="form-row-duo">
+                  <div class="form-field-group">
+                    <label class="field-label-bold">Corporate Work Email *</label>
+                    <input type="email" class="input-box" placeholder="name@company.ae" required />
+                  </div>
+                  <div class="form-field-group">
+                    <label class="field-label-bold">Phone Number</label>
+                    <input type="tel" class="input-box" placeholder="+971 50 000 0000" />
+                  </div>
+                </div>
+
+                <div class="form-field-group">
+                  <label class="field-label-bold">Selected Equipment Item</label>
+                  <input type="text" class="input-box" value={product.name} readonly style="background:#F3F4F6; cursor:not-allowed;" />
+                </div>
+
+                <div class="form-field-group">
+                  <label class="field-label-bold">Required Specifications, Quantities & Sizing *</label>
+                  <textarea class="input-box" rows="4" placeholder="Please specify nominal diameter, pressure rating, material grade, flow rate, hazardous classification, or project delivery schedule..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-orange-solid" style="width:100%; justify-content:center; padding:1rem; font-size:1.05rem;">
+                  <span>Submit Product RFQ →</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <Modals />
+</Layout>
+

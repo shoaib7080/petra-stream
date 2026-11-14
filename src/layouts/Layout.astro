@@ -1,0 +1,91 @@
+---
+// src/layouts/Layout.astro - Base layout with comprehensive Technical SEO & JSON-LD Structured Data
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const { 
+  title = "Petra Stream | Mechanical Services & Mechanical Products Provider (UAE)", 
+  description = "Petra Stream (Petrastream Contracting LLC) is a UAE-based mechanical services and mechanical products provider supporting B2B clients across the Oil & Gas, Petrochemical, and Energy sectors.",
+  canonical = "https://petrastream.ae/"
+} = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Petra Stream",
+  "legalName": "Petrastream Contracting LLC",
+  "url": "https://petrastream.ae",
+  "logo": "https://petrastream.ae/favicon.svg",
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "AE",
+    "addressRegion": "UAE"
+  },
+  "knowsAbout": [
+    "Mechanical Services in UAE",
+    "Mechanical Products Supplier UAE",
+    "Oil and Gas Mechanical Solutions",
+    "Mechanical Equipment Supplier",
+    "Industrial Mechanical Services",
+    "Turnaround and Shutdown Maintenance",
+    "Process and Plant Piping",
+    "Industrial Valves Supply"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "technical support",
+    "email": "info@petrastream.ae",
+    "areaServed": "AE",
+    "availableLanguage": ["English", "Arabic"]
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="theme-1">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:site_name" content="Petra Stream" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonical} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Google Fonts: Manrope & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/styles.css" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+</head>
+<body data-theme="theme-1">
+  <slot />
+  <script src="/app.js" is:inline></script>
+</body>
+</html>

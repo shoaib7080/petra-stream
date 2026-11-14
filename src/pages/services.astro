@@ -1,0 +1,359 @@
+---
+// src/pages/services.astro - Dedicated Services Page (Full Blueprint)
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Modals from '../components/Modals.astro';
+import { imageConfig } from '../config/imageConfig.js';
+
+const allServices = [
+  {
+    id: "service-01",
+    num: "01",
+    title: "Maintenance, Shutdown & Turnaround",
+    img: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=85",
+    overview: "Industrial plant maintenance and shutdown activities are essential for maintaining equipment condition, addressing operational issues and carrying out planned inspection, repair and replacement work. Petrastream's Maintenance, Shutdown & Turnaround service covers industrial maintenance requirements associated with plant equipment, piping systems and related mechanical installations.",
+    scopes: [
+      "Planned Maintenance: Activities for industrial equipment and associated installations according to approved procedures.",
+      "Corrective Maintenance: Repair and replacement work to address identified equipment issues within the agreed scope.",
+      "Mechanical Maintenance: Maintenance of mechanical equipment, piping components, valves, fittings and associated assemblies.",
+      "Shutdown Activities: Work carried out during plant shutdowns, including inspection, dismantling, repair and reinstallation.",
+      "Turnaround Support: Coordination of assigned maintenance and repair packages during scheduled plant turnaround periods.",
+      "Inspection & Reinstatement: Support for applicable inspection, completion checks and reinstatement activities."
+    ],
+    requirements: "Review of maintenance work orders, work-pack coordination, permit-to-work isolations, tool/access staging, and formal QA/QC inspection sign-offs.",
+    applications: "Refineries, petrochemical facilities, gas plants and process installations requiring scheduled outages."
+  },
+  {
+    id: "service-02",
+    num: "02",
+    title: "Pre-Commissioning & Commissioning",
+    img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=85",
+    overview: "Pre-commissioning and commissioning verify the condition, functionality and readiness of equipment, piping systems and associated installations before introducing process fluids and entering commercial service.",
+    scopes: [
+      "System Preparation: Verification of mechanical completion status and system boundaries.",
+      "Pressure Testing: Execution of hydrostatic or pneumatic pressure testing per approved test packs.",
+      "Flushing & Cleaning: Chemical and mechanical cleaning of piping systems to remove mill scale and debris.",
+      "Air Blowing & Drying: High-velocity air blowing, dewatering and system drying per specifications.",
+      "Pipeline Pigging & Gauging: Caliper pigging and internal pipeline verification.",
+      "Nitrogen Purging: Inerting and preservation of hydrocarbon circuits.",
+      "Instrumentation Checks: Loop checks, calibration verifications and safety interlock tests."
+    ],
+    requirements: "Defined boundary limits, approved test procedures, safety perimeter controls, and complete turnover dossier packages.",
+    applications: "Process plants, refineries, gas transmission pipelines, and offshore topsides."
+  },
+  {
+    id: "service-03",
+    num: "03",
+    title: "Electrical & Instrumentation",
+    img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=85",
+    overview: "Electrical and instrumentation systems form an essential part of industrial facilities, supporting power distribution, equipment operation, process measurement, monitoring and control.",
+    scopes: [
+      "Cable Tray & Support Installation: Heavy ladder and perforated tray installation per approved layouts.",
+      "Cable Laying & Routing: Power, control, analog instrumentation, and fiber optic cabling.",
+      "Termination & Testing: Glanding, termination, megger testing, and continuity verification.",
+      "Field Instruments: Transmitter mounting (pressure, flow, temperature, level) and impulse tubing.",
+      "Hazardous-Area Compliance: Explosion-proof junction boxes and certified field fittings.",
+      "Loop Checking Support: Cold and hot loop checking with central control systems (DCS/PLC)."
+    ],
+    requirements: "Approved wiring schematics, cable schedules, hazardous-area zone classifications, and calibration records.",
+    applications: "Oil & Gas processing units, chemical synthesis facilities, utility plants, and power substations."
+  },
+  {
+    id: "service-04",
+    num: "04",
+    title: "Civil & Structural Works",
+    img: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=85",
+    overview: "Civil and structural works provide the essential foundation and structural integrity required for heavy mechanical equipment, pipe racks, and industrial facility buildings.",
+    scopes: [
+      "Site Preparation & Earthworks: Excavation, leveling, compaction, and engineered backfilling.",
+      "Equipment Foundations: Reinforced concrete bases, pedestals, and pump skids.",
+      "Structural Steel Erection: Pipe racks, equipment access platforms, stair towers, and walkways.",
+      "Anchor Bolt Setting: Precision bolt placement and non-shrink cementitious grouting.",
+      "Drainage & Paving: Industrial oily-water drainage channels and concrete paving works."
+    ],
+    requirements: "Structural calculations, reinforcement rebar inspection, concrete batch testing, and discipline interface verification.",
+    applications: "Refinery expansions, pipeline manifold stations, compressor stations, and chemical plants."
+  },
+  {
+    id: "service-05",
+    num: "05",
+    title: "Mechanical Erection",
+    img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85",
+    overview: "Mechanical erection involves the positioning, assembly, precision alignment, and connection of industrial rotating and static equipment in strict compliance with manufacturer specifications.",
+    scopes: [
+      "Static Equipment Erection: Distillation columns, pressure vessels, reactors, and storage tanks.",
+      "Rotating Machinery: Heavy centrifugal pumps, compressors, turbines, and electric motor drivers.",
+      "Precision Alignment: Laser shaft alignment, dial indicator runout checks, and soft-foot mitigation.",
+      "Internals Installation: Tray installation, packing, demisters, and internal baffles.",
+      "Grouting & Cold Alignment: Heavy baseplate leveling, precision shimming, and epoxy grouting."
+    ],
+    requirements: "Certified crane rigging plans, foundation load checks, manufacturer installation manuals, and vendor sign-offs.",
+    applications: "Petrochemical complexes, power generation plants, water desalination works, and crude refineries."
+  },
+  {
+    id: "service-06",
+    num: "06",
+    title: "Process & Plant Piping",
+    img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=85",
+    overview: "Process piping networks transport hydrocarbons, steam, utility fluids, and chemicals throughout an operating facility under high pressures and extreme temperatures.",
+    scopes: [
+      "Spool Fabrication Coordination: Cutting, beveling, pre-heating, and certified shop/field welding.",
+      "Piping Erection: Flanged and welded line installation against isometric drawings.",
+      "Specialty Metallurgy: Carbon steel, stainless steel (304/316), Duplex, Super Duplex, and Alloy 625.",
+      "Pipe Supports & Spring Hangers: Rigid supports, spring canisters, guides, and slide plates.",
+      "Non-Destructive Testing (NDT): Radiography (RT), Ultrasonic (UT), Magnetic Particle (MPI), and Dye Penetrant.",
+      "Bolt Torquing & Flange Inspection: Controlled bolt torque protocols and gasket traceability."
+    ],
+    requirements: "Approved WPS/PQR welding procedures, isometric verification, welder qualifications, and NDT clearance.",
+    applications: "Hydrocarbon processing units, steam distribution networks, tank farm interconnecting headers."
+  },
+  {
+    id: "service-07",
+    num: "07",
+    title: "Pipeline Construction",
+    img: "https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=1200&q=85",
+    overview: "Pipeline construction encompasses route clearance, stringing, ditching, cross-country welding, field joint coating, lowering-in, and hydrotesting for long-distance transport pipelines.",
+    scopes: [
+      "Right-of-Way (ROW) Preparation: Route clearing, grading, and access road construction.",
+      "Pipe Stringing & Bending: Cold field bending and stringing along the trench line.",
+      "Field Welding & Tie-Ins: Automatic and manual downhill/uphill welding with 100% NDT inspection.",
+      "Joint Coating & Holiday Testing: Heat shrink sleeves, field polyurethane coating, and spark testing.",
+      "Lowering-in & Backfill: Side-boom handling, padding, and controlled trench backfilling.",
+      "Caliper Pigging & Hydrotest: Baseline geometry verification and strength testing."
+    ],
+    requirements: "Approved route alignments, environmental safety permits, welder qualifications, and cathodic protection tie-in.",
+    applications: "Cross-country crude oil transmission, natural gas trunklines, infield flowlines, and water pipelines."
+  },
+  {
+    id: "service-08",
+    num: "08",
+    title: "Oil & Gas Construction",
+    img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+    overview: "Turnkey plant construction activities supporting upstream extraction, midstream pumping and compression, and downstream processing facility upgrades.",
+    scopes: [
+      "Turnkey Multidisciplinary Civil & Mechanical: Integrated execution across disciplines.",
+      "Modular Skid Installation: Metering skids, chemical injection skids, and separator packages.",
+      "Tie-In Execution: Live plant interconnects during planned operational windows.",
+      "Mechanical Completion Packages: Punch-list closure, system sign-offs, and as-built turnover.",
+      "HSE & Permit Governance: Rigorous compliance with operator safety charters and environmental rules."
+    ],
+    requirements: "Multidisciplinary schedule coordination, SIMOPS (simultaneous operations) planning, and site safety leadership.",
+    applications: "Wellhead facilities, gas compression stations, crude stabilization units, and refinery modernizations."
+  },
+  {
+    id: "service-09",
+    num: "09",
+    title: "Welding Habitat Solutions",
+    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+    overview: "Pressurized welding habitats create a secure, controlled positive-pressure enclosure that prevents explosive hydrocarbon gas ingress, enabling hot work to proceed safely without shutting down adjacent live process equipment.",
+    scopes: [
+      "Habitat Enclosure Configuration: Fire-retardant modular panels engineered to site geometries.",
+      "Positive-Pressure Air Management: Flame-proof ventilation fans delivering continuous outward pressure.",
+      "Atmospheric Gas Monitoring: Continuous internal/external gas detection linked to auto-fail shutdown dampers.",
+      "Electrical & Lighting: Hazardous-area certified lighting, sockets, and emergency alarms.",
+      "Hot-Work Containment: Spark-containment floors, airlocks, and certified welding tarpaulins."
+    ],
+    requirements: "Hazardous-area Zone 1 / Zone 2 engineering assessment, certified fan/damper assemblies, and operator permit approvals.",
+    applications: "Live offshore platforms, active refinery pipe racks, gas processing terminals, and FPSOs."
+  }
+];
+---
+
+<Layout 
+  title="Industrial Contracting Services | Petrastream Contracting LLC"
+  description="Explore the complete 9 industrial contracting services provided by Petrastream Contracting LLC: Maintenance, Turnaround, Commissioning, Piping, Mechanical Erection, and Welding Habitats."
+  canonical="https://petrastream.ae/services"
+>
+  <Header activePage="services" />
+
+  <main>
+    <!-- Section 1: Services Hero Banner -->
+    <section class="subpage-hero">
+      <div class="subpage-hero-bg" style={`background-image: url('${imageConfig.servicesImage.url}');`}></div>
+      <div class="subpage-hero-scrim"></div>
+      <div class="content-frame">
+        <div class="subpage-hero-content">
+          <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span aria-hidden="true">/</span>
+            <span>Services</span>
+          </nav>
+          <div class="section-kicker-light">INDUSTRIAL CONTRACTING SERVICES</div>
+          <h1 class="subpage-hero-title">Industrial Contracting & Engineering Services</h1>
+          <p class="subpage-hero-lead">
+            Petrastream Contracting LLC provides industrial contracting services covering maintenance, shutdown and turnaround, commissioning, electrical and instrumentation, civil and structural works, mechanical erection, piping and pipeline construction. Each work scope is considered in relation to client technical specifications, site conditions and contractual requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Introduction -->
+    <section class="section-block section-cream">
+      <div class="content-frame">
+        <div style="max-width:880px;">
+          <div class="section-kicker">OUR SERVICE CAPABILITIES</div>
+          <h2 class="section-heading-lg">Industrial Services for Plant Operations & Project Requirements</h2>
+          <p class="section-desc-readable" style="margin-bottom:1.25rem;">
+            Industrial facilities require a range of coordinated activities to support plant operations, equipment installation, maintenance and project development. These activities involve different technical disciplines, each with its own work requirements, site conditions and applicable procedures.
+          </p>
+          <p class="section-desc-readable">
+            Our approach begins with an understanding of the required scope, technical documentation and project conditions. Work activities are then defined and coordinated in accordance with agreed responsibilities, approved specifications and applicable site safety requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Our Industrial Services (9 Comprehensive Service Blocks) -->
+    <section class="section-block section-white" id="all-services">
+      <div class="content-frame">
+        <div style="display:flex; flex-direction:column; gap:4.5rem;">
+          {allServices.map((service, index) => (
+            <article 
+              id={service.id} 
+              class={`service-detail-row ${index % 2 !== 0 ? 'reverse' : ''}`}
+            >
+              <!-- Photo -->
+              <div class="service-photo-col" style="position:relative; overflow:hidden; border-radius:2px; border:1px solid var(--border); box-shadow:0 8px 24px rgba(20,43,70,0.06);">
+                <img 
+                  src={service.img} 
+                  alt={service.title} 
+                  style="width:100%; height:320px; object-fit:cover; display:block;" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+                <div style="position:absolute; top:1rem; right:1rem; background:var(--navy); color:var(--orange); font-family:'Manrope',sans-serif; font-size:1.1rem; font-weight:800; padding:0.4rem 0.9rem; border-left:3px solid var(--orange);">
+                  {service.num}
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="service-content-col" style="display:flex; flex-direction:column; gap:1rem;">
+                <span style="font-size:0.85rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.06em;">SERVICE {service.num}</span>
+                <h2 style="font-family:'Manrope',sans-serif; font-size:clamp(1.5rem, 2.3vw, 2rem); font-weight:750; color:var(--navy); line-height:1.25; margin:0;">
+                  {service.title}
+                </h2>
+                <p style="font-size:1.05rem; line-height:1.68; color:var(--slate); margin:0;">
+                  {service.overview}
+                </p>
+
+                <!-- Scope of Services -->
+                <div style="background:var(--cream); padding:1.25rem 1.5rem; border-radius:2px; margin-top:0.5rem; border-left:3px solid var(--orange);">
+                  <h3 style="font-size:1rem; font-weight:750; color:var(--navy); margin-bottom:0.75rem; text-transform:uppercase; letter-spacing:0.04em;">Scope of Services</h3>
+                  <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.4rem;">
+                    {service.scopes.map((scope) => (
+                      <li style="font-size:0.92rem; color:var(--slate); line-height:1.5; display:flex; align-items:flex-start; gap:0.5rem;">
+                        <span style="color:var(--orange); font-weight:700;">•</span>
+                        <span>{scope}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <!-- Typical Requirements & Applications -->
+                <div style="display:grid; grid-template-columns:1fr; gap:0.6rem; font-size:0.9rem; color:var(--slate-muted); margin-top:0.25rem;">
+                  <p style="margin:0;"><strong style="color:var(--navy);">Technical Requirements:</strong> {service.requirements}</p>
+                  <p style="margin:0;"><strong style="color:var(--navy);">Industrial Applications:</strong> {service.applications}</p>
+                </div>
+
+                <!-- Link to Dedicated Service Subpage -->
+                <div style="margin-top:0.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+                  <a 
+                    href={`/services/${service.id === 'service-01' ? 'maintenance-shutdown-turnaround' : service.id === 'service-02' ? 'pre-commissioning-commissioning' : service.id === 'service-03' ? 'electrical-instrumentation' : service.id === 'service-04' ? 'civil-structural-works' : service.id === 'service-05' ? 'mechanical-erection' : service.id === 'service-06' ? 'process-plant-piping' : service.id === 'service-07' ? 'pipeline-construction' : service.id === 'service-08' ? 'oil-gas-plant-construction' : 'welding-habitats'}`} 
+                    class="btn-orange-solid" 
+                    style="padding:0.65rem 1.35rem; font-size:0.92rem;"
+                  >
+                    <span>View Dedicated Service Page →</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Service Coordination & Execution Approach -->
+    <section class="section-block section-cream" id="execution-approach">
+      <div class="content-frame">
+        <div class="section-title-wrap">
+          <div class="section-label-chip">
+            <span class="label-dot"></span>
+            <span>EXECUTION METHODOLOGY</span>
+          </div>
+          <h2 class="section-h2">Planning, Coordination & Service Execution</h2>
+          <p class="section-lead-p">
+            Industrial contracting activities require coordination between technical requirements, site conditions, work procedures and project schedules. Each service scope must be reviewed before the commencement of work to establish the applicable responsibilities and execution requirements.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-row">
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">01</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 1</span>
+                <h3 class="timeline-title">Review of Requirements</h3>
+                <p class="timeline-desc">Review client enquiry, drawings, specifications, and scope of work.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">02</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 2</span>
+                <h3 class="timeline-title">Technical & Site Assessment</h3>
+                <p class="timeline-desc">Evaluate site conditions, equipment requirements, discipline interfaces, and HSE procedures.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">03</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 3</span>
+                <h3 class="timeline-title">Work Planning & Coordination</h3>
+                <p class="timeline-desc">Establish resource scheduling, work packs, materials, and safety controls.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">04</span><div class="timeline-connector-line"></div></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 4</span>
+                <h3 class="timeline-title">Service Execution</h3>
+                <p class="timeline-desc">Carry out field activities in accordance with approved procedures and client milestones.</p>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-marker"><span class="timeline-step-num">05</span></div>
+              <div class="timeline-card">
+                <span class="timeline-phase-tag">STAGE 5</span>
+                <h3 class="timeline-title">Inspection & Completion</h3>
+                <p class="timeline-desc">Coordinate punch-list closure, QA/QC documentation dossiers, and handover packages.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Final Enquiry Section -->
+    <section class="section-block theme-dark cta-section" id="service-enquiries">
+      <div class="content-frame">
+        <div style="text-align:center; max-width:820px; margin:0 auto;">
+          <span class="section-label-chip-light"><span class="label-dot-orange"></span><span>SERVICE ENQUIRIES</span></span>
+          <h2 class="cta-h2" style="margin-top:1rem;">Discuss Your Industrial Contracting Requirements</h2>
+          <p class="cta-lead-p" style="margin:1rem auto 2rem;">
+            Petrastream Contracting LLC welcomes enquiries relating to industrial maintenance, shutdown and turnaround, commissioning, electrical and instrumentation, civil and structural works, mechanical erection, piping, pipeline construction and specialized welding habitat solutions.
+          </p>
+          <div style="display:flex; justify-content:center;">
+            <a href="/contact-us" class="btn-orange-solid" style="padding:1rem 2.25rem; font-size:1.1rem;">
+              <span>Submit a Service Enquiry →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <Modals />
+</Layout>
+

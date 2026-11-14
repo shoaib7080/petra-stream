@@ -1,0 +1,69 @@
+---
+// Products.astro - Section 06: Specialized Industrial Products & Equipment (17 Products)
+const products = [
+  { name: "Hot Tapping Equipment", category: "Pipeline & Flow", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", desc: "Live pipeline connection solutions without shutdown." },
+  { name: "Industrial Flushing Units", category: "Maintenance Skids", img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80", desc: "High-velocity lubrication and hydraulic flushing packages." },
+  { name: "Hydro Jetting Equipment", category: "Cleaning Systems", img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80", desc: "High-pressure 500 to 1400+ bar surface cleaning systems." },
+  { name: "Industrial Valves", category: "Flow Control", img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80", desc: "Gate, Globe, Ball, Check & Control valves to ASME/API." },
+  { name: "Orifice Flanges", category: "Piping Components", img: "https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=600&q=80", desc: "Differential-pressure flow measurement assemblies." },
+  { name: "Flow Transmitters", category: "Instrumentation", img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80", desc: "Electromagnetic, Coriolis and ultrasonic flow measurement." },
+  { name: "Wireless Corrosion Sensors", category: "Monitoring", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80", desc: "Non-intrusive asset metal-loss monitoring probes." },
+  { name: "Fire Tarpaulins", category: "Safety Solutions", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80", desc: "Certified silica and fiberglass hot-work spark blankets." },
+  { name: "Flange Management & Bolting Tools", category: "Bolting", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80", desc: "Hydraulic torque wrenches and bolt tensioning packages." },
+  { name: "HVAC Systems", category: "Climate Control", img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80", desc: "Explosion-proof air handling and industrial chillers." },
+  { name: "Pressurised Habitats", category: "Safety Enclosures", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", desc: "Positive-pressure hot-work enclosures with auto-shutdown." },
+  { name: "TGR / Blast-Proof / E-House", category: "Modular Buildings", img: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80", desc: "Engineered blast-resistant electrical substations." },
+  { name: "Specialized Containers & Accommodation", category: "Containers", img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80", desc: "DNV 2.7-1 certified offshore containers & living modules." },
+  { name: "COSASCO Fittings", category: "Corrosion Fittings", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80", desc: "High-pressure mechanical access fittings and probes." },
+  { name: "RO & STP Water Treatment", category: "Water Treatment", img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80", desc: "Containerized Reverse Osmosis and sewage treatment packages." },
+  { name: "Robotics Solutions", category: "Industrial Robotics", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80", desc: "Pipeline crawlers and remote CCTV inspection systems." },
+  { name: "Industrial Automation", category: "Automation & SCADA", img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80", desc: "PLC control panels and SCADA integration solutions." }
+];
+---
+
+<section class="section-block section-white" id="products">
+  <div class="content-frame">
+    <div style="max-width:880px; margin-bottom:3.5rem;">
+      <div class="section-kicker">OUR PRODUCT PORTFOLIO</div>
+      <h2 class="section-heading-lg">Specialized Industrial Products & Equipment</h2>
+      <p class="section-desc-readable">
+        We offer a diverse portfolio of specialized industrial products and equipment to support operational, maintenance and project requirements across various industrial applications. Our range includes pipeline and flow equipment, cleaning systems, safety solutions, modular systems and advanced industrial technologies.
+      </p>
+    </div>
+
+    <!-- Product Grid (17 Products) -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap:1.75rem;">
+      {products.map((item) => (
+        <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
+          <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
+            <img src={item.img} alt={item.name} style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" />
+            <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">
+              {item.category}
+            </span>
+          </div>
+          <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
+            <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">
+              {item.name}
+            </h4>
+            <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">
+              {item.desc}
+            </p>
+            <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
+              <a href="/products" class="btn-ghost-orange" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; text-decoration:none;">
+                <span>View Product →</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Button -->
+    <div style="text-align:center; margin-top:3.5rem;">
+      <a href="/products" class="btn-navy-outline">
+        <span>Explore All Products →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
