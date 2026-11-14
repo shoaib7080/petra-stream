@@ -20,7 +20,7 @@ export const faqData = [
   {
     id: "faq-4",
     question: "How can our engineering or procurement team submit a Technical RFQ?",
-    answer: "You can submit an RFQ directly using our website enquiry form, by emailing our technical sales desk at info@petrastream.ae, or through the 'Get in Touch' button. Please attach project scopes, material datasheets, or turnaround timelines for prompt review."
+    answer: "You can submit an RFQ directly using our website enquiry form, by emailing our technical sales desk at info@petra-stream.com, or through the 'Get in Touch' button. Please attach project scopes, material datasheets, or turnaround timelines for prompt review."
   },
   {
     id: "faq-5",

@@ -199,17 +199,55 @@ const { service, prevService, nextService } = Astro.props;
       </div>
     </section>
 
-    <!-- Section 5: Previous / Next Navigation Between All 9 Services -->
+    <!-- Section 5: Service Categories Navigator (All 9 Specialized Disciplines) -->
     <section class="section-block section-white" style="border-bottom:1px solid var(--border);">
       <div class="content-frame">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem;">
-          <a href={`/services/${prevService.slug}`} class="btn-navy-outline" style="padding:0.75rem 1.4rem;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1.5rem; margin-bottom:2rem;">
+          <div>
+            <div class="section-kicker">SERVICE CATEGORIES</div>
+            <h2 style="font-family:'Manrope',sans-serif; font-size:clamp(1.5rem, 2.2vw, 2rem); font-weight:750; color:var(--navy); margin:0.35rem 0 0;">
+              Explore All 9 Specialized Engineering Disciplines
+            </h2>
+          </div>
+          <a href="/services" class="btn-navy-outline" style="padding:0.65rem 1.25rem; font-size:0.92rem;">
+            <span>Browse Full Services Directory →</span>
+          </a>
+        </div>
+
+        <!-- 9 Categories Navigation Grid -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem; margin-bottom:2.5rem;">
+          {servicesData.map((item) => {
+            const isCurrent = item.slug === service.slug;
+            return (
+              <a 
+                href={`/services/${item.slug}`} 
+                style={`display:flex; align-items:center; gap:0.9rem; padding:1rem 1.15rem; border-radius:2px; text-decoration:none; transition:all 0.2s ease; border:1.5px solid ${isCurrent ? 'var(--orange)' : 'var(--border)'}; background:${isCurrent ? 'rgba(233,130,53,0.08)' : 'var(--white)'}; box-shadow:${isCurrent ? '0 4px 14px rgba(233,130,53,0.15)' : 'none'};`}
+              >
+                <div style={`width:36px; height:36px; display:flex; align-items:center; justify-content:center; font-family:'Manrope',sans-serif; font-weight:800; font-size:0.85rem; border-radius:2px; flex-shrink:0; background:${isCurrent ? 'var(--orange)' : 'var(--navy)'}; color:${isCurrent ? 'var(--white)' : 'var(--cream)'};`}>
+                  {item.num}
+                </div>
+                <div style="flex:1; min-width:0;">
+                  <span style={`display:block; font-size:0.92rem; font-weight:700; line-height:1.35; color:${isCurrent ? 'var(--orange)' : 'var(--navy)'};`}>
+                    {item.title}
+                  </span>
+                  {isCurrent && (
+                    <span style="display:inline-block; font-size:0.72rem; font-weight:750; color:var(--orange); text-transform:uppercase; letter-spacing:0.05em; margin-top:0.2rem;">
+                      ● Currently Viewing
+                    </span>
+                  )}
+                </div>
+                <svg width="16" height="16" fill="none" stroke={isCurrent ? "var(--orange)" : "var(--slate-muted)"} stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+              </a>
+            );
+          })}
+        </div>
+
+        <!-- Previous / Next Pagination Row -->
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.25rem; padding-top:1.5rem; border-top:1px solid var(--border);">
+          <a href={`/services/${prevService.slug}`} class="btn-navy-outline" style="padding:0.75rem 1.35rem; font-size:0.92rem;">
             <span>← Previous: {prevService.title}</span>
           </a>
-          <a href="/services" style="color:var(--orange); font-weight:700; font-size:1rem; text-decoration:none;">
-            View All 9 Services
-          </a>
-          <a href={`/services/${nextService.slug}`} class="btn-navy-outline" style="padding:0.75rem 1.4rem;">
+          <a href={`/services/${nextService.slug}`} class="btn-orange-solid" style="padding:0.75rem 1.35rem; font-size:0.92rem;">
             <span>Next: {nextService.title} →</span>
           </a>
         </div>
@@ -235,7 +273,7 @@ const { service, prevService, nextService } = Astro.props;
               </div>
               <div>
                 <span class="contact-meta-label">Technical RFQ Submissions</span>
-                <p class="contact-meta-val"><a href="mailto:info@petrastream.ae" class="contact-meta-link">info@petrastream.ae</a></p>
+                <p class="contact-meta-val"><a href="mailto:info@petra-stream.com" class="contact-meta-link">info@petra-stream.com</a></p>
               </div>
             </div>
             <div class="contact-meta-card" style="margin-top:1rem;">

@@ -12,10 +12,11 @@ export const siteConfig = {
   country: "United Arab Emirates",
   businessModel: "B2B",
 
-  // Clear, non-fictional editable contact placeholders
+  // Official contact information
   contact: {
-    addressPlaceholder: "Abu Dhabi / Dubai, United Arab Emirates [Official Address Placeholder]",
-    emailPlaceholder: "info@petrastream.ae",
+    addressPlaceholder: "Abu Dhabi / Dubai, United Arab Emirates",
+    emailPlaceholder: "info@petra-stream.com",
+    email: "info@petra-stream.com",
     phonePlaceholder: "+971 [Phone Number Placeholder]",
     workingHours: "Monday – Friday: 08:00 – 17:00 (GST)",
     responseCommitment: "Technical responses within 24 business hours"
