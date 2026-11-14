@@ -345,6 +345,17 @@ const industriesDetail = [
                   </ul>
                 </div>
               </div>
+
+              <!-- Link to Dedicated Subpage -->
+              <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border); display:flex; justify-content:flex-end;">
+                <a 
+                  href={`/industries/${ind.id === 'ind-oilgas' ? 'oil-and-gas' : ind.id === 'ind-petrochem' ? 'petrochemical-and-chemical' : ind.id === 'ind-energy' ? 'energy-and-power-generation' : ind.id === 'ind-mfg' ? 'industrial-manufacturing' : ind.id === 'ind-water' ? 'water-and-utilities' : 'infrastructure-and-construction'}`} 
+                  class="btn-orange-solid"
+                  style="padding:0.65rem 1.35rem; font-size:0.92rem;"
+                >
+                  <span>Explore {ind.name} Dedicated Page →</span>
+                </a>
+              </div>
             </article>
           ))}
         </div>
