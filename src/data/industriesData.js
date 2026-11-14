@@ -269,3 +269,4 @@ export const industriesData = [
 ];
 
 export default industriesData;
+
