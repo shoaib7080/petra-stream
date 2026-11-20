@@ -1,12 +1,38 @@
 ---
-// Hero.astro - Full-width industrial hero section with dark navy overlay per blueprint
+// Hero.astro - Full-width industrial hero section with cycling background videos and primary color gradient overlay
 import { imageConfig } from '../config/imageConfig.js';
 ---
 
 <section class="hero-industrial-bold" id="hero" style="min-height: 620px;">
-  <!-- Single high-quality industrial background image with dark navy transparent overlay -->
-  <div class="hero-oilgas-img" style={`background-image: url('${imageConfig.heroImage.url}');`} role="img" aria-label={imageConfig.heroImage.alt}></div>
+  <!-- Background Media: 2 cycling industrial 4K videos with fallback poster image -->
+  <div class="hero-media-wrapper" aria-hidden="true">
+    <div class="hero-oilgas-img" style={`background-image: url('${imageConfig.heroImage.url}');`} role="img" aria-label={imageConfig.heroImage.alt}></div>
+    
+    <video
+      id="hero-video-1"
+      class="hero-bg-video is-active"
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="/assets/vids/10386901-hd_3840_2160_30fps.mp4" type="video/mp4" />
+    </video>
+
+    <video
+      id="hero-video-2"
+      class="hero-bg-video"
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="/assets/vids/12891229-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- Primary Colour Gradient Overlay: Denser on left for text readability, transitioning so video is more visible on the right -->
   <div class="hero-scrim-dark"></div>
+  <div class="hero-scrim-vignette"></div>
 
   <div class="content-frame">
     <div class="hero-text-container" style="max-width: 980px;">
@@ -32,3 +58,85 @@ import { imageConfig } from '../config/imageConfig.js';
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function initHeroCyclingVideos() {
+    const v1 = document.getElementById('hero-video-1');
+    const v2 = document.getElementById('hero-video-2');
+    if (!v1 || !v2) return;
+
+    let activeVideo = v1;
+    let nextVideo = v2;
+    let isTransitioning = false;
+
+    v1.muted = true;
+    v2.muted = true;
+
+    function safePlay(v) {
+      if (!v) return;
+      v.muted = true;
+      const p = v.play();
+      if (p !== undefined) {
+        p.catch(() => {});
+      }
+    }
+
+    function transitionToNext() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      nextVideo.currentTime = 0;
+      nextVideo.muted = true;
+      const playPromise = nextVideo.play();
+
+      const performSwitch = () => {
+        nextVideo.classList.add('is-active');
+        activeVideo.classList.remove('is-active');
+
+        setTimeout(() => {
+          activeVideo.pause();
+          activeVideo.currentTime = 0;
+          const temp = activeVideo;
+          activeVideo = nextVideo;
+          nextVideo = temp;
+          isTransitioning = false;
+        }, 1200);
+      };
+
+      if (playPromise !== undefined) {
+        playPromise.then(performSwitch).catch(() => {
+          isTransitioning = false;
+          safePlay(activeVideo);
+        });
+      } else {
+        performSwitch();
+      }
+    }
+
+    function checkVideoProgress(e) {
+      const vid = e.target;
+      if (vid === activeVideo && vid.duration && (vid.duration - vid.currentTime <= 1.2)) {
+        transitionToNext();
+      }
+    }
+
+    v1.addEventListener('timeupdate', checkVideoProgress);
+    v2.addEventListener('timeupdate', checkVideoProgress);
+    v1.addEventListener('ended', transitionToNext);
+    v2.addEventListener('ended', transitionToNext);
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && activeVideo) {
+        safePlay(activeVideo);
+      }
+    });
+
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v1.pause();
+      v2.pause();
+      return;
+    }
+
+    safePlay(activeVideo);
+  })();
+</script>

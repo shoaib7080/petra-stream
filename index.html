@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://petrastream.ae/" />
   <meta property="og:title" content="Petra Stream | Mechanical Services & Mechanical Products Provider (UAE)" />
   <meta property="og:description" content="Petra Stream is a UAE-based mechanical services and mechanical products provider for the Oil & Gas industry." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:image" content="/assets/img/general/pexels-max-laurell-1958001-10160165.jpg" />
   <meta property="og:site_name" content="Petra Stream" />
 
   <!-- Twitter -->
@@ -24,7 +24,7 @@
   <meta property="twitter:url" content="https://petrastream.ae/" />
   <meta property="twitter:title" content="Petra Stream | Mechanical Services & Mechanical Products Provider (UAE)" />
   <meta property="twitter:description" content="Petra Stream is a UAE-based mechanical services and mechanical products provider for the Oil & Gas industry." />
-  <meta property="twitter:image" content="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="twitter:image" content="/assets/img/general/pexels-max-laurell-1958001-10160165.jpg" />
 
   <!-- Google Fonts: Manrope & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -221,8 +221,17 @@
          SECTION 02: HERO SECTION
          ========================================================================= -->
     <section class="hero-industrial-bold" id="hero">
-      <div class="hero-oilgas-img"></div>
+      <div class="hero-media-wrapper" aria-hidden="true">
+        <div class="hero-oilgas-img"></div>
+        <video id="hero-video-1" class="hero-bg-video is-active" autoplay muted playsinline preload="auto">
+          <source src="/assets/vids/10386901-hd_3840_2160_30fps.mp4" type="video/mp4" />
+        </video>
+        <video id="hero-video-2" class="hero-bg-video" muted playsinline preload="auto">
+          <source src="/assets/vids/12891229-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="hero-scrim-dark"></div>
+      <div class="hero-scrim-vignette"></div>
 
       <div class="content-frame">
         <div class="hero-text-container">
@@ -261,7 +270,7 @@
           <!-- Left Column (45%): Industrial Image -->
           <div class="overview-img-container">
             <img 
-              src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85" 
+              src="/assets/img/general/pexels-sergey-sergeev-2153675005-32845682.jpg" 
               alt="Petrastream Industrial Engineering & Contracting Facility"
               class="overview-featured-photo"
               loading="lazy"
@@ -343,7 +352,7 @@
         <article class="business-showcase-panel">
           <div class="showcase-img-holder">
             <img 
-              src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=85" 
+              src="/assets/img/general/pexels-cmrcn-29224589.jpg" 
               alt="Petrastream Industrial Contracting Services"
               class="showcase-img"
               loading="lazy"
@@ -446,7 +455,7 @@
 
           <div class="showcase-img-holder">
             <img 
-              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85" 
+              src="/assets/img/general/pexels-son-tung-tran-17375059-6454846.jpg" 
               alt="Petrastream Industrial Products & Equipment"
               class="showcase-img"
               loading="lazy"
@@ -579,308 +588,361 @@
     <!-- =========================================================================
          SECTION 06: MECHANICAL PRODUCTS & EQUIPMENT (17 PRODUCTS)
          ========================================================================= -->
-    <section class="section-block section-white" id="products">
+        <section class="section-block section-white" id="products">
       <div class="content-frame">
-        <div class="section-title-wrap">
-          <div class="section-label-chip">
-            <span class="label-dot"></span>
-            <span>CERTIFIED INDUSTRIAL PRODUCTS</span>
-          </div>
-          <h2 class="section-h2">Specialized Products & Equipment</h2>
-          <p class="section-lead-p">
-            Certified industrial components, pipeline intervention systems, corrosion monitoring instrumentation, and modular blast-resistant buildings engineered for demanding environments.
+        <!-- Header -->
+        <div style="max-width:820px; margin-bottom:2.25rem;">
+          <div class="section-kicker">OUR PRODUCT PORTFOLIO</div>
+          <h2 class="section-heading-lg">Specialized Industrial Products & Equipment</h2>
+          <p class="section-desc-readable">
+            We offer a diverse portfolio of specialized industrial products and equipment across two focused tracks. Browse horizontally or use the direction buttons on each track to inspect our complete equipment line.
           </p>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.75rem;">
-          <!-- 01 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Hot Tapping Equipment" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Pipeline & Flow</span>
+        <!-- Two-Row Horizontal Scrollable Product Track -->
+        <div class="products-two-rows-container">
+          <!-- ROW 1: Process, Pipeline, Instrumentation & Safety (Products 1–9) -->
+          <div class="products-row-wrap">
+            <div class="products-row-label">
+              <span class="row-label-dot"></span>
+              <span>Pipeline, Valves, Instrumentation & Tooling (1–9)</span>
             </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Hot Tapping Equipment</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Live pipeline connection solutions without shutdown.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
+            <div class="products-track-row">
+              <button 
+                type="button" 
+                class="products-arrow-btn products-btn-prev" 
+                aria-label="Scroll row 1 backward" 
+                title="Previous products"
+              >
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <div class="products-scroll-track" id="products-track-1" tabindex="0" role="region" aria-label="Products track 1">
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Hot Tapping Equipment" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Pipeline & Flow</span>
               </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Hot Tapping Equipment</h4>
+                <p class="product-card-desc">Live pipeline connection solutions without shutdown.</p>
+                <div class="product-card-footer">
+                  <a href="/products/hot-tapping-equipment" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Industrial Flushing Units" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Maintenance Skids</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Industrial Flushing Units</h4>
+                <p class="product-card-desc">High-velocity lubrication and hydraulic flushing packages.</p>
+                <div class="product-card-footer">
+                  <a href="/products/industrial-flushing-units" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Hydro Jetting Equipment" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Cleaning Systems</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Hydro Jetting Equipment</h4>
+                <p class="product-card-desc">High-pressure 500 to 1400+ bar surface cleaning systems.</p>
+                <div class="product-card-footer">
+                  <a href="/products/hydro-jetting-equipment" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80" alt="Industrial Valves" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Flow Control</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Industrial Valves</h4>
+                <p class="product-card-desc">Gate, Globe, Ball, Check & Control valves to ASME/API.</p>
+                <div class="product-card-footer">
+                  <a href="/products/industrial-valves" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=600&q=80" alt="Orifice Flanges" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Piping Components</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Orifice Flanges</h4>
+                <p class="product-card-desc">Differential-pressure flow measurement assemblies.</p>
+                <div class="product-card-footer">
+                  <a href="/products/orifice-flanges-plates" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="Flow Transmitters" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Instrumentation</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Flow Transmitters</h4>
+                <p class="product-card-desc">Electromagnetic, Coriolis and ultrasonic flow measurement.</p>
+                <div class="product-card-footer">
+                  <a href="/products/flow-transmitters" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Wireless Corrosion Sensors" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Monitoring</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Wireless Corrosion Sensors</h4>
+                <p class="product-card-desc">Non-intrusive asset metal-loss monitoring probes.</p>
+                <div class="product-card-footer">
+                  <a href="/products/wireless-corrosion-sensors" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Fire Tarpaulins" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Safety Solutions</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Fire Tarpaulins</h4>
+                <p class="product-card-desc">Certified silica and fiberglass hot-work spark blankets.</p>
+                <div class="product-card-footer">
+                  <a href="/products/fire-tarpaulin-welding-blankets" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Flange Management & Bolting Tools" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Bolting</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Flange Management & Bolting Tools</h4>
+                <p class="product-card-desc">Hydraulic torque wrenches and bolt tensioning packages.</p>
+                <div class="product-card-footer">
+                  <a href="/products/flange-management-bolting-tools" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
             </div>
+            <button 
+              type="button" 
+              class="products-arrow-btn products-btn-next" 
+              aria-label="Scroll row 1 forward" 
+              title="Next products"
+            >
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
+        </div>
 
-          <!-- 02 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Industrial Flushing Units" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Maintenance Skids</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Industrial Flushing Units</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">High-velocity lubrication and hydraulic flushing packages.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
+        <!-- ROW 2: Modular Systems, Safety Habitats, Water & Automation (Products 10–17) -->
+        <div class="products-row-wrap">
+          <div class="products-row-label">
+            <span class="row-label-dot"></span>
+            <span>Modular Buildings, Habitats, Water & Automation (10–17)</span>
           </div>
+          <div class="products-track-row">
+            <button 
+              type="button" 
+              class="products-arrow-btn products-btn-prev" 
+              aria-label="Scroll row 2 backward" 
+              title="Previous products"
+            >
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div class="products-scroll-track" id="products-track-2" tabindex="0" role="region" aria-label="Products track 2">
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="HVAC Systems" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Climate Control</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">HVAC Systems</h4>
+                <p class="product-card-desc">Explosion-proof air handling and industrial chillers.</p>
+                <div class="product-card-footer">
+                  <a href="/products/hvac-systems-equipment" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Pressurised Habitats" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Safety Enclosures</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Pressurised Habitats</h4>
+                <p class="product-card-desc">Positive-pressure hot-work enclosures with auto-shutdown.</p>
+                <div class="product-card-footer">
+                  <a href="/products/pressurised-welding-habitat" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80" alt="TGR / Blast-Proof / E-House" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Modular Buildings</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">TGR / Blast-Proof / E-House</h4>
+                <p class="product-card-desc">Engineered blast-resistant electrical substations.</p>
+                <div class="product-card-footer">
+                  <a href="/products/blast-resistant-buildings-ehouses" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80" alt="Specialized Containers & Accommodation" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Containers</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Specialized Containers & Accommodation</h4>
+                <p class="product-card-desc">DNV 2.7-1 certified offshore containers & living modules.</p>
+                <div class="product-card-footer">
+                  <a href="/products/specialized-containers-accommodation" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="COSASCO Fittings" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Corrosion Fittings</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">COSASCO Fittings</h4>
+                <p class="product-card-desc">High-pressure mechanical access fittings and probes.</p>
+                <div class="product-card-footer">
+                  <a href="/products/cosasco-fittings-accessories" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="RO & STP Water Treatment" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Water Treatment</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">RO & STP Water Treatment</h4>
+                <p class="product-card-desc">Containerized Reverse Osmosis and sewage treatment packages.</p>
+                <div class="product-card-footer">
+                  <a href="/products/ro-stp-water-treatment" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Robotics Solutions" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Industrial Robotics</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Robotics Solutions</h4>
+                <p class="product-card-desc">Pipeline crawlers and remote CCTV inspection systems.</p>
+                <div class="product-card-footer">
+                  <a href="/products/robotics-solutions" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <article class="product-row-card">
+              <div class="product-card-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="Industrial Automation" class="product-card-img" loading="lazy" />
+                <span class="product-card-category-badge">Automation & SCADA</span>
+              </div>
+              <div class="product-card-body">
+                <h4 class="product-card-title">Industrial Automation</h4>
+                <p class="product-card-desc">PLC control panels and SCADA integration solutions.</p>
+                <div class="product-card-footer">
+                  <a href="/products/industrial-automation-solutions" class="product-card-link">
+                    <span>View Product Details</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            </div>
+            <button 
+              type="button" 
+              class="products-arrow-btn products-btn-next" 
+              aria-label="Scroll row 2 forward" 
+              title="Next products"
+            >
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
 
-          <!-- 03 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="Hydro Jetting Equipment" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Cleaning Systems</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Hydro Jetting Equipment</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">High-pressure 500 to 1400+ bar surface cleaning systems.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 04 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80" alt="Industrial Valves" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Flow Control</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Industrial Valves</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Gate, Globe, Ball, Check & Control valves to ASME/API.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 05 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=600&q=80" alt="Orifice Flanges" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Piping Components</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Orifice Flanges</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Differential-pressure flow measurement assemblies.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 06 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="Flow Transmitters" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Instrumentation</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Flow Transmitters</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Electromagnetic, Coriolis and ultrasonic flow measurement.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 07 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Wireless Corrosion Sensors" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Monitoring</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Wireless Corrosion Sensors</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Non-intrusive asset metal-loss monitoring probes.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 08 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" alt="Fire Tarpaulins" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Safety Solutions</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Fire Tarpaulins</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Certified silica and fiberglass hot-work spark blankets.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 09 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Flange Management & Bolting Tools" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Bolting</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Flange Management & Bolting Tools</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Hydraulic torque wrenches and bolt tensioning packages.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 10 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="HVAC Systems" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Climate Control</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">HVAC Systems</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Explosion-proof air handling and industrial chillers.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 11 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80" alt="Pressurised Habitats" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Safety Enclosures</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Pressurised Habitats</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Positive-pressure hot-work enclosures with auto-shutdown.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 12 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80" alt="TGR / Blast-Proof / E-House" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Modular Buildings</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">TGR / Blast-Proof / E-House</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Engineered blast-resistant electrical substations.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 13 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80" alt="Specialized Containers & Accommodation" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Containers</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Specialized Containers & Accommodation</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">DNV 2.7-1 certified offshore containers & living modules.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 14 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="COSASCO Fittings" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Corrosion Fittings</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">COSASCO Fittings</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">High-pressure mechanical access fittings and probes.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 15 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80" alt="RO & STP Water Treatment" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Water Treatment</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">RO & STP Water Treatment</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Containerized Reverse Osmosis and sewage treatment packages.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 16 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Robotics Solutions" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Industrial Robotics</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Robotics Solutions</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">Pipeline crawlers and remote CCTV inspection systems.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 17 -->
-          <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-            <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-              <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80" alt="Industrial Automation" style="width:100%; height:100%; object-fit:cover;" />
-              <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">Automation & SCADA</span>
-            </div>
-            <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-              <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">Industrial Automation</h4>
-              <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">PLC control panels and SCADA integration solutions.</p>
-              <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-                <button type="button" class="btn-ghost-orange" data-open-modal="rfq" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; background:none; border:none; cursor:pointer;">
-                  <span>View Product →</span>
-                </button>
-              </div>
-            </div>
-          </div>
+        <!-- Bottom Button -->
+        <div style="text-align:center; margin-top:3.5rem;">
+          <a href="/products" class="btn-navy-outline">
+            <span>Explore All 17 Products & Technical Specs &rarr;</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1160,7 +1222,7 @@
       <div class="content-frame">
         <div class="section-title-wrap">
           <div class="section-label-chip">
-            <span class="label-dot"></span>
+            <!-- <span class="label-dot"></span> -->
             <span>FREQUENTLY ASKED QUESTIONS</span>
           </div>
           <h2 class="section-h2">Questions & Technical Clarifications</h2>

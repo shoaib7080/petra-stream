@@ -8,7 +8,7 @@ export const industriesData = [
     name: "Oil & Gas Industry",
     title: "Oil & Gas Industry",
     tagline: "Industrial Contracting & Equipment Solutions for Oil & Gas Operations",
-    img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=85",
+    img: "/assets/img/general/pexels-anoop1992-5987842.jpg",
     desc: "The Oil & Gas industry requires specialized industrial services, reliable equipment and coordinated execution across upstream, midstream and downstream operations. Petrastream aims to support project and operational requirements through industrial contracting services, equipment coordination and specialized product solutions.",
     challenges: "Operations in upstream exploration, offshore platforms, pipeline transmission, and downstream refining face severe operating conditions including extreme pressures, high temperatures, sour gas (H2S), and stringent zero-flame permit-to-work safety regimes. Unplanned downtime costs millions, making scheduled turnaround execution and asset integrity paramount.",
     technicalStandards: [
@@ -56,7 +56,7 @@ export const industriesData = [
     name: "Petrochemical & Chemical Industry",
     title: "Petrochemical & Chemical Industry",
     tagline: "Supporting Complex Process Facilities & Chemical Operations",
-    img: "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1400&q=85",
+    img: "/assets/img/general/pexels-ian-panelo-38601958.jpg",
     desc: "Petrochemical and chemical facilities require equipment and services that are suitable for specific process conditions, fluid characteristics, operating pressures and temperatures. Petrastream's industrial services and product portfolio are intended to support maintenance, equipment installation, piping systems and selected process-related requirements.",
     challenges: "Chemical synthesis, polymer production, and cracking units handle highly corrosive media, aggressive solvents, and hazardous hydrocarbons. Maintaining mechanical seal reliability, joint tightness, emission containment, and alloy material metallurgy is critical for preventing loss of containment and ensuring environmental compliance.",
     technicalStandards: [
@@ -101,7 +101,7 @@ export const industriesData = [
     name: "Energy & Power Generation",
     title: "Energy & Power Generation",
     tagline: "Industrial Support for Power Generation & Energy Facilities",
-    img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=85",
+    img: "/assets/img/general/pexels-ugomon82-37703372.jpg",
     desc: "Power generation and energy facilities depend on reliable mechanical, electrical, instrumentation and utility systems. Planned maintenance, equipment installation and commissioning activities are important for maintaining plant performance and operational reliability. Petrastream aims to support energy-related projects through industrial contracting and equipment supply coordination.",
     challenges: "Combined cycle gas turbine plants, co-generation units, and substations operate under high thermal stress, cyclic peak-load demands, and continuous high-voltage requirements. Reliable steam piping, cooling water circuits, and automated switchgear are critical to ensure continuous electrical supply to industrial grids.",
     technicalStandards: [
@@ -143,7 +143,7 @@ export const industriesData = [
     name: "Industrial Manufacturing",
     title: "Industrial Manufacturing",
     tagline: "Supporting Industrial Facilities, Equipment & Production Infrastructure",
-    img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=85",
+    img: "/assets/img/general/pexels-sergey-sergeev-2153675005-32845682.jpg",
     desc: "Manufacturing facilities require dependable equipment, utility systems and maintenance support to keep production operations functioning effectively. Petrastream's contracting and product solutions can support selected requirements associated with industrial machinery, equipment installation, plant maintenance and automation.",
     challenges: "Heavy manufacturing, metals production, and processing factories require continuous material handling, structural durability, consistent pneumatic/hydraulic power, and automated robotic process controls with minimal equipment downtime.",
     technicalStandards: [
@@ -186,7 +186,7 @@ export const industriesData = [
     name: "Water & Utilities",
     title: "Water & Utilities",
     tagline: "Water Treatment, Utility Infrastructure & Process Support",
-    img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=85",
+    img: "/assets/img/general/pexels-arda-kaykisiz-672105204-37479298.jpg",
     desc: "Water treatment and utility facilities require suitable process equipment, pumping systems, instrumentation and control solutions to support water production, distribution and wastewater treatment operations. Petrastream's product portfolio includes selected water treatment and industrial equipment solutions for utility-related applications.",
     challenges: "Desalination facilities, municipal wastewater plants, and industrial utility grids encounter scaling, biological fouling, high-salinity brine corrosion, and rigorous potable water purity regulations requiring continuous chlorination, filtration, and flow monitoring.",
     technicalStandards: [
@@ -229,7 +229,7 @@ export const industriesData = [
     name: "Infrastructure & Construction",
     title: "Infrastructure & Construction",
     tagline: "Industrial Construction, Mechanical Works & Infrastructure Support",
-    img: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1400&q=85",
+    img: "/assets/img/general/pexels-jan-rune-smenes-reite-221584-3192662.jpg",
     desc: "Infrastructure and construction projects involve coordinated civil, structural, mechanical, electrical and utility-related activities. Petrastream aims to support relevant project requirements through its contracting services and specialized product supply capabilities.",
     challenges: "Large-scale industrial construction demands tight coordination between multiple engineering trades, heavy structural load management, extreme desert ambient temperatures, fast-track mobilization, and strict adherence to structural safety standards.",
     technicalStandards: [

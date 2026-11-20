@@ -4,7 +4,7 @@ export const servicesData = [
     "num": "01",
     "slug": "maintenance-shutdown-turnaround",
     "title": "Maintenance, Shutdown & Turnaround",
-    "img": "https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-hoang-nc-483165236-15947586.jpg",
     "overview": "Industrial plant maintenance and shutdown activities are essential for maintaining equipment condition, addressing operational issues and carrying out planned inspection, repair and replacement work. Petrastream's Maintenance, Shutdown & Turnaround service covers industrial maintenance requirements associated with plant equipment, piping systems and related mechanical installations. The scope of work is determined according to the facility's maintenance plan, equipment condition, operational requirements and client-approved work procedures. Shutdown and turnaround activities involve coordinated work within a defined plant outage period. These activities require proper planning of work sequences, equipment access, materials, personnel and site interfaces to support completion within the agreed schedule.",
     "scopes": [
       "Planned Maintenance: Maintenance activities for industrial equipment and associated installations in accordance with approved maintenance requirements.",
@@ -23,7 +23,7 @@ export const servicesData = [
     "num": "02",
     "slug": "pre-commissioning-commissioning",
     "title": "Pre-Commissioning & Commissioning",
-    "img": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-hoang-nc-483165236-15947587.jpg",
     "overview": "Pre-commissioning and commissioning are important stages between the completion of construction and the introduction of a system into operation. These activities are carried out to verify the condition, functionality and readiness of equipment, piping systems and associated installations. Petrastream's Pre-Commissioning & Commissioning service covers activities associated with preparing industrial systems for operational handover. The required scope depends on the type of facility, system design, approved commissioning procedures and client specifications. Pre-commissioning generally involves checks and tests performed before the system is placed into operation. Commissioning involves the subsequent verification of system functionality under the specified operating conditions and the coordination of activities leading towards operational readiness.",
     "scopes": [
       "System Preparation: Review of mechanical completion status, system boundaries and applicable pre-commissioning documentation.",
@@ -45,7 +45,7 @@ export const servicesData = [
     "num": "03",
     "slug": "electrical-instrumentation",
     "title": "Electrical & Instrumentation",
-    "img": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-sergey-sergeev-2153675005-32845670.jpg",
     "overview": "Electrical and instrumentation systems form an essential part of industrial facilities, supporting power distribution, equipment operation, process measurement, monitoring and control. Petrastream's Electrical & Instrumentation service covers relevant installation and associated work requirements for industrial electrical and instrumentation systems. The work scope is determined by project drawings, equipment specifications, cable schedules, instrument data sheets and approved installation procedures. Electrical and instrumentation activities require coordination with civil, structural, mechanical and piping disciplines to ensure that installations are carried out in accordance with the project design and site requirements.",
     "scopes": [
       "Electrical Installation: Installation-related activities for specified electrical equipment and associated components.",
@@ -66,7 +66,7 @@ export const servicesData = [
     "num": "04",
     "slug": "civil-structural-works",
     "title": "Civil & Structural Works",
-    "img": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-mike-van-schoonderwalt-1884800-5503874.jpg",
     "overview": "Civil and structural works form part of the infrastructure required for industrial facilities, equipment installations and associated construction activities. Petrastream's Civil & Structural Works service covers relevant civil construction and structural installation requirements within industrial project environments. The work scope is established according to approved engineering drawings, construction specifications, site conditions and project requirements. Civil and structural activities require coordination with other project disciplines to ensure that foundations, supports, access structures and associated works are completed in accordance with the approved design and construction sequence.",
     "scopes": [
       "Site Preparation: Site preparation and associated civil activities within the approved construction scope.",
@@ -87,7 +87,7 @@ export const servicesData = [
     "num": "05",
     "slug": "mechanical-erection",
     "title": "Mechanical Erection",
-    "img": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-cmrcn-29224595.jpg",
     "overview": "Mechanical erection involves the installation and assembly of industrial equipment and mechanical systems in accordance with approved engineering documentation and equipment manufacturer's requirements. Petrastream's Mechanical Erection service covers installation-related activities for specified mechanical equipment and associated components within industrial project environments. The scope may include equipment positioning, assembly, alignment-related work and coordination with connected piping, structural and electrical systems. Mechanical erection activities require proper planning of lifting arrangements, equipment access, foundation readiness, installation sequence and applicable inspection requirements.",
     "scopes": [
       "Equipment Receiving & Inspection: Review of delivered equipment and identification of visible transportation or handling-related issues.",
@@ -109,7 +109,7 @@ export const servicesData = [
     "num": "06",
     "slug": "process-plant-piping",
     "title": "Process & Plant Piping",
-    "img": "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-gryziu-30885665.jpg",
     "overview": "Process and plant piping systems are used to transport fluids, gases and utilities between equipment and different sections of an industrial facility. Their installation requires accurate coordination of piping materials, routing, supports, connections and associated components. Petrastream's Process & Plant Piping service covers piping installation requirements within industrial facilities. Work activities are determined according to approved piping isometric drawings, line lists, piping specifications, material requirements and applicable project procedures. The service scope may include pipe installation, fitting and welding coordination, support installation, valve integration and preparation for inspection and testing.",
     "scopes": [
       "Piping Material Handling: Handling, identification and arrangement of specified piping materials and components.",
@@ -131,7 +131,7 @@ export const servicesData = [
     "num": "07",
     "slug": "pipeline-construction",
     "title": "Pipeline Construction",
-    "img": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-paul-oor-281880-38404249.jpg",
     "overview": "Pipeline construction involves a sequence of activities associated with the installation of pipelines for the transportation of fluids and gases. These activities require coordination of engineering documentation, materials, construction equipment, field operations and inspection requirements. Petrastream's Pipeline Construction service covers relevant pipeline installation and construction work scopes according to project specifications and approved construction procedures. Pipeline work is planned in relation to the pipeline route, ground conditions, pipe dimensions, installation methodology, environmental requirements and the interfaces between different construction activities.",
     "scopes": [
       "Route & Site Preparation: Site preparation activities associated with the approved pipeline construction route.",
@@ -153,7 +153,7 @@ export const servicesData = [
     "num": "08",
     "slug": "oil-gas-plant-construction",
     "title": "Oil & Gas Construction",
-    "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-aron-razif-98492360-9336590.jpg",
     "overview": "Oil and gas construction involves coordinated construction and installation activities required for the development, modification or expansion of industrial facilities. Petrastream's Oil & Gas Construction service covers relevant construction work scopes associated with industrial and oil and gas facilities. These activities may involve civil, structural, mechanical and piping disciplines, depending on the project requirements and contractual scope. Construction activities require coordination of engineering documentation, construction materials, equipment, work sequences, site interfaces, inspection requirements and applicable safety procedures.",
     "scopes": [
       "Civil Construction: Civil work associated with specified foundations, concrete structures and facility infrastructure.",
@@ -174,7 +174,7 @@ export const servicesData = [
     "num": "09",
     "slug": "welding-habitats",
     "title": "Welding Habitat Solutions",
-    "img": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/general/pexels-cmrcn-29224589.jpg",
     "overview": "Welding habitat systems are specialized enclosures used to establish a controlled working environment for hot-work activities in locations where surrounding operating conditions require additional precautions. Petrastream's Welding Habitat Solutions service focuses on habitat requirements for industrial hot-work applications. Habitat selection and configuration must take account of the work location, hazardous-area classification, surrounding process conditions, ventilation requirements, access arrangements and the applicable project safety procedures. Depending on the application, the required solution may involve a pressurized habitat arrangement, associated ventilation and monitoring equipment, electrical components and other safety-related accessories specified for the project. Scope of Solutions Habitat Selection: Assessment of the required habitat type and configuration based on the work location and project requirements. Pressurized Habitat Systems: Solutions involving controlled positive-pressure arrangements where specified and suitable for the application. Enclosure Configuration: Habitat enclosure selection and arrangement based on the dimensions, access and work requirements. Ventilation & Air Management: Ventilation arrangements and related equipment according to the approved design and operating requirements. Electrical & Lighting Arrangements: Electrical and lighting components appropriate to the specified hazardous-area requirements. Monitoring & Safety Equipment: Relevant pressure, gas monitoring and associated safety equipment where required by the approved system design. Access & Installation: Coordination of habitat access, installation and positioning arrangements. Inspection & Documentation: Review of applicable equipment documentation, inspection requirements and certification records. Hazardous-Area & Certification Considerations ATEX and IECEx requirements must be assessed against the actual hazardous-area classification, equipment category, protection concept and intended operating conditions. Certification applies to the relevant certified equipment or assembly within its documented scope. It should not be assumed that every component, complete habitat arrangement or service provider holds the same certification. Industrial Applications Industrial hot-work activities in oil and gas, petrochemical and other facilities where the project requires a controlled habitat arrangement. Important: ATEX/IECEx certification claims must only be published after verification of the relevant certificates, equipment scope and applicable configuration.",
     "scopes": [],
     "requirements": "Review of engineering work packs, permit-to-work isolations, tool/access staging, and formal QA/QC inspection sign-offs.",

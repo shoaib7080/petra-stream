@@ -1,69 +1,239 @@
 ---
-// Products.astro - Section 06: Specialized Industrial Products & Equipment (17 Products)
+// Products.astro - Section 06: Specialized Industrial Products & Equipment (17 Products in 2 Horizontal Scroll Rows)
 const products = [
-  { name: "Hot Tapping Equipment", category: "Pipeline & Flow", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", desc: "Live pipeline connection solutions without shutdown." },
-  { name: "Industrial Flushing Units", category: "Maintenance Skids", img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80", desc: "High-velocity lubrication and hydraulic flushing packages." },
-  { name: "Hydro Jetting Equipment", category: "Cleaning Systems", img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80", desc: "High-pressure 500 to 1400+ bar surface cleaning systems." },
-  { name: "Industrial Valves", category: "Flow Control", img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80", desc: "Gate, Globe, Ball, Check & Control valves to ASME/API." },
-  { name: "Orifice Flanges", category: "Piping Components", img: "https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=600&q=80", desc: "Differential-pressure flow measurement assemblies." },
-  { name: "Flow Transmitters", category: "Instrumentation", img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80", desc: "Electromagnetic, Coriolis and ultrasonic flow measurement." },
-  { name: "Wireless Corrosion Sensors", category: "Monitoring", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80", desc: "Non-intrusive asset metal-loss monitoring probes." },
-  { name: "Fire Tarpaulins", category: "Safety Solutions", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80", desc: "Certified silica and fiberglass hot-work spark blankets." },
-  { name: "Flange Management & Bolting Tools", category: "Bolting", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80", desc: "Hydraulic torque wrenches and bolt tensioning packages." },
-  { name: "HVAC Systems", category: "Climate Control", img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80", desc: "Explosion-proof air handling and industrial chillers." },
-  { name: "Pressurised Habitats", category: "Safety Enclosures", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", desc: "Positive-pressure hot-work enclosures with auto-shutdown." },
-  { name: "TGR / Blast-Proof / E-House", category: "Modular Buildings", img: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80", desc: "Engineered blast-resistant electrical substations." },
-  { name: "Specialized Containers & Accommodation", category: "Containers", img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80", desc: "DNV 2.7-1 certified offshore containers & living modules." },
-  { name: "COSASCO Fittings", category: "Corrosion Fittings", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80", desc: "High-pressure mechanical access fittings and probes." },
-  { name: "RO & STP Water Treatment", category: "Water Treatment", img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80", desc: "Containerized Reverse Osmosis and sewage treatment packages." },
-  { name: "Robotics Solutions", category: "Industrial Robotics", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80", desc: "Pipeline crawlers and remote CCTV inspection systems." },
-  { name: "Industrial Automation", category: "Automation & SCADA", img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80", desc: "PLC control panels and SCADA integration solutions." }
+  { name: "Hot Tapping Equipment", slug: "hot-tapping-equipment", category: "Pipeline & Flow", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", desc: "Live pipeline connection solutions without shutdown." },
+  { name: "Industrial Flushing Units", slug: "industrial-flushing-units", category: "Maintenance Skids", img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80", desc: "High-velocity lubrication and hydraulic flushing packages." },
+  { name: "Hydro Jetting Equipment", slug: "hydro-jetting-equipment", category: "Cleaning Systems", img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80", desc: "High-pressure 500 to 1400+ bar surface cleaning systems." },
+  { name: "Industrial Valves", slug: "industrial-valves", category: "Flow Control", img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80", desc: "Gate, Globe, Ball, Check & Control valves to ASME/API." },
+  { name: "Orifice Flanges", slug: "orifice-flanges-plates", category: "Piping Components", img: "https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=600&q=80", desc: "Differential-pressure flow measurement assemblies." },
+  { name: "Flow Transmitters", slug: "flow-transmitters", category: "Instrumentation", img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80", desc: "Electromagnetic, Coriolis and ultrasonic flow measurement." },
+  { name: "Wireless Corrosion Sensors", slug: "wireless-corrosion-sensors", category: "Monitoring", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80", desc: "Non-intrusive asset metal-loss monitoring probes." },
+  { name: "Fire Tarpaulins", slug: "fire-tarpaulin-welding-blankets", category: "Safety Solutions", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80", desc: "Certified silica and fiberglass hot-work spark blankets." },
+  { name: "Flange Management & Bolting Tools", slug: "flange-management-bolting-tools", category: "Bolting", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80", desc: "Hydraulic torque wrenches and bolt tensioning packages." },
+  { name: "HVAC Systems", slug: "hvac-systems-equipment", category: "Climate Control", img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80", desc: "Explosion-proof air handling and industrial chillers." },
+  { name: "Pressurised Habitats", slug: "pressurised-welding-habitat", category: "Safety Enclosures", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", desc: "Positive-pressure hot-work enclosures with auto-shutdown." },
+  { name: "TGR / Blast-Proof / E-House", slug: "blast-resistant-buildings-ehouses", category: "Modular Buildings", img: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80", desc: "Engineered blast-resistant electrical substations." },
+  { name: "Specialized Containers & Accommodation", slug: "specialized-containers-accommodation", category: "Containers", img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80", desc: "DNV 2.7-1 certified offshore containers & living modules." },
+  { name: "COSASCO Fittings", slug: "cosasco-fittings-accessories", category: "Corrosion Fittings", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80", desc: "High-pressure mechanical access fittings and probes." },
+  { name: "RO & STP Water Treatment", slug: "ro-stp-water-treatment", category: "Water Treatment", img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80", desc: "Containerized Reverse Osmosis and sewage treatment packages." },
+  { name: "Robotics Solutions", slug: "robotics-solutions", category: "Industrial Robotics", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80", desc: "Pipeline crawlers and remote CCTV inspection systems." },
+  { name: "Industrial Automation", slug: "industrial-automation-solutions", category: "Automation & SCADA", img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80", desc: "PLC control panels and SCADA integration solutions." }
 ];
+
+// Split the 17 products evenly into two rows (9 in row 1, 8 in row 2)
+const halfIndex = Math.ceil(products.length / 2);
+const row1Products = products.slice(0, halfIndex);
+const row2Products = products.slice(halfIndex);
 ---
 
 <section class="section-block section-white" id="products">
   <div class="content-frame">
-    <div style="max-width:880px; margin-bottom:3.5rem;">
+    <!-- Header -->
+    <div style="max-width:820px; margin-bottom:2.25rem;">
       <div class="section-kicker">OUR PRODUCT PORTFOLIO</div>
       <h2 class="section-heading-lg">Specialized Industrial Products & Equipment</h2>
       <p class="section-desc-readable">
-        We offer a diverse portfolio of specialized industrial products and equipment to support operational, maintenance and project requirements across various industrial applications. Our range includes pipeline and flow equipment, cleaning systems, safety solutions, modular systems and advanced industrial technologies.
+        We offer a diverse portfolio of specialized industrial products and equipment across two focused tracks. Browse horizontally or use the direction buttons on each track to inspect our complete equipment line.
       </p>
     </div>
 
-    <!-- Product Grid (17 Products) -->
-    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap:1.75rem;">
-      {products.map((item) => (
-        <div style="background:var(--white); border:1.5px solid var(--border); box-shadow:0 6px 20px rgba(20,43,70,0.06); display:flex; flex-direction:column; overflow:hidden; transition:transform 0.2s ease, border-color 0.2s ease;">
-          <div style="height:190px; position:relative; overflow:hidden; background:#F8FAFC;">
-            <img src={item.img} alt={item.name} style="width:100%; height:100%; object-fit:cover;" loading="lazy" decoding="async" />
-            <span style="position:absolute; bottom:0.75rem; left:0.75rem; background:var(--navy); color:var(--white); font-size:0.75rem; font-weight:700; text-transform:uppercase; padding:0.25rem 0.65rem; border-left:3px solid var(--orange);">
-              {item.category}
-            </span>
-          </div>
-          <div style="padding:1.5rem; display:flex; flex-direction:column; flex-grow:1;">
-            <h4 style="font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; line-height:1.3;">
-              {item.name}
-            </h4>
-            <p style="font-size:0.98rem; line-height:1.6; color:var(--slate); margin-bottom:1.5rem; flex-grow:1;">
-              {item.desc}
-            </p>
-            <div style="padding-top:1rem; border-top:1px solid var(--border-light);">
-              <a href="/products" class="btn-ghost-orange" style="display:inline-flex; align-items:center; justify-content:space-between; width:100%; font-weight:700; color:var(--orange); font-size:0.98rem; text-decoration:none;">
-                <span>View Product →</span>
-              </a>
-            </div>
-          </div>
+    <!-- Two-Row Horizontal Scrollable Product Track -->
+    <div class="products-two-rows-container">
+      <!-- ROW 1: Process, Pipeline, Instrumentation & Safety (Products 1–9) -->
+      <div class="products-row-wrap">
+        <div class="products-row-label">
+          <span class="row-label-dot"></span>
+          <span>Pipeline, Valves, Instrumentation & Tooling (1–9)</span>
         </div>
-      ))}
+        <div class="products-track-row">
+          <button 
+            type="button" 
+            class="products-arrow-btn products-btn-prev" 
+            aria-label="Scroll row 1 backward" 
+            title="Previous products"
+          >
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div class="products-scroll-track" id="products-track-1" tabindex="0" role="region" aria-label="Products track 1">
+            {row1Products.map((item) => (
+              <article class="product-row-card">
+                <div class="product-card-img-wrap">
+                  <img src={item.img} alt={item.name} class="product-card-img" loading="lazy" decoding="async" />
+                  <span class="product-card-category-badge">{item.category}</span>
+                </div>
+                <div class="product-card-body">
+                  <h4 class="product-card-title">{item.name}</h4>
+                  <p class="product-card-desc">{item.desc}</p>
+                  <div class="product-card-footer">
+                    <a href={`/products/${item.slug}`} class="product-card-link">
+                      <span>View Product Details</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <button 
+            type="button" 
+            class="products-arrow-btn products-btn-next" 
+            aria-label="Scroll row 1 forward" 
+            title="Next products"
+          >
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ROW 2: Modular Systems, Safety Habitats, Water & Automation (Products 10–17) -->
+      <div class="products-row-wrap">
+        <div class="products-row-label">
+          <span class="row-label-dot"></span>
+          <span>Modular Buildings, Habitats, Water & Automation (10–17)</span>
+        </div>
+        <div class="products-track-row">
+          <button 
+            type="button" 
+            class="products-arrow-btn products-btn-prev" 
+            aria-label="Scroll row 2 backward" 
+            title="Previous products"
+          >
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <div class="products-scroll-track" id="products-track-2" tabindex="0" role="region" aria-label="Products track 2">
+            {row2Products.map((item) => (
+              <article class="product-row-card">
+                <div class="product-card-img-wrap">
+                  <img src={item.img} alt={item.name} class="product-card-img" loading="lazy" decoding="async" />
+                  <span class="product-card-category-badge">{item.category}</span>
+                </div>
+                <div class="product-card-body">
+                  <h4 class="product-card-title">{item.name}</h4>
+                  <p class="product-card-desc">{item.desc}</p>
+                  <div class="product-card-footer">
+                    <a href={`/products/${item.slug}`} class="product-card-link">
+                      <span>View Product Details</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <button 
+            type="button" 
+            class="products-arrow-btn products-btn-next" 
+            aria-label="Scroll row 2 forward" 
+            title="Next products"
+          >
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- Bottom Button -->
+    <!-- Bottom Button to Full Catalog -->
     <div style="text-align:center; margin-top:3.5rem;">
       <a href="/products" class="btn-navy-outline">
-        <span>Explore All Products →</span>
+        <span>Explore All 17 Products & Technical Specs →</span>
       </a>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function initProductsTwoRowScroller() {
+    const rows = document.querySelectorAll('.products-track-row');
+    if (!rows.length) return;
+
+    rows.forEach((row) => {
+      const track = row.querySelector('.products-scroll-track');
+      const btnPrev = row.querySelector('.products-btn-prev');
+      const btnNext = row.querySelector('.products-btn-next');
+
+      if (!track || !btnPrev || !btnNext) return;
+
+      function getCardStep() {
+        const card = track.querySelector('.product-row-card');
+        return card ? card.offsetWidth + 24 : 340;
+      }
+
+      function updateButtonStates() {
+        const isStart = track.scrollLeft <= 10;
+        const isEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 15;
+
+        btnPrev.disabled = isStart;
+        btnPrev.classList.toggle('is-disabled', isStart);
+
+        btnNext.disabled = isEnd;
+        btnNext.classList.toggle('is-disabled', isEnd);
+      }
+
+      btnNext.addEventListener('click', () => {
+        const step = getCardStep();
+        track.scrollBy({ left: step, behavior: 'smooth' });
+        setTimeout(updateButtonStates, 320);
+      });
+
+      btnPrev.addEventListener('click', () => {
+        const step = getCardStep();
+        track.scrollBy({ left: -step, behavior: 'smooth' });
+        setTimeout(updateButtonStates, 320);
+      });
+
+      track.addEventListener('scroll', updateButtonStates, { passive: true });
+
+      // Enable smooth mouse drag-to-scroll on desktop
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      let moved = false;
+
+      track.addEventListener('mousedown', (e) => {
+        isDown = true;
+        moved = false;
+        track.classList.add('is-dragging');
+        startX = e.pageX - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+      });
+
+      track.addEventListener('mouseleave', () => {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      });
+
+      track.addEventListener('mouseup', () => {
+        isDown = false;
+        track.classList.remove('is-dragging');
+      });
+
+      track.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.35;
+        if (Math.abs(walk) > 4) moved = true;
+        track.scrollLeft = scrollLeft - walk;
+      });
+
+      // Prevent accidental link clicks when dragging
+      track.addEventListener('click', (e) => {
+        if (moved) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }, true);
+
+      updateButtonStates();
+    });
+  })();
+</script>
 
