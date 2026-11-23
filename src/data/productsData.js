@@ -5,7 +5,7 @@ export const productsData = [
     "slug": "hot-tapping-equipment",
     "name": "Hot Tapping Equipment",
     "category": "Process & Mechanical Equipment",
-    "img": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/hot-tapping.webp",
     "overview": "Hot tapping equipment is used to create a branch connection or access point on an existing pressurized pipeline or process system without taking the entire system out of service, subject to approved engineering assessment and operating conditions.",
     "specs": [
       "Application: Pressurized pipeline and process piping connections.",
@@ -23,7 +23,7 @@ export const productsData = [
     "slug": "industrial-flushing-units",
     "name": "Industrial Flushing Units",
     "category": "Process & Mechanical Equipment",
-    "img": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/flushing-unit.png",
     "overview": "Industrial flushing units are designed for circulating and cleaning hydraulic oil, lubrication systems, pipelines and process equipment. They help remove contaminants before commissioning or after maintenance activities.",
     "specs": [
       "System configuration: Skid-mounted or mobile flushing package.",
@@ -41,7 +41,7 @@ export const productsData = [
     "slug": "hydro-jetting-equipment",
     "name": "Hydro-Jetting Equipment",
     "category": "Process & Mechanical Equipment",
-    "img": "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/Hydrojetting.webp",
     "overview": "High-pressure water jetting systems are used for industrial cleaning, surface preparation, removal of deposits and cleaning of heat exchangers, pipelines and process equipment.",
     "specs": [
       "Equipment type: High-pressure pump unit or skid-mounted hydrojetting package.",
@@ -59,7 +59,7 @@ export const productsData = [
     "slug": "industrial-valves",
     "name": "Industrial Valves",
     "category": "Valves, Flanges & Piping",
-    "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/valves-1.jpg",
     "overview": "A range of industrial valves for isolation, flow regulation, pressure control and process system applications. Selection depends on the fluid service, pressure-temperature conditions and piping specification. Product types Gate Valves Globe Valves Ball Valves Butterfly Valves Check Valves Plug Valves Control Valves",
     "specs": [
       "Body material: Carbon steel, stainless steel, alloy steel and other specified materials.",
@@ -76,7 +76,7 @@ export const productsData = [
     "slug": "orifice-flanges-plates",
     "name": "Orifice Flanges & Orifice Plate Assemblies",
     "category": "Valves, Flanges & Piping",
-    "img": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/orifice-flanges.png",
     "overview": "Orifice flange assemblies are used as part of differential-pressure flow measurement systems. They provide a mounting arrangement for an orifice plate and pressure tapping connections within a pipeline.",
     "specs": [
       "Configuration: Orifice flange pair, orifice plate and associated fittings.",
@@ -94,7 +94,7 @@ export const productsData = [
     "slug": "flange-management-bolting-tools",
     "name": "Flange Management & Bolting Tools",
     "category": "Valves, Flanges & Piping",
-    "img": "https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/flange-management-2.jpg",
     "overview": "A specialized range of tools for controlled tightening, loosening, alignment and maintenance of bolted flange connections. Product types Hydraulic Torque Wrenches Pneumatic Torque Wrenches Electric Torque Wrenches Hydraulic Bolt Tensioners Flange Alignment Tools Nut Splitters Hydraulic Pumps and Accessories",
     "specs": [
       "Torque capacity: Selected according to required bolt load and joint design.",
@@ -112,7 +112,7 @@ export const productsData = [
     "slug": "flow-transmitters",
     "name": "Flow Transmitters",
     "category": "Instrumentation & Monitoring",
-    "img": "https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/flow-transmitter.jpg",
     "overview": "Flow transmitters measure and transmit flow-related information for monitoring, control and process automation systems. Different technologies are selected depending on the fluid and process conditions. Product types Electromagnetic Flow Transmitters Coriolis Mass Flow Transmitters Ultrasonic Flow Transmitters Differential Pressure Flow Transmitters Vortex Flow Transmitters",
     "specs": [
       "Measurement type: Volumetric or mass flow, depending on technology.",
@@ -131,7 +131,7 @@ export const productsData = [
     "slug": "wireless-corrosion-sensors",
     "name": "Wireless Corrosion Monitoring Sensors",
     "category": "Instrumentation & Monitoring",
-    "img": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/corrosion-monitoring.jpg",
     "overview": "Wireless corrosion monitoring solutions are used to monitor corrosion-related conditions in pipelines, process equipment and industrial assets. Depending on the technology, systems may measure corrosion rate, metal loss or related process parameters.",
     "specs": [
       "Monitoring technology: ER, LPR or other specified sensing technologies.",
@@ -149,7 +149,7 @@ export const productsData = [
     "slug": "fire-tarpaulin-welding-blankets",
     "name": "Fire Tarpaulin & Welding Blankets",
     "category": "Safety & Welding Solutions",
-    "img": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/Welding-Fire-Blanket.webp",
     "overview": "Fire-resistant tarpaulins and welding blankets are used to protect nearby equipment, structures and work areas from welding sparks, molten metal splashes and heat exposure.",
     "specs": [
       "Material: Fibreglass, silica fabric or other specified fire-resistant textiles.",
@@ -168,7 +168,7 @@ export const productsData = [
     "slug": "pressurised-welding-habitat",
     "name": "Pressurised Welding Habitat",
     "category": "Safety & Welding Solutions",
-    "img": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/welding-habitat.jpg",
     "overview": "Pressurised welding habitats provide a controlled enclosure for hot-work activities in selected hazardous environments. The system is configured around the project risk assessment, area classification and approved hot-work requirements.",
     "specs": [
       "Habitat type: Modular or project-specific pressurised enclosure.",
@@ -188,7 +188,7 @@ export const productsData = [
     "slug": "hvac-systems-equipment",
     "name": "HVAC Systems & Equipment",
     "category": "HVAC & Modular Solutions",
-    "img": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/industrial-hvac-system.jpg",
     "overview": "HVAC systems provide heating, ventilation, air conditioning and environmental control for industrial buildings, control rooms, modular facilities and specialized enclosures. Product types Air Handling Units (AHU) Fan Coil Units (FCU) Chillers Package Units Split Units Exhaust Fans Precision Cooling Systems Ventilation Systems",
     "specs": [
       "Cooling capacity: kW or TR, as required.",
@@ -208,7 +208,7 @@ export const productsData = [
     "slug": "blast-resistant-buildings-ehouses",
     "name": "TGR, Blast-Resistant Buildings, Positive-Pressure Modules & E-Houses",
     "category": "HVAC & Modular Solutions",
-    "img": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/tgr-1.jpg",
     "overview": "Specialized modular buildings and engineered enclosures for housing electrical, instrumentation, control and process-related equipment in industrial environments. Product configurations TGR / Technical Gas Rooms Blast-Resistant Buildings Positive-Pressure Buildings Electrical Houses (E-Houses) Control Rooms Electrical Substations Analyzer Shelters Instrument Rooms",
     "specs": [
       "Structural design: Based on applicable loads and project requirements.",
@@ -228,7 +228,7 @@ export const productsData = [
     "slug": "specialized-containers-accommodation",
     "name": "Specialized Containers & Accommodation Units",
     "category": "HVAC & Modular Solutions",
-    "img": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/containers-1.jpg",
     "overview": "A range of standard and customized containers for storage, transportation, industrial workshops, offshore applications and personnel accommodation. Product types ISO Containers DNV Offshore Containers Offshore Baskets Marine Containers Oilfield Containers Storage Containers Workshop Containers Accommodation Containers Customized Equipment Containers",
     "specs": [
       "Standard sizes: 10 ft, 20 ft and 40 ft configurations, subject to availability.",
@@ -248,7 +248,7 @@ export const productsData = [
     "slug": "cosasco-fittings-accessories",
     "name": "COSASCO Corrosion Monitoring Fittings & Accessories",
     "category": "Corrosion & Water Treatment",
-    "img": "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/cosasco-1.jpg",
     "overview": "Corrosion monitoring access fittings and accessories are used to support inspection, corrosion monitoring and retrieval of corrosion coupons or probes from process systems, depending on the selected product design. Product range Corrosion Monitoring Access Fittings Retractable Probe Assemblies Corrosion Coupons Injection and Sampling Fittings Access Systems Retrieval Tools and Accessories",
     "specs": [
       "Connection type: Threaded, flanged or proprietary connection.",
@@ -266,7 +266,7 @@ export const productsData = [
     "slug": "ro-stp-water-treatment",
     "name": "RO & STP Water Treatment Systems",
     "category": "Corrosion & Water Treatment",
-    "img": "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/ro-1.jpg",
     "overview": "Reverse Osmosis (RO) and Sewage Treatment Plant (STP) systems are used for water purification, wastewater treatment and reuse in industrial and facility applications. Product configurations Industrial RO Plants Containerized RO Systems Brackish Water RO Seawater RO, where specified Sewage Treatment Plants Wastewater Treatment Packages Water Filtration and Pretreatment Systems",
     "specs": [
       "Capacity: m\u00b3/day or m\u00b3/hour.",
@@ -286,7 +286,7 @@ export const productsData = [
     "slug": "robotics-solutions",
     "name": "Robotics Solutions",
     "category": "Robotics & Industrial Automation",
-    "img": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/robotics-1.png",
     "overview": "Industrial robotics and robotic inspection technologies support automation, inspection and selected maintenance operations in industrial environments. Product types Industrial Robotic Arms Automated Handling Systems Inspection Robots Pipeline Inspection Robots Remote Visual Inspection Systems Robotic Cleaning Solutions Customized Robotic Applications",
     "specs": [
       "Payload capacity: kg.",
@@ -306,7 +306,7 @@ export const productsData = [
     "slug": "industrial-automation-solutions",
     "name": "Industrial Automation Solutions",
     "category": "Robotics & Industrial Automation",
-    "img": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1200&q=85",
+    "img": "/assets/img/products/industrial-automation-1.jpg",
     "overview": "Industrial automation systems support process control, equipment monitoring, operational efficiency and integration between field devices and plant control systems. Product types PLC Control Systems SCADA Systems DCS Integration Control Panels Instrumentation & Control Systems Remote Monitoring Solutions Industrial Communication Systems Motor Control & Drive Systems",
     "specs": [
       "PLC platforms: Selected according to project requirements.",

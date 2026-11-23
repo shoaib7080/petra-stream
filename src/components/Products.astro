@@ -1,23 +1,23 @@
 ---
-// Products.astro - Section 06: Specialized Industrial Products & Equipment (17 Products in 2 Horizontal Scroll Rows)
+// Products.astro - Section 06: Specialized Industrial Products & Equipment (Catalogue Carousel Style - 2 Rows)
 const products = [
-  { name: "Hot Tapping Equipment", slug: "hot-tapping-equipment", category: "Pipeline & Flow", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", desc: "Live pipeline connection solutions without shutdown." },
-  { name: "Industrial Flushing Units", slug: "industrial-flushing-units", category: "Maintenance Skids", img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80", desc: "High-velocity lubrication and hydraulic flushing packages." },
-  { name: "Hydro Jetting Equipment", slug: "hydro-jetting-equipment", category: "Cleaning Systems", img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80", desc: "High-pressure 500 to 1400+ bar surface cleaning systems." },
-  { name: "Industrial Valves", slug: "industrial-valves", category: "Flow Control", img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80", desc: "Gate, Globe, Ball, Check & Control valves to ASME/API." },
-  { name: "Orifice Flanges", slug: "orifice-flanges-plates", category: "Piping Components", img: "https://images.unsplash.com/photo-1574689231359-54316b8a8b89?auto=format&fit=crop&w=600&q=80", desc: "Differential-pressure flow measurement assemblies." },
-  { name: "Flow Transmitters", slug: "flow-transmitters", category: "Instrumentation", img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80", desc: "Electromagnetic, Coriolis and ultrasonic flow measurement." },
-  { name: "Wireless Corrosion Sensors", slug: "wireless-corrosion-sensors", category: "Monitoring", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80", desc: "Non-intrusive asset metal-loss monitoring probes." },
-  { name: "Fire Tarpaulins", slug: "fire-tarpaulin-welding-blankets", category: "Safety Solutions", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80", desc: "Certified silica and fiberglass hot-work spark blankets." },
-  { name: "Flange Management & Bolting Tools", slug: "flange-management-bolting-tools", category: "Bolting", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80", desc: "Hydraulic torque wrenches and bolt tensioning packages." },
-  { name: "HVAC Systems", slug: "hvac-systems-equipment", category: "Climate Control", img: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80", desc: "Explosion-proof air handling and industrial chillers." },
-  { name: "Pressurised Habitats", slug: "pressurised-welding-habitat", category: "Safety Enclosures", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", desc: "Positive-pressure hot-work enclosures with auto-shutdown." },
-  { name: "TGR / Blast-Proof / E-House", slug: "blast-resistant-buildings-ehouses", category: "Modular Buildings", img: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80", desc: "Engineered blast-resistant electrical substations." },
-  { name: "Specialized Containers & Accommodation", slug: "specialized-containers-accommodation", category: "Containers", img: "https://images.unsplash.com/photo-1542385151-efd9000785a0?auto=format&fit=crop&w=600&q=80", desc: "DNV 2.7-1 certified offshore containers & living modules." },
-  { name: "COSASCO Fittings", slug: "cosasco-fittings-accessories", category: "Corrosion Fittings", img: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80", desc: "High-pressure mechanical access fittings and probes." },
-  { name: "RO & STP Water Treatment", slug: "ro-stp-water-treatment", category: "Water Treatment", img: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80", desc: "Containerized Reverse Osmosis and sewage treatment packages." },
-  { name: "Robotics Solutions", slug: "robotics-solutions", category: "Industrial Robotics", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80", desc: "Pipeline crawlers and remote CCTV inspection systems." },
-  { name: "Industrial Automation", slug: "industrial-automation-solutions", category: "Automation & SCADA", img: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&w=600&q=80", desc: "PLC control panels and SCADA integration solutions." }
+  { name: "Hot Tapping Equipment", slug: "hot-tapping-equipment", category: "Pipeline & Flow", img: "/assets/img/products/hot-tapping.webp", desc: "Live pipeline connection solutions without shutdown." },
+  { name: "Industrial Flushing Units", slug: "industrial-flushing-units", category: "Maintenance Skids", img: "/assets/img/products/flushing-unit.png", desc: "High-velocity lubrication and hydraulic flushing packages." },
+  { name: "Hydro Jetting Equipment", slug: "hydro-jetting-equipment", category: "Cleaning Systems", img: "/assets/img/products/Hydrojetting.webp", desc: "High-pressure 500 to 1400+ bar surface cleaning systems." },
+  { name: "Industrial Valves", slug: "industrial-valves", category: "Flow Control", img: "/assets/img/products/valves-1.jpg", desc: "Gate, Globe, Ball, Check & Control valves to ASME/API." },
+  { name: "Orifice Flanges", slug: "orifice-flanges-plates", category: "Piping Components", img: "/assets/img/products/orifice-flanges.png", desc: "Differential-pressure flow measurement assemblies." },
+  { name: "Flow Transmitters", slug: "flow-transmitters", category: "Instrumentation", img: "/assets/img/products/flow-transmitter.jpg", desc: "Electromagnetic, Coriolis and ultrasonic flow measurement." },
+  { name: "Wireless Corrosion Sensors", slug: "wireless-corrosion-sensors", category: "Monitoring", img: "/assets/img/products/corrosion-monitoring.jpg", desc: "Non-intrusive asset metal-loss monitoring probes." },
+  { name: "Fire Tarpaulins", slug: "fire-tarpaulin-welding-blankets", category: "Safety Solutions", img: "/assets/img/products/Welding-Fire-Blanket.webp", desc: "Certified silica and fiberglass hot-work spark blankets." },
+  { name: "Flange Management & Bolting Tools", slug: "flange-management-bolting-tools", category: "Bolting", img: "/assets/img/products/flange-management-2.jpg", desc: "Hydraulic torque wrenches and bolt tensioning packages." },
+  { name: "HVAC Systems", slug: "hvac-systems-equipment", category: "Climate Control", img: "/assets/img/products/industrial-hvac-system.jpg", desc: "Explosion-proof air handling and industrial chillers." },
+  { name: "Pressurised Habitats", slug: "pressurised-welding-habitat", category: "Safety Enclosures", img: "/assets/img/products/welding-habitat.jpg", desc: "Positive-pressure hot-work enclosures with auto-shutdown." },
+  { name: "TGR / Blast-Proof / E-House", slug: "blast-resistant-buildings-ehouses", category: "Modular Buildings", img: "/assets/img/products/tgr-1.jpg", desc: "Engineered blast-resistant electrical substations." },
+  { name: "Specialized Containers & Accommodation", slug: "specialized-containers-accommodation", category: "Containers", img: "/assets/img/products/containers-1.jpg", desc: "DNV 2.7-1 certified offshore containers & living modules." },
+  { name: "COSASCO Fittings", slug: "cosasco-fittings-accessories", category: "Corrosion Fittings", img: "/assets/img/products/cosasco-1.jpg", desc: "High-pressure mechanical access fittings and probes." },
+  { name: "RO & STP Water Treatment", slug: "ro-stp-water-treatment", category: "Water Treatment", img: "/assets/img/products/ro-1.jpg", desc: "Containerized Reverse Osmosis and sewage treatment packages." },
+  { name: "Robotics Solutions", slug: "robotics-solutions", category: "Industrial Robotics", img: "/assets/img/products/robotics-1.png", desc: "Pipeline crawlers and remote CCTV inspection systems." },
+  { name: "Industrial Automation", slug: "industrial-automation-solutions", category: "Automation & SCADA", img: "/assets/img/products/industrial-automation-1.jpg", desc: "PLC control panels and SCADA integration solutions." }
 ];
 
 // Split the 17 products evenly into two rows (9 in row 1, 8 in row 2)
@@ -26,172 +26,261 @@ const row1Products = products.slice(0, halfIndex);
 const row2Products = products.slice(halfIndex);
 ---
 
-<section class="section-block section-white" id="products">
+<section class="section-block section-white catalogue-carousel-section" id="products">
   <div class="content-frame">
-    <!-- Header -->
-    <div style="max-width:820px; margin-bottom:2.25rem;">
-      <div class="section-kicker">OUR PRODUCT PORTFOLIO</div>
-      <h2 class="section-heading-lg">Specialized Industrial Products & Equipment</h2>
-      <p class="section-desc-readable">
-        We offer a diverse portfolio of specialized industrial products and equipment across two focused tracks. Browse horizontally or use the direction buttons on each track to inspect our complete equipment line.
+    <!-- Centered Section Title per template style -->
+    <div class="section-title text-center mb-4" style="text-align: center; max-width: 820px; margin: 0 auto 2.5rem auto;">
+      <div class="section-kicker" style="justify-content: center;">OUR PRODUCT PORTFOLIO</div>
+      <h2 class="section-heading-lg" style="margin-bottom: 0.65rem;">Specialized Industrial Products & Equipment</h2>
+      <p class="section-desc-readable" style="margin: 0 auto; color: var(--slate);">
+        Most requested industrial products and fast-moving engineering supplies across critical operating sectors.
       </p>
     </div>
 
-    <!-- Two-Row Horizontal Scrollable Product Track -->
-    <div class="products-two-rows-container">
-      <!-- ROW 1: Process, Pipeline, Instrumentation & Safety (Products 1–9) -->
-      <div class="products-row-wrap">
-        <div class="products-row-label">
-          <span class="row-label-dot"></span>
-          <span>Pipeline, Valves, Instrumentation & Tooling (1–9)</span>
-        </div>
-        <div class="products-track-row">
-          <button 
-            type="button" 
-            class="products-arrow-btn products-btn-prev" 
-            aria-label="Scroll row 1 backward" 
-            title="Previous products"
-          >
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <div class="products-scroll-track" id="products-track-1" tabindex="0" role="region" aria-label="Products track 1">
-            {row1Products.map((item) => (
-              <article class="product-row-card">
-                <div class="product-card-img-wrap">
-                  <img src={item.img} alt={item.name} class="product-card-img" loading="lazy" decoding="async" />
-                  <span class="product-card-category-badge">{item.category}</span>
-                </div>
-                <div class="product-card-body">
-                  <h4 class="product-card-title">{item.name}</h4>
-                  <p class="product-card-desc">{item.desc}</p>
-                  <div class="product-card-footer">
-                    <a href={`/products/${item.slug}`} class="product-card-link">
-                      <span>View Product Details</span>
-                      <span aria-hidden="true">→</span>
-                    </a>
-                  </div>
-                </div>
-              </article>
-            ))}
+    <!-- Two-Row Catalogue Carousel Wrapper -->
+    <div class="catalogue-carousel-wrapper">
+      <div class="products-two-rows-container">
+        <!-- ROW 1: Process, Pipeline, Instrumentation & Tooling (1–9) -->
+        <div class="catalogue-row-wrapper">
+          <div class="products-row-label">
+            <span class="row-label-dot"></span>
+            <span>Pipeline, Valves, Instrumentation & Tooling (1–9)</span>
           </div>
-          <button 
-            type="button" 
-            class="products-arrow-btn products-btn-next" 
-            aria-label="Scroll row 1 forward" 
-            title="Next products"
-          >
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-      </div>
 
-      <!-- ROW 2: Modular Systems, Safety Habitats, Water & Automation (Products 10–17) -->
-      <div class="products-row-wrap">
-        <div class="products-row-label">
-          <span class="row-label-dot"></span>
-          <span>Modular Buildings, Habitats, Water & Automation (10–17)</span>
-        </div>
-        <div class="products-track-row">
-          <button 
-            type="button" 
-            class="products-arrow-btn products-btn-prev" 
-            aria-label="Scroll row 2 backward" 
-            title="Previous products"
-          >
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <div class="products-scroll-track" id="products-track-2" tabindex="0" role="region" aria-label="Products track 2">
-            {row2Products.map((item) => (
-              <article class="product-row-card">
-                <div class="product-card-img-wrap">
-                  <img src={item.img} alt={item.name} class="product-card-img" loading="lazy" decoding="async" />
-                  <span class="product-card-category-badge">{item.category}</span>
+          <div class="catalogue-swiper-outer position-relative">
+            <div class="catalogue-scroll-track" id="catalogue-track-1" tabindex="0" role="region" aria-label="Products track 1">
+              {row1Products.map((item) => (
+                <div class="catalogue-slide-item">
+                  <a href={`/products/${item.slug}`} class="catalogue-card-link">
+                    <div class="catalogue-item-card">
+                      <div class="item-img-box">
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          class="img-fluid"
+                          width="420"
+                          height="228"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                      <div class="item-info">
+                        <span class="item-category-tag">{item.category}</span>
+                        <h4 class="item-title" title={item.name}>{item.name}</h4>
+                        <p class="item-desc">{item.desc}</p>
+                        <div class="item-action">
+                          <span class="item-link">
+                            View Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-                <div class="product-card-body">
-                  <h4 class="product-card-title">{item.name}</h4>
-                  <p class="product-card-desc">{item.desc}</p>
-                  <div class="product-card-footer">
-                    <a href={`/products/${item.slug}`} class="product-card-link">
-                      <span>View Product Details</span>
-                      <span aria-hidden="true">→</span>
-                    </a>
-                  </div>
-                </div>
-              </article>
+              ))}
+            </div>
+
+            <!-- Navigation Buttons centered strictly on the card row -->
+            <button type="button" class="catalogue-nav-btn catalogue-prev" aria-label="Previous items">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button type="button" class="catalogue-nav-btn catalogue-next" aria-label="Next items">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Pagination directly beneath cards -->
+          <div class="catalogue-pagination text-center" role="tablist" aria-label="Pipeline, Valves, Instrumentation & Tooling pagination">
+            {row1Products.map((item, idx) => (
+              <button
+                type="button"
+                class={`catalogue-dot ${idx === 0 ? 'active' : ''}`}
+                aria-label={`Go to slide ${idx + 1}: ${item.name}`}
+                aria-selected={idx === 0 ? "true" : "false"}
+                role="tab"
+                data-index={idx}
+              ></button>
             ))}
           </div>
-          <button 
-            type="button" 
-            class="products-arrow-btn products-btn-next" 
-            aria-label="Scroll row 2 forward" 
-            title="Next products"
-          >
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+        </div>
+
+        <!-- ROW 2: Modular Systems, Safety Habitats, Water & Automation (10–17) -->
+        <div class="catalogue-row-wrapper">
+          <div class="products-row-label">
+            <span class="row-label-dot"></span>
+            <span>Modular Buildings, Habitats, Water & Automation (10–17)</span>
+          </div>
+
+          <div class="catalogue-swiper-outer position-relative">
+            <div class="catalogue-scroll-track" id="catalogue-track-2" tabindex="0" role="region" aria-label="Products track 2">
+              {row2Products.map((item) => (
+                <div class="catalogue-slide-item">
+                  <a href={`/products/${item.slug}`} class="catalogue-card-link">
+                    <div class="catalogue-item-card">
+                      <div class="item-img-box">
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          class="img-fluid"
+                          width="420"
+                          height="228"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                      <div class="item-info">
+                        <span class="item-category-tag">{item.category}</span>
+                        <h4 class="item-title" title={item.name}>{item.name}</h4>
+                        <p class="item-desc">{item.desc}</p>
+                        <div class="item-action">
+                          <span class="item-link">
+                            View Details <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </div>
+
+            <!-- Navigation Buttons centered strictly on the card row -->
+            <button type="button" class="catalogue-nav-btn catalogue-prev" aria-label="Previous items">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button type="button" class="catalogue-nav-btn catalogue-next" aria-label="Next items">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Pagination directly beneath cards -->
+          <div class="catalogue-pagination text-center" role="tablist" aria-label="Modular Buildings, Habitats, Water & Automation pagination">
+            {row2Products.map((item, idx) => (
+              <button
+                type="button"
+                class={`catalogue-dot ${idx === 0 ? 'active' : ''}`}
+                aria-label={`Go to slide ${idx + 1}: ${item.name}`}
+                aria-selected={idx === 0 ? "true" : "false"}
+                role="tab"
+                data-index={idx}
+              ></button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Button to Full Catalog -->
-    <div style="text-align:center; margin-top:3.5rem;">
+    <!-- Bottom Button to Full Catalogue -->
+    <div style="text-align:center; margin-top:3rem;">
       <a href="/products" class="btn-navy-outline">
-        <span>Explore All 17 Products & Technical Specs →</span>
+        <span>View Full Product Catalogue →</span>
       </a>
     </div>
   </div>
 </section>
 
 <script is:inline>
-  (function initProductsTwoRowScroller() {
-    const rows = document.querySelectorAll('.products-track-row');
-    if (!rows.length) return;
+  (function initCatalogueCarousel() {
+    const outers = document.querySelectorAll('.catalogue-swiper-outer');
+    if (!outers.length) return;
 
-    rows.forEach((row) => {
-      const track = row.querySelector('.products-scroll-track');
-      const btnPrev = row.querySelector('.products-btn-prev');
-      const btnNext = row.querySelector('.products-btn-next');
+    outers.forEach((outer) => {
+      const track = outer.querySelector('.catalogue-scroll-track');
+      const btnPrev = outer.querySelector('.catalogue-prev');
+      const btnNext = outer.querySelector('.catalogue-next');
 
       if (!track || !btnPrev || !btnNext) return;
+      if (track.dataset.scrollerInitialized === 'true') return;
+      track.dataset.scrollerInitialized = 'true';
+
+      const rowWrapper = outer.closest('.catalogue-row-wrapper') || outer.parentElement;
+      const pagination = rowWrapper ? rowWrapper.querySelector('.catalogue-pagination') : null;
+      const items = Array.from(track.querySelectorAll('.catalogue-slide-item'));
+      let dots = pagination ? Array.from(pagination.querySelectorAll('.catalogue-dot')) : [];
 
       function getCardStep() {
-        const card = track.querySelector('.product-row-card');
-        return card ? card.offsetWidth + 24 : 340;
+        const item = items[0];
+        return item ? item.offsetWidth + 24 : 340;
       }
 
-      function updateButtonStates() {
-        const isStart = track.scrollLeft <= 10;
-        const isEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 15;
+      function updateActiveStates() {
+        const scrollLeft = track.scrollLeft;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+
+        // Button states
+        const isStart = scrollLeft <= 10;
+        const isEnd = maxScroll <= 0 || scrollLeft >= maxScroll - 15;
 
         btnPrev.disabled = isStart;
         btnPrev.classList.toggle('is-disabled', isStart);
 
         btnNext.disabled = isEnd;
         btnNext.classList.toggle('is-disabled', isEnd);
+
+        // Pagination dots state
+        if (dots.length && items.length) {
+          let activeIndex = 0;
+          if (maxScroll > 0 && scrollLeft >= maxScroll - 20) {
+            activeIndex = items.length - 1;
+          } else {
+            let minDistance = Infinity;
+            items.forEach((item, idx) => {
+              const itemLeft = item.offsetLeft - track.offsetLeft;
+              const distance = Math.abs(itemLeft - scrollLeft);
+              if (distance < minDistance) {
+                minDistance = distance;
+                activeIndex = idx;
+              }
+            });
+          }
+
+          dots.forEach((dot, idx) => {
+            const isActive = idx === activeIndex;
+            dot.classList.toggle('active', isActive);
+            dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+        }
       }
 
-      btnNext.addEventListener('click', () => {
+      // Dot click navigation
+      if (dots.length) {
+        dots.forEach((dot, idx) => {
+          dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (items[idx]) {
+              const targetLeft = items[idx].offsetLeft - track.offsetLeft;
+              track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+              setTimeout(updateActiveStates, 320);
+            }
+          });
+        });
+      }
+
+      btnNext.addEventListener('click', (e) => {
+        e.preventDefault();
         const step = getCardStep();
         track.scrollBy({ left: step, behavior: 'smooth' });
-        setTimeout(updateButtonStates, 320);
+        setTimeout(updateActiveStates, 320);
       });
 
-      btnPrev.addEventListener('click', () => {
+      btnPrev.addEventListener('click', (e) => {
+        e.preventDefault();
         const step = getCardStep();
         track.scrollBy({ left: -step, behavior: 'smooth' });
-        setTimeout(updateButtonStates, 320);
+        setTimeout(updateActiveStates, 320);
       });
 
-      track.addEventListener('scroll', updateButtonStates, { passive: true });
+      track.addEventListener('scroll', updateActiveStates, { passive: true });
 
-      // Enable smooth mouse drag-to-scroll on desktop
+      // Smooth mouse drag-to-scroll on desktop
       let isDown = false;
       let startX;
       let scrollLeft;
@@ -224,7 +313,6 @@ const row2Products = products.slice(halfIndex);
         track.scrollLeft = scrollLeft - walk;
       });
 
-      // Prevent accidental link clicks when dragging
       track.addEventListener('click', (e) => {
         if (moved) {
           e.preventDefault();
@@ -232,8 +320,7 @@ const row2Products = products.slice(halfIndex);
         }
       }, true);
 
-      updateButtonStates();
+      updateActiveStates();
     });
   })();
 </script>
-

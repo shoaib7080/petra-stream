@@ -342,48 +342,91 @@ function initHeroVideos() {
    Handles flanking left/right buttons, wheel, drag, and button states
    ========================================================================== */
 function initProductsScroller() {
-  const rows = document.querySelectorAll(".products-track-row");
+  const rows = document.querySelectorAll(".catalogue-swiper-outer, .products-track-row");
   if (!rows.length) return;
 
   rows.forEach((row) => {
-    const track = row.querySelector(".products-scroll-track");
-    const btnPrev = row.querySelector(".products-btn-prev");
-    const btnNext = row.querySelector(".products-btn-next");
+    const track = row.querySelector(".catalogue-scroll-track, .products-scroll-track");
+    const btnPrev = row.querySelector(".catalogue-prev, .products-btn-prev");
+    const btnNext = row.querySelector(".catalogue-next, .products-btn-next");
 
     if (!track || !btnPrev || !btnNext) return;
     if (track.dataset.scrollerInitialized === "true") return;
     track.dataset.scrollerInitialized = "true";
 
+    const rowWrapper = row.closest(".catalogue-row-wrapper") || row.parentElement;
+    const pagination = rowWrapper ? rowWrapper.querySelector(".catalogue-pagination") : null;
+    const items = Array.from(track.querySelectorAll(".catalogue-slide-item, .product-row-card"));
+    let dots = pagination ? Array.from(pagination.querySelectorAll(".catalogue-dot")) : [];
+
     function getCardStep() {
-      const card = track.querySelector(".product-row-card");
+      const card = items[0];
       return card ? card.offsetWidth + 24 : 340;
     }
 
-    function updateButtonStates() {
-      const isStart = track.scrollLeft <= 10;
-      const isEnd =
-        track.scrollLeft + track.clientWidth >= track.scrollWidth - 15;
+    function updateActiveStates() {
+      const scrollLeft = track.scrollLeft;
+      const maxScroll = track.scrollWidth - track.clientWidth;
+
+      const isStart = scrollLeft <= 10;
+      const isEnd = maxScroll <= 0 || scrollLeft >= maxScroll - 15;
 
       btnPrev.disabled = isStart;
       btnPrev.classList.toggle("is-disabled", isStart);
 
       btnNext.disabled = isEnd;
       btnNext.classList.toggle("is-disabled", isEnd);
+
+      if (dots.length && items.length) {
+        let activeIndex = 0;
+        if (maxScroll > 0 && scrollLeft >= maxScroll - 20) {
+          activeIndex = items.length - 1;
+        } else {
+          let minDistance = Infinity;
+          items.forEach((item, idx) => {
+            const itemLeft = item.offsetLeft - track.offsetLeft;
+            const distance = Math.abs(itemLeft - scrollLeft);
+            if (distance < minDistance) {
+              minDistance = distance;
+              activeIndex = idx;
+            }
+          });
+        }
+
+        dots.forEach((dot, idx) => {
+          const isActive = idx === activeIndex;
+          dot.classList.toggle("active", isActive);
+          dot.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+      }
+    }
+
+    if (dots.length) {
+      dots.forEach((dot, idx) => {
+        dot.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (items[idx]) {
+            const targetLeft = items[idx].offsetLeft - track.offsetLeft;
+            track.scrollTo({ left: targetLeft, behavior: "smooth" });
+            setTimeout(updateActiveStates, 320);
+          }
+        });
+      });
     }
 
     btnNext.addEventListener("click", () => {
       const step = getCardStep();
       track.scrollBy({ left: step, behavior: "smooth" });
-      setTimeout(updateButtonStates, 320);
+      setTimeout(updateActiveStates, 320);
     });
 
     btnPrev.addEventListener("click", () => {
       const step = getCardStep();
       track.scrollBy({ left: -step, behavior: "smooth" });
-      setTimeout(updateButtonStates, 320);
+      setTimeout(updateActiveStates, 320);
     });
 
-    track.addEventListener("scroll", updateButtonStates, { passive: true });
+    track.addEventListener("scroll", updateActiveStates, { passive: true });
 
     // Enable smooth mouse drag-to-scroll on desktop
     let isDown = false;
@@ -430,6 +473,6 @@ function initProductsScroller() {
       true,
     );
 
-    updateButtonStates();
+    updateActiveStates();
   });
 }

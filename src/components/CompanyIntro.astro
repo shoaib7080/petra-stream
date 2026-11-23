@@ -12,6 +12,7 @@ import { imageConfig } from '../config/imageConfig.js';
           src={imageConfig.aboutImage.url} 
           alt="Industrial Engineers and Plant Facility" 
           class="overview-heroic-img"
+          style="height: clamp(340px, 35vw, 420px);"
           loading="lazy"
           decoding="async"
         />
@@ -23,21 +24,19 @@ import { imageConfig } from '../config/imageConfig.js';
 
       <!-- Right: 55% Width Text -->
       <div class="overview-content-pane">
+        
         <div class="section-kicker">ABOUT PETRASTREAM</div>
         <h2 class="overview-heading-text">
           Your Partner in Industrial Contracting & Product Solutions
         </h2>
         <div class="orange-bar"></div>
-        <p class="overview-main-p">
-          Petrastream Contracting LLC is an industrial contracting and product solutions company focused on addressing the requirements of the Oil & Gas, Energy and Industrial sectors.
+        <p class="overview-main-p" style="margin-bottom:0.85rem;">
+          Petrastream Contracting LLC delivers specialized industrial contracting services and equipment supply focused on the Oil & Gas, Energy, and Industrial sectors.
         </p>
-        <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-1rem;">
-          Our business is built around two key areas: specialized industrial contracting services and the supply of industrial products and equipment.
+        <p class="overview-main-p" style="color:var(--slate-muted); margin-bottom:1.5rem;">
+          From on-site mechanical works and plant maintenance to certified product solutions, we support client requirements through a structured, professional, and specification-focused approach.
         </p>
-        <p class="overview-main-p" style="color:var(--slate-muted); margin-top:-1.2rem;">
-          From maintenance, construction and installation activities to specialized equipment and industrial product solutions, we aim to support client requirements through a structured, professional and specification-focused approach. We emphasize understanding project requirements, coordinating suitable solutions and maintaining clear communication throughout the engagement.
-        </p>
-        <div style="margin-top:0.5rem;">
+        <div>
           <a href="/about-us" class="btn-navy-outline">
             <span>Discover More About Us →</span>
           </a>
