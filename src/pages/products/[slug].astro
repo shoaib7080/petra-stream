@@ -18,12 +18,51 @@ export function getStaticPaths() {
 }
 
 const { product, prevProduct, nextProduct } = Astro.props;
+
+const rawDesc = `${product.name} supplier in UAE. ${product.overview}`;
+const metaDescription = rawDesc.length > 158 ? rawDesc.slice(0, 155).replace(/\s+\S*$/, '') + '...' : rawDesc;
+
+const productSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.overview,
+    "category": product.category,
+    "image": `https://petrastream.ae${product.img}`,
+    "brand": {
+      "@type": "Brand",
+      "name": "Petra Stream"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "areaServed": "AE",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petrastream Contracting LLC"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://petrastream.ae/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://petrastream.ae/products" },
+      { "@type": "ListItem", "position": 3, "name": product.name, "item": `https://petrastream.ae/products/${product.slug}` }
+    ]
+  }
+];
 ---
 
 <Layout 
   title={`${product.name} | Petrastream Contracting LLC UAE`}
-  description={`${product.name} supplier in the UAE. ${product.overview.slice(0, 150)}... Sourced and coordinated by Petrastream Contracting LLC.`}
+  description={metaDescription}
   canonical={`https://petrastream.ae/products/${product.slug}`}
+  ogImage={product.img}
+  ogType="product"
+  extraSchema={productSchemas}
 >
   <Header activePage="products" />
 

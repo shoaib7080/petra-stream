@@ -6,12 +6,30 @@ import Footer from '../components/Footer.astro';
 import Modals from '../components/Modals.astro';
 import Contact from '../components/Contact.astro';
 import { imageConfig } from '../config/imageConfig.js';
+
+const contactSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Petrastream Contracting LLC",
+    "url": "https://petrastream.ae/contact-us"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://petrastream.ae/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://petrastream.ae/contact-us" }
+    ]
+  }
+];
 ---
 
 <Layout 
   title="Contact Us | Petrastream Contracting LLC"
-  description="Contact Petrastream Contracting LLC in the United Arab Emirates for industrial contracting services, mechanical products supply, technical RFQs, and project consultations."
+  description="Contact Petrastream Contracting LLC in the UAE for industrial contracting services, mechanical products supply, technical RFQs, and project consultations."
   canonical="https://petrastream.ae/contact-us"
+  extraSchema={contactSchemas}
 >
   <Header activePage="contact" />
 

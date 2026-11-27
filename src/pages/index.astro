@@ -15,11 +15,36 @@ import CTA from '../components/CTA.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import Modals from '../components/Modals.astro';
+import { faqData } from '../data/faqData.js';
+
+const homeSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Petra Stream",
+    "alternateName": "Petrastream Contracting LLC",
+    "url": "https://petrastream.ae/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
+];
 ---
 
 <Layout 
   title="Petra Stream | Mechanical Services & Mechanical Products Provider (UAE)"
   description="Petra Stream (Petrastream Contracting LLC) is a UAE-based mechanical services and mechanical products provider supporting B2B clients in the Oil & Gas, Petrochemical, and Energy sectors."
+  canonical="https://petrastream.ae/"
+  extraSchema={homeSchemas}
 >
   <!-- Section 01: Header & Navigation with Mega-Menus & Drawer -->
   <Header />

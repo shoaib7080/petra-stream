@@ -3,7 +3,7 @@
 import { imageConfig } from '../config/imageConfig.js';
 ---
 
-<section class="hero-industrial-bold" id="hero" style="min-height: 620px;">
+<section class="hero-industrial-bold" id="hero">
   <!-- Background Media: 2 cycling industrial 4K videos with fallback poster image -->
   <div class="hero-media-wrapper" aria-hidden="true">
     <div class="hero-oilgas-img" style={`background-image: url('${imageConfig.heroImage.url}');`} role="img" aria-label={imageConfig.heroImage.alt}></div>
@@ -14,7 +14,7 @@ import { imageConfig } from '../config/imageConfig.js';
       autoplay
       muted
       playsinline
-      preload="auto"
+      preload="metadata"
     >
       <source src="/assets/vids/10386901-hd_3840_2160_30fps.mp4" type="video/mp4" />
     </video>
@@ -24,7 +24,7 @@ import { imageConfig } from '../config/imageConfig.js';
       class="hero-bg-video"
       muted
       playsinline
-      preload="auto"
+      preload="metadata"
     >
       <source src="/assets/vids/12891229-uhd_3840_2160_30fps.mp4" type="video/mp4" />
     </video>

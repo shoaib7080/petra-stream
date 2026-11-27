@@ -4,15 +4,27 @@ interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  extraSchema?: Record<string, any> | Record<string, any>[];
 }
 
 const { 
   title = "Petra Stream | Mechanical Services & Mechanical Products Provider (UAE)", 
   description = "Petra Stream (Petrastream Contracting LLC) is a UAE-based mechanical services and mechanical products provider supporting B2B clients across the Oil & Gas, Petrochemical, and Energy sectors.",
-  canonical = "https://petrastream.ae/"
+  canonical = "https://petrastream.ae/",
+  ogImage = "https://petrastream.ae/assets/img/general/pexels-max-laurell-1958001-10160165.jpg",
+  ogType = "website",
+  noindex = false,
+  extraSchema
 } = Astro.props;
 
-const structuredData = {
+const resolvedOgImage = ogImage.startsWith("http")
+  ? ogImage
+  : `https://petrastream.ae${ogImage.startsWith("/") ? ogImage : `/${ogImage}`}`;
+
+const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Petra Stream",
@@ -43,6 +55,11 @@ const structuredData = {
     "availableLanguage": ["English", "Arabic"]
   }
 };
+
+const schemas = [
+  organizationSchema,
+  ...(Array.isArray(extraSchema) ? extraSchema : extraSchema ? [extraSchema] : [])
+];
 ---
 
 <!DOCTYPE html>
@@ -50,28 +67,36 @@ const structuredData = {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#142B46" />
   
   <!-- Primary Meta Tags -->
   <title>{title}</title>
   <meta name="title" content={title} />
   <meta name="description" content={description} />
+  <meta name="author" content="Petrastream Contracting LLC" />
+  <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
+  <meta name="geo.region" content="AE" />
+  <meta name="geo.placename" content="United Arab Emirates" />
   <link rel="canonical" href={canonical} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:locale" content="en_AE" />
   <meta property="og:url" content={canonical} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content="https://petrastream.ae/assets/img/general/pexels-max-laurell-1958001-10160165.jpg" />
+  <meta property="og:image" content={resolvedOgImage} />
+  <meta property="og:image:alt" content={title} />
   <meta property="og:site_name" content="Petra Stream" />
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content={canonical} />
-  <meta property="twitter:title" content={title} />
-  <meta property="twitter:description" content={description} />
-  <meta property="twitter:image" content="https://petrastream.ae/assets/img/general/pexels-max-laurell-1958001-10160165.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonical} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={resolvedOgImage} />
+  <meta name="twitter:image:alt" content={title} />
 
   <!-- Google Fonts: Manrope & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,7 +107,9 @@ const structuredData = {
   <link rel="stylesheet" href="/styles.css" />
 
   <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  {schemas.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
 </head>
 <body data-theme="theme-1">
   <slot />

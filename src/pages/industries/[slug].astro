@@ -18,12 +18,36 @@ export function getStaticPaths() {
 }
 
 const { industry, prevIndustry, nextIndustry } = Astro.props;
+
+const rawDesc = `${industry.name} mechanical services & industrial equipment in UAE. ${industry.desc}`;
+const metaDescription = rawDesc.length > 158 ? rawDesc.slice(0, 155).replace(/\s+\S*$/, '') + '...' : rawDesc;
+
+const industrySchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": `${industry.name} | Petrastream Contracting LLC`,
+    "description": metaDescription,
+    "url": `https://petrastream.ae/industries/${industry.slug}`
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://petrastream.ae/" },
+      { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://petrastream.ae/industries" },
+      { "@type": "ListItem", "position": 3, "name": industry.name, "item": `https://petrastream.ae/industries/${industry.slug}` }
+    ]
+  }
+];
 ---
 
 <Layout 
   title={`${industry.name} | Petrastream Contracting LLC UAE`}
-  description={`${industry.name} specialized mechanical services and industrial product solutions in the UAE. ${industry.desc.slice(0, 155)}...`}
+  description={metaDescription}
   canonical={`https://petrastream.ae/industries/${industry.slug}`}
+  ogImage={industry.img}
+  extraSchema={industrySchemas}
 >
   <Header activePage="industries" />
 
@@ -128,7 +152,7 @@ const { industry, prevIndustry, nextIndustry } = Astro.props;
           </p>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.25rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap:1.25rem;">
           {industry.technicalStandards.map((std) => (
             <div style="background:var(--cream); border:1px solid var(--border); padding:1.25rem 1.5rem; border-radius:2px; display:flex; align-items:flex-start; gap:0.85rem;">
               <div style="width:28px; height:28px; background:var(--navy); color:var(--orange); display:flex; align-items:center; justify-content:center; border-radius:2px; flex-shrink:0; margin-top:2px;">
@@ -160,7 +184,7 @@ const { industry, prevIndustry, nextIndustry } = Astro.props;
           </a>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.25rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap:1.25rem;">
           {industry.services.map((srv) => (
             <a 
               href={`/services/${srv.slug}`}
@@ -205,7 +229,7 @@ const { industry, prevIndustry, nextIndustry } = Astro.props;
           </a>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.25rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap:1.25rem;">
           {industry.products.map((prod) => (
             <a 
               href={`/products/${prod.slug}`}
@@ -245,7 +269,7 @@ const { industry, prevIndustry, nextIndustry } = Astro.props;
           </p>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:1rem;">
           {industry.applications.map((app) => (
             <div style="background:var(--white); border:1px solid var(--border); padding:1.25rem 1.5rem; border-radius:2px; display:flex; align-items:flex-start; gap:0.9rem;">
               <span style="color:var(--orange); font-size:1.4rem; font-weight:800; line-height:1; margin-top:2px;">•</span>
@@ -274,7 +298,7 @@ const { industry, prevIndustry, nextIndustry } = Astro.props;
         </div>
 
         <!-- 6 Industries Grid -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:1rem; margin-bottom:2.5rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap:1rem; margin-bottom:2.5rem;">
           {industriesData.map((item) => {
             const isCurrent = item.slug === industry.slug;
             return (

@@ -158,12 +158,31 @@ const allServices = [
     applications: "Live offshore platforms, active refinery pipe racks, gas processing terminals, and FPSOs."
   }
 ];
+const servicesPageSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Industrial Contracting Services",
+    "description": "Complete 9 industrial contracting services provided by Petrastream Contracting LLC in the UAE.",
+    "url": "https://petrastream.ae/services"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://petrastream.ae/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://petrastream.ae/services" }
+    ]
+  }
+];
 ---
 
 <Layout 
   title="Industrial Contracting Services | Petrastream Contracting LLC"
-  description="Explore the complete 9 industrial contracting services provided by Petrastream Contracting LLC: Maintenance, Turnaround, Commissioning, Piping, Mechanical Erection, and Welding Habitats."
+  description="Explore 9 industrial contracting services by Petrastream Contracting LLC: Maintenance, Turnaround, Commissioning, Piping, Mechanical Erection, and Welding Habitats."
   canonical="https://petrastream.ae/services"
+  ogImage={imageConfig.servicesImage.url}
+  extraSchema={servicesPageSchemas}
 >
   <Header activePage="services" />
 

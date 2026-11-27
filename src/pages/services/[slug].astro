@@ -18,12 +18,46 @@ export function getStaticPaths() {
 }
 
 const { service, prevService, nextService } = Astro.props;
+
+const rawDesc = `${service.title} industrial contracting in UAE. ${service.overview}`;
+const metaDescription = rawDesc.length > 158 ? rawDesc.slice(0, 155).replace(/\s+\S*$/, '') + '...' : rawDesc;
+
+const serviceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.overview,
+    "serviceType": "Industrial & Mechanical Contracting",
+    "image": `https://petrastream.ae${service.img}`,
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Petrastream Contracting LLC",
+      "url": "https://petrastream.ae"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://petrastream.ae/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://petrastream.ae/services" },
+      { "@type": "ListItem", "position": 3, "name": service.title, "item": `https://petrastream.ae/services/${service.slug}` }
+    ]
+  }
+];
 ---
 
 <Layout 
   title={`${service.title} | Petrastream Contracting LLC UAE`}
-  description={`${service.title} specialized industrial contracting services in the UAE. ${service.overview.slice(0, 155)}...`}
+  description={metaDescription}
   canonical={`https://petrastream.ae/services/${service.slug}`}
+  ogImage={service.img}
+  extraSchema={serviceSchemas}
 >
   <Header activePage="services" />
 
@@ -215,7 +249,7 @@ const { service, prevService, nextService } = Astro.props;
         </div>
 
         <!-- 9 Categories Navigation Grid -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem; margin-bottom:2.5rem;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap:1rem; margin-bottom:2.5rem;">
           {servicesData.map((item) => {
             const isCurrent = item.slug === service.slug;
             return (

@@ -214,12 +214,31 @@ const specTable = [
   { cat: "Robotics Solutions", params: "Payload reach, pipeline diameter range, camera resolution, ATEX certification" },
   { cat: "Automation Systems", params: "PLC platform, communication protocols, I/O count, control architecture" }
 ];
+const productsPageSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Specialized Industrial Products & Equipment",
+    "description": "Complete portfolio of 17 specialized industrial products supplied across the UAE.",
+    "url": "https://petrastream.ae/products"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://petrastream.ae/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://petrastream.ae/products" }
+    ]
+  }
+];
 ---
 
 <Layout 
   title="Specialized Industrial Products & Equipment | Petrastream Contracting LLC"
-  description="Explore Petrastream Contracting LLC's complete portfolio of 17 specialized industrial products across 7 categories: Process equipment, valves, bolting tools, instrumentation, habitats, and automation."
+  description="Explore Petrastream Contracting LLC's portfolio of 17 specialized industrial products: process equipment, valves, bolting tools, instrumentation, habitats, and automation."
   canonical="https://petrastream.ae/products"
+  ogImage={imageConfig.productsImage.url}
+  extraSchema={productsPageSchemas}
 >
   <Header activePage="products" />
 

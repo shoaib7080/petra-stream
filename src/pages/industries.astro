@@ -219,12 +219,21 @@ const industriesDetail = [
     ]
   }
 ];
+const industriesPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://petrastream.ae/" },
+    { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://petrastream.ae/industries" }
+  ]
+};
 ---
 
 <Layout 
   title="Industries We Serve | Petrastream Contracting LLC"
-  description="Learn about the 6 critical industrial sectors Petrastream Contracting LLC supports: Oil & Gas, Petrochemical, Energy & Power, Industrial Manufacturing, Water Treatment, and Infrastructure."
+  description="Learn about the 6 critical industrial sectors Petrastream Contracting LLC supports: Oil & Gas, Petrochemical, Energy & Power, Manufacturing, Water, and Infrastructure."
   canonical="https://petrastream.ae/industries"
+  extraSchema={industriesPageSchema}
 >
   <Header activePage="industries" />
 
@@ -258,7 +267,7 @@ const industriesDetail = [
           <p class="section-desc-readable" style="margin-bottom:1.5rem;">
             Every industry operates under different technical, operational and safety requirements. From maintaining continuous production in process facilities to supporting construction activities, equipment installation and specialized product procurement, each project requires a practical and coordinated approach.
           </p>
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:1.25rem;">
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap:1.25rem;">
             <div style="background:var(--white); padding:1.25rem; border:1px solid var(--border); border-left:3px solid var(--orange);">
               Understanding project scope and technical specifications
             </div>
@@ -347,13 +356,13 @@ const industriesDetail = [
               </div>
 
               <!-- Link to Dedicated Subpage -->
-              <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border); display:flex; justify-content:flex-end;">
+              <div style="margin-top:1rem; padding-top:1.25rem; display:flex; justify-content:flex-start;">
                 <a 
                   href={`/industries/${ind.id === 'ind-oilgas' ? 'oil-and-gas' : ind.id === 'ind-petrochem' ? 'petrochemical-and-chemical' : ind.id === 'ind-energy' ? 'energy-and-power-generation' : ind.id === 'ind-mfg' ? 'industrial-manufacturing' : ind.id === 'ind-water' ? 'water-and-utilities' : 'infrastructure-and-construction'}`} 
                   class="btn-orange-solid"
                   style="padding:0.65rem 1.35rem; font-size:0.92rem;"
                 >
-                  <span>Explore {ind.name} Dedicated Page →</span>
+                  <span>Explore {ind.name} →</span>
                 </a>
               </div>
             </article>
